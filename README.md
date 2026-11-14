@@ -28,7 +28,7 @@ La IA es como un practicante brillante, rapidísimo y muy leído, que **nunca ha
 
 Lo que se proyecta en el taller: una presentación por sesión, con todos sus pasos.
 
-- [Sesión 1: Crear](presentacion/sesion-1.html) · *en construcción*
+- [Sesión 1: Crear](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-1.html) · *en construcción*
 
 Se avanza con las flechas del teclado. La tecla **S** abre la vista de presentador con las notas.
 
