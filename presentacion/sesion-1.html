@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA para la escuela · Sesión 1</title>
+<link rel="stylesheet" href="lib/reset.css">
+<link rel="stylesheet" href="lib/reveal.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#FBF7EF; --tinta:#1E2A3A; --suave:#5B6676;
+    --rol:#E4572E; --contexto:#2E86AB; --tarea:#3BA55C; --formato:#9B5DE5;
+    --acento:#FFD60A;
+  }
+  .reveal-viewport{background:var(--papel);}
+  .reveal{font-family:'Nunito',system-ui,sans-serif;color:var(--tinta);font-size:46px;}
+  .reveal .slides{text-align:left;}
+  .reveal h1,.reveal h2,.reveal h3{font-family:'Fraunces',Georgia,serif;color:var(--tinta);letter-spacing:-.01em;line-height:1.05;margin:0 0 .4em;}
+  .reveal h1{font-size:3.1em;font-weight:800;}
+  .reveal h2{font-size:2.1em;font-weight:800;}
+  .reveal h3{font-size:1.2em;font-weight:600;}
+  .reveal p{margin:0 0 .5em;line-height:1.35;}
+  .eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.55em;color:var(--suave);margin-bottom:.8em;}
+  .centro{text-align:center;}
+  .gigante{font-family:'Fraunces',serif;font-size:2.6em;font-weight:800;line-height:1.1;}
+  .subrayado{background:linear-gradient(transparent 62%, var(--acento) 62%);padding:0 .1em;}
+  /* portada */
+  .portada{display:flex;flex-direction:column;justify-content:center;height:100%;}
+  .portada .linea{width:140px;height:10px;background:var(--acento);border-radius:6px;margin:.4em 0 .8em;}
+  .portada .pie{font-size:.6em;color:var(--suave);margin-top:1.4em;}
+  /* tarjetas de voto */
+  .tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:1em;}
+  .tarjeta{background:#fff;border-radius:28px;padding:44px 28px;text-align:center;box-shadow:0 14px 30px rgba(30,42,58,.10);border-top:12px solid var(--c);}
+  .tarjeta .icono{font-size:2.8em;line-height:1;margin-bottom:.3em;}
+  .tarjeta .nombre{font-family:'Fraunces',serif;font-weight:800;font-size:1.1em;}
+  .tarjeta .materia{color:var(--suave);font-size:.6em;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-top:.4em;}
+  /* prompt con colores */
+  .prompt{background:#fff;border-radius:24px;padding:40px 48px;box-shadow:0 14px 30px rgba(30,42,58,.10);font-size:.7em;line-height:1.5;}
+  .prompt p{margin:0 0 .55em;}
+  .prompt p:last-child{margin:0;}
+  .parte{font-weight:800;padding:2px 12px;border-radius:999px;color:#fff;margin-right:.35em;font-size:.85em;}
+  .rol{background:var(--rol);} .contexto{background:var(--contexto);}
+  .tarea{background:var(--tarea);} .formato{background:var(--formato);}
+  .leyenda{display:flex;gap:14px;margin-top:.8em;font-size:.55em;font-weight:800;}
+  .leyenda span{padding:6px 16px;border-radius:999px;color:#fff;}
+  /* resultado */
+  .marco{background:#fff;border-radius:24px;box-shadow:0 14px 30px rgba(30,42,58,.10);height:560px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--suave);font-size:.6em;border:3px dashed #D9D2C3;}
+  .marco iframe{width:100%;height:100%;border:0;}
+  /* mapa del día */
+  .mapa{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:.6em;}
+  .paso{background:#fff;border-radius:20px;padding:26px 28px;box-shadow:0 8px 18px rgba(30,42,58,.08);font-size:.68em;font-weight:700;}
+  .paso b{display:inline-block;font-family:'Fraunces',serif;font-size:1.6em;font-weight:800;color:var(--tinta);background:var(--acento);border-radius:14px;padding:4px 16px;line-height:1.1;margin-right:14px;}
+  .paso.hoy{background:var(--acento);}
+  .paso.hoy b{background:var(--tinta);color:var(--acento);}
+
+  /* bienvenida */
+  .quien{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:.6em;}
+  .dato{background:#fff;border-radius:22px;padding:28px 32px;box-shadow:0 10px 24px rgba(30,42,58,.08);font-size:.7em;font-weight:700;border-left:12px solid var(--acento);}
+  .dato small{display:block;color:var(--suave);font-weight:700;font-size:.75em;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3em;}
+  /* esquema de claude */
+  .pantalla{display:grid;grid-template-columns:260px 1fr;height:520px;background:#fff;border-radius:24px;box-shadow:0 14px 30px rgba(30,42,58,.12);overflow:hidden;font-size:.5em;}
+  .lateral{background:#F1ECE2;padding:24px;display:flex;flex-direction:column;gap:14px;}
+  .lateral .item{height:22px;border-radius:8px;background:#DDD5C6;}
+  .boton-nuevo{background:var(--tinta);color:#fff;border-radius:12px;padding:12px 16px;font-weight:800;text-align:center;}
+  .principal{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;}
+  .caja{border:3px solid #D9D2C3;border-radius:18px;padding:22px 24px;color:var(--suave);}
+  .num{position:absolute;width:64px;height:64px;border-radius:50%;background:var(--acento);color:var(--tinta);font-family:'Fraunces',serif;font-weight:800;font-size:2.4em;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(0,0,0,.18);}
+  .lista3{display:flex;flex-direction:column;gap:22px;justify-content:center;font-size:.72em;font-weight:700;}
+  .lista3 div{display:flex;align-items:center;gap:18px;}
+  .lista3 .num{position:static;flex:none;width:56px;height:56px;font-size:1.3em;}
+  /* primer mensaje */
+  .mensaje{background:#fff;border-radius:28px;padding:56px 60px;box-shadow:0 14px 30px rgba(30,42,58,.12);font-size:1.15em;font-weight:700;line-height:1.5;}
+  .hueco{background:var(--acento);border-radius:10px;padding:0 .5em;}
+  /* acuerdos */
+  .acuerdos{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:.6em;}
+  .acuerdo{background:#fff;border-radius:28px;padding:40px 32px;box-shadow:0 14px 30px rgba(30,42,58,.10);}
+  .acuerdo .icono{font-size:2.4em;line-height:1;margin-bottom:.35em;}
+  .acuerdo .titulo{font-family:'Fraunces',serif;font-weight:800;font-size:1em;line-height:1.15;margin-bottom:.45em;}
+  .acuerdo p{font-size:.58em;color:var(--suave);font-weight:700;}
+
+  /* que es claude */
+  .ias{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:.4em 0 .9em;}
+  .ia{background:#fff;border-radius:24px;padding:30px;text-align:center;box-shadow:0 10px 24px rgba(30,42,58,.08);}
+  .ia.yo{background:var(--acento);}
+  .ia .n{font-family:'Fraunces',serif;font-weight:800;font-size:1.25em;}
+  .ia .e{font-size:.58em;font-weight:700;color:var(--suave);text-transform:uppercase;letter-spacing:.1em;margin-top:.3em;}
+  .ia.yo .e{color:var(--tinta);}
+  .clave{font-family:'Fraunces',serif;font-weight:600;font-size:1.05em;line-height:1.3;}
+  /* hace / ojo */
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:.4em;}
+  .col{background:#fff;border-radius:26px;padding:34px 38px;box-shadow:0 12px 26px rgba(30,42,58,.09);}
+  .col h3{margin-bottom:.5em;}
+  .col ul{margin:0;padding:0;list-style:none;font-size:.62em;font-weight:700;}
+  .col li{margin:0 0 .75em;padding-left:1.4em;position:relative;line-height:1.35;}
+  .col li::before{content:"";position:absolute;left:0;top:.35em;width:.7em;height:.7em;border-radius:50%;background:var(--tarea);}
+  .col.ojo li::before{background:var(--rol);}
+  .col li span{display:block;font-weight:400;color:var(--suave);}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:.45em;}
+  .chip{background:var(--papel);border:2px solid #E6DECF;border-radius:999px;padding:4px 16px;font-size:.85em;font-weight:800;color:var(--tinta);}
+  .reveal .progress{color:var(--acento);height:6px;}
+  .reveal .controls{color:var(--tinta);}
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+  <!-- ===================== PORTADA ===================== -->
+  <section>
+    <div class="portada">
+      <div class="eyebrow">Taller práctico · Sesión 1 de 2</div>
+      <h1>IA para<br>la escuela</h1>
+      <div class="linea"></div>
+      <p style="font-size:.9em">Crea contenido educativo <span class="subrayado">con tu contexto y a tu manera.</span></p>
+      <p class="pie">Ing. Juan Pablo Rojas</p>
+    </div>
+    <aside class="notes">Proyectar mientras llegan.</aside>
+  </section>
+
+
+  <!-- ===================== PASO 0: BIENVENIDA ===================== -->
+  <section>
+    <div class="eyebrow">Bienvenida</div>
+    <h2>Hola, soy Juan</h2>
+    <div class="quien">
+      <div class="dato"><small>Formación</small>Ingeniero en Mecatrónica · BUAP</div>
+      <div class="dato"><small>Estudio</small>Maestría en Ciencia de Datos · UTM</div>
+      <div class="dato"><small>Me preparo en</small>IA agéntica · NVIDIA e INFOTEC</div>
+      <div class="dato"><small>Hoy</small>Vamos a crear materiales para tu trabajo</div>
+    </div>
+    <aside class="notes">Presentación breve, 1 minuto. El gancho hace el resto.</aside>
+  </section>
+
+
+  <section>
+    <div class="eyebrow">¿Qué es Claude?</div>
+    <h2>Una IA como las que ya conoces</h2>
+    <div class="ias">
+      <div class="ia yo"><div class="n">Claude</div><div class="e">Anthropic</div></div>
+      <div class="ia"><div class="n">ChatGPT</div><div class="e">OpenAI</div></div>
+      <div class="ia"><div class="n">Gemini</div><div class="e">Google</div></div>
+    </div>
+    <p class="clave">En lo básico, las tres hacen lo mismo.<br>La diferencia más grande no está en la IA: <span class="subrayado">está en cómo le pides.</span></p>
+    <aside class="notes">Esta idea es la columna del taller: el prompt importa más que la herramienta.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">¿Por qué Claude en este taller?</div>
+    <div class="dos">
+      <div class="col">
+        <h3>Lo que hace bien</h3>
+        <ul>
+          <li>Escribe muy bien<span>Planeaciones, avisos y oficios con buena redacción.</span></li>
+          <li>Crea materiales listos<span>Páginas interactivas y archivos para descargar.</span>
+            <div class="chips"><span class="chip">Word</span><span class="chip">PowerPoint</span><span class="chip">Excel</span><span class="chip">PDF</span></div></li>
+          <li>Lee tus documentos<span>Subes tu archivo y trabaja con él.</span>
+            <div class="chips"><span class="chip">PDF</span><span class="chip">Word</span><span class="chip">Excel</span><span class="chip">Fotos</span><span class="chip">Texto</span></div></li>
+        </ul>
+      </div>
+      <div class="col ojo">
+        <h3>Lo que debes saber</h3>
+        <ul>
+          <li>Se acaba más rápido<span>La versión gratuita tiene un límite que se recarga cada 5 horas, más estricto que ChatGPT.</span></li>
+          <li>No genera imágenes<span>Para fotos o ilustraciones usa ChatGPT o Gemini. Claude sí dibuja diagramas y escenas con código.</span></li>
+          <li>Por eso: piensa antes de enviar<span>Un buen prompt ahorra mensajes.</span></li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">Fuentes: centro de ayuda de Claude (formatos), comparativas de planes gratuitos 2026 (límites, imágenes). Revisar antes del taller: los planes cambian seguido.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Entremos a Claude</div>
+    <h2 style="margin-bottom:.3em">claude.ai</h2>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:44px;align-items:center">
+      <div class="pantalla">
+        <div class="lateral">
+          <div class="boton-nuevo">+ Chat nuevo</div>
+          <div class="item"></div><div class="item" style="width:80%"></div><div class="item" style="width:65%"></div><div class="item" style="width:85%"></div>
+        </div>
+        <div class="principal">
+          <div class="caja">Escribe aquí…</div>
+          <div class="num" style="bottom:22px;right:22px">1</div>
+          <div class="num" style="top:22px;left:-30px">2</div>
+          <div class="num" style="top:170px;left:-30px">3</div>
+        </div>
+      </div>
+      <div class="lista3">
+        <div><span class="num">1</span>Dónde escribir</div>
+        <div><span class="num">2</span>Chat nuevo</div>
+        <div><span class="num">3</span>Tus conversaciones anteriores</div>
+      </div>
+    </div>
+    <aside class="notes">Esquema simplificado; se puede cambiar por una captura real. Recorrer el salón mientras entran.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Tu primera conversación</div>
+    <div class="mensaje">Hola, soy <span class="hueco">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> y trabajo en <span class="hueco">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>. ¿Qué me puedes ayudar a hacer?</div>
+    <p style="margin-top:1em;font-size:.7em;color:var(--suave);font-weight:700">Ejemplo: soy maestra de Ciencias y trabajo en una telesecundaria.</p>
+    <aside class="notes">Sin explicarlo: ya le están dando contexto. Retomarlo en el paso 3.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Tres acuerdos</div>
+    <div class="acuerdos">
+      <div class="acuerdo"><div class="icono">🔢</div><div class="titulo">Números de lista, no nombres</div><p>Para calificar o registrar, la IA trabaja igual con "Alumno 7".</p></div>
+      <div class="acuerdo"><div class="icono">✋</div><div class="titulo">Si te atoras, levanta la mano</div><p>Nadie se queda atrás.</p></div>
+      <div class="acuerdo"><div class="icono">💬</div><div class="titulo">Se vale preguntar</div><p>Aquí nadie sabe todo.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== PASO 1: GANCHO ===================== -->
+  <section>
+    <section class="centro">
+      <div class="eyebrow">Para empezar</div>
+      <p class="gigante">¿Qué es lo que más tiempo te quita en la semana?</p>
+      <aside class="notes">Que contesten en voz alta. 2 minutos. Escuchar a docentes y secretarias.</aside>
+    </section>
+
+    <section>
+      <div class="eyebrow">Hagamos uno en 2 minutos</div>
+      <h2>Elijan un tema</h2>
+      <div class="tarjetas">
+        <div class="tarjeta" style="--c:var(--contexto)"><div class="icono">💧</div><div class="nombre">Ciclo del agua</div><div class="materia">Ciencias</div></div>
+        <div class="tarjeta" style="--c:var(--rol)"><div class="icono">🔔</div><div class="nombre">Independencia de México</div><div class="materia">Historia</div></div>
+        <div class="tarjeta" style="--c:var(--tarea)"><div class="icono">🔷</div><div class="nombre">Prismas en 3D</div><div class="materia">Matemáticas</div></div>
+      </div>
+      <aside class="notes">Votación a mano alzada. Después de esta diapositiva, baja (flecha abajo) al prompt del tema ganador.</aside>
+    </section>
+
+    <!-- prompt: ciclo del agua -->
+    <section>
+      <div class="eyebrow">💧 Ciclo del agua · el prompt</div>
+      <div class="prompt">
+        <p><span class="parte rol">Rol</span>Eres diseñador de materiales educativos para secundaria en México.</p>
+        <p><span class="parte contexto">Contexto</span>Doy Ciencias en una telesecundaria. Mis alumnos leen poco texto, así que necesito palabras sencillas y frases cortas.</p>
+        <p><span class="parte tarea">Tarea</span>Crea una animación interactiva del ciclo del agua con 4 pasos: evaporación, condensación, precipitación, escurrimiento e infiltración. Cada paso se activa con un botón y anima la escena. Incluye un botón para reproducir todo el ciclo.</p>
+        <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), letras grandes para verse en proyector, todo en español, máximo 2 frases por paso.</p>
+      </div>
+      <aside class="notes">Pegar el prompt en Claude (está en prompts.md). Mientras genera, leer los cuatro colores en voz alta SIN explicarlos: el paso 3 los explica.</aside>
+    </section>
+
+    <!-- prompt: independencia -->
+    <section>
+      <div class="eyebrow">🔔 Independencia de México · el prompt</div>
+      <div class="prompt">
+        <p><span class="parte rol">Rol</span>Eres diseñador de materiales educativos para secundaria en México.</p>
+        <p><span class="parte contexto">Contexto</span>Doy Historia en una telesecundaria. Mis alumnos se pierden con tantas fechas y personajes, así que necesito algo visual y frases cortas.</p>
+        <p><span class="parte tarea">Tarea</span>Crea una línea del tiempo interactiva de la Independencia de México, de 1810 a 1821, con al menos 6 momentos clave. Al hacer clic en cada momento se muestra la fecha, qué pasó y quién participó, con una ilustración sencilla dibujada dentro de la página. Botones de anterior y siguiente; cambios animados y botones con movimiento.</p>
+        <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), con colores, sombras y profundidad, letras grandes, todo en español.</p>
+      </div>
+      <aside class="notes">Versión resumida para proyectar. El prompt completo para pegar está en prompts.md.</aside>
+    </section>
+
+    <!-- prompt: prismas -->
+    <section>
+      <div class="eyebrow">🔷 Prismas en 3D · el prompt</div>
+      <div class="prompt">
+        <p><span class="parte rol">Rol</span>Eres profesor de matemáticas de secundaria en México.</p>
+        <p><span class="parte contexto">Contexto</span>Doy Matemáticas en una telesecundaria. Mis alumnos están viendo prismas y les cuesta imaginar cómo se arma un prisma a partir de su desarrollo plano.</p>
+        <p><span class="parte tarea">Tarea</span>Crea una herramienta con dos vistas: un prisma en 3D que se pueda girar con el mouse y su desarrollo plano en 2D, con las caras del mismo color en las dos vistas. Botones para elegir prisma triangular, rectangular, pentagonal y hexagonal. Si es posible, un botón que anime cómo se desdobla.</p>
+        <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), letras grandes, todo en español.</p>
+      </div>
+      <aside class="notes">El más arriesgado: si el desdoblado no sale, el prisma girando ya impresiona.</aside>
+    </section>
+  </section>
+
+  <section>
+    <div class="eyebrow">El resultado</div>
+    <div class="marco">
+      Aquí va la animación ya hecha (plan B):&nbsp;<code>sesion-1/01-gancho/resultados/</code>
+    </div>
+    <aside class="notes">Lo normal es mostrar el resultado en vivo en Claude. Esta diapositiva es el plan B: cuando existan los archivos de resultados, aquí se abre la animación dentro de la presentación. Pasa un voluntario sin experiencia a usarla.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">En la misma conversación</div>
+    <h2>Ahora, un aviso<br>para los tutores</h2>
+    <div class="prompt">
+      <p>Ahora redacta un aviso para los padres de familia y tutores. Los alumnos van a presentar una exposición sobre este tema usando esta animación. Usa estos datos: Escuela Telesecundaria "Ejemplo", el viernes 5 de diciembre a las 10:00 en el salón de usos múltiples, firma la dirección. Tono formal pero amable, máximo media página, listo para imprimir.</p>
+    </div>
+    <p style="margin-top:.8em;font-size:.75em">No le repetimos el tema: <span class="subrayado">la conversación recuerda.</span></p>
+    <aside class="notes">Esto es para que secretarias y directivos vean que el taller también es para ellos. Datos inventados.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">La promesa</div>
+    <h2>Hoy, antes de irte,<br>tendrás uno de estos <span class="subrayado">con tu tema.</span></h2>
+    <div class="mapa">
+      <div class="paso"><b>0</b>Bienvenida</div>
+      <div class="paso hoy"><b>1</b>Gancho</div>
+      <div class="paso"><b>2</b>Cómo funciona</div>
+      <div class="paso"><b>3</b>Pedir bien</div>
+      <div class="paso"><b>4</b>Producto 1</div>
+      <div class="paso"><b>5</b>Pedir cambios</div>
+      <div class="paso"><b>6</b>Producto 2</div>
+      <div class="paso"><b>7</b>Cierre</div>
+    </div>
+  </section>
+
+</div></div>
+<script src="lib/reveal.js"></script>
+<script src="lib/notes.js"></script>
+<script>
+  Reveal.initialize({hash:true, width:1600, height:900, margin:0.06, transition:'slide', plugins:[RevealNotes]});
+</script>
+</body>
+</html>

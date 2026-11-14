@@ -24,6 +24,14 @@ La IA es como un practicante brillante, rapidísimo y muy leído, que **nunca ha
 | [Sesión 1: Crear](sesion-1/) | Cómo funciona la IA, cómo pedirle bien y crear tus primeros materiales | El que **escribes**: quién eres, para quién es, cómo lo quieres |
 | [Sesión 2: Dar contexto](sesion-2/) | Lo que la IA no sabe, subir tus documentos y resolver un reto real | El que **subes**: el libro, tus apuntes, tus formatos |
 
+## Presentaciones
+
+Lo que se proyecta en el taller: una presentación por sesión, con todos sus pasos.
+
+- [Sesión 1: Crear](presentacion/sesion-1.html) · *en construcción*
+
+Se avanza con las flechas del teclado. La tecla **S** abre la vista de presentador con las notas.
+
 ## Cómo usar este repositorio
 
 - **Durante el taller** se proyecta paso a paso. No necesitas tenerlo abierto.
@@ -44,6 +52,7 @@ Cada paso tiene el mismo formato:
 taller-ia-escuela/
 ├── sesion-1/      ← Crear (pasos 0 a 7)
 ├── sesion-2/      ← Dar contexto
+├── presentacion/  ← lo que se proyecta (una presentación por sesión)
 └── recursos/      ← hojas de trabajo, reglas de oro y casos donde la IA falla
 ```
 
