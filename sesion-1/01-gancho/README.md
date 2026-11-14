@@ -51,6 +51,7 @@ En este paso no hay nada que hacer en tu equipo: solo observa.
 - **El voluntario:** de preferencia alguien que nunca haya usado IA. Mensaje: "si él pudo, tú también".
 - **El aviso** es para que secretarias y directivos vean desde el inicio que el taller también es para ellos. Usa datos inventados, como en el acuerdo del paso 0. A los tutores se les manda un **aviso o circular**; el oficio va a autoridades.
 - **Independencia:** la IA elige los eventos. Revisa las fechas antes del taller; más adelante sirve para preguntar "¿alguien revisó si las fechas son correctas?".
+- **Imágenes en Independencia:** el prompt pide ilustraciones dibujadas dentro de la página, no fotos de internet: la IA suele inventar direcciones de imágenes que no existen y aparecen cuadros rotos.
 - **Prismas** es el más impresionante y el más arriesgado: el 3D carga una librería de internet y el desdoblado puede no salir. Pruébalo varias veces y en las computadoras de la sala.
 - **Al cerrar,** proyecta el mapa de los pasos del día ([sesión 1](../)).
 - **Plan B:** si Claude tarda o falla, abre el resultado del tema en [resultados/](resultados/) y di: "esta la hice ayer con el mismo prompt".

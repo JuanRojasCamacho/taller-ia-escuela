@@ -18,8 +18,8 @@ Formato: una sola página web (un solo archivo HTML), letras grandes para verse 
 ```
 Eres diseñador de materiales educativos para secundaria en México.
 Contexto: doy Historia en una telesecundaria. Mis alumnos se pierden con tantas fechas y personajes, así que necesito algo visual y frases cortas.
-Tarea: crea una línea del tiempo interactiva de la Independencia de México, de 1810 a 1821, con al menos 6 momentos clave. Al hacer clic en cada momento se muestra la fecha, qué pasó y quién participó, en máximo 2 frases. Incluye botones de anterior y siguiente para recorrerla en orden.
-Formato: una sola página web (un solo archivo HTML), letras grandes para verse en proyector, todo en español.
+Tarea: crea una línea del tiempo interactiva de la Independencia de México, de 1810 a 1821, con al menos 6 momentos clave. Al hacer clic en cada momento se muestra la fecha, qué pasó y quién participó, en máximo 2 frases, con una ilustración sencilla dibujada dentro de la página (por ejemplo, una campana, una bandera o un mapa). Incluye botones de anterior y siguiente para recorrerla en orden. El cambio entre momentos debe ser animado y los botones deben moverse al pasar el mouse y al hacer clic.
+Formato: una sola página web (un solo archivo HTML), con colores, sombras y profundidad para que no se vea plana, letras grandes para verse en proyector, todo en español.
 ```
 
 ## 3. Prismas (3D y desarrollo plano)
