@@ -81,7 +81,7 @@ Cuando escribas tus propios prompts y no sepas qué poner en alguna parte, conte
 - **Malo y bueno en chats separados.** Si escriben el bueno en el mismo chat, la IA ya sabe lo que querían y la comparación no es justa.
 - **Mientras se genera el malo, pregunta:** "¿qué parte de la receta le falta?". Al terminar: "¿le serviría a tus alumnos?", "¿así son sus oficios?". Cuenta sin nombre que a una compañera de otra escuela la IA le dio contenido muy técnico para sus alumnos.
 - **Escribir el bueno tarda:** son cuatro renglones. Recorre el salón y, si alguien se atora, pide a quien tenga al lado que lo apoye.
-- **Al comparar,** que se fijen en el largo, las palabras, para quién está escrito y si ya lo podrían usar. Los datos del oficio son inventados; pregunta a las secretarias si se parece a los suyos.
+- **Al comparar,** que se fijen en el largo, las palabras, para quién está escrito y si ya lo podrían usar. Los datos del oficio son inventados; pregunta a las secretarias si se parece a los suyos. El oficio bueno llega como **documento de Word** para descargar: pruébalo antes en una cuenta gratuita, porque necesita que esté activada la creación de archivos.
 - **Los prompts malos tienen que fallar de verdad.** Pruébalos antes en una cuenta gratuita y guarda capturas como respaldo: las IA no siempre fallan igual.
 - **Practiquen editar:** en el chat del prompt bueno, que pasen el mouse sobre su mensaje, den clic en el lápiz, cambien algo ("máximo 4 frases") y guarden. Así ven que no hace falta mandar otro mensaje.
 - **El paso 4 es su primer prompt propio:** aquí solo copian la receta; allá la llenan con su tema.

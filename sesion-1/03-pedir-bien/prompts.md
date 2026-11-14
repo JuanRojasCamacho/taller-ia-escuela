@@ -35,5 +35,5 @@ Hazme un oficio para pedir permiso.
 Eres secretaria de una escuela secundaria en México.
 Contexto: trabajo en la dirección de la Telesecundaria "Ejemplo". Los oficios se dirigen a la Supervisión Escolar y los firma el director.
 Tarea: redacta un oficio para pedir permiso de salir con los alumnos de tercero a una visita al museo el viernes 28 de noviembre, de 9:00 a 13:00.
-Formato: oficio formal con número de oficio, lugar y fecha, asunto, destinatario, cuerpo de máximo dos párrafos, despedida y espacio para la firma.
+Formato: entrégamelo como documento de Word (.docx), tamaño carta, listo para imprimir: número de oficio, lugar y fecha, asunto, destinatario, cuerpo de máximo dos párrafos, despedida y espacio para la firma.
 ```
