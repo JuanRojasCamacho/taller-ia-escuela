@@ -69,7 +69,7 @@ La versión gratuita de Claude tiene un límite de uso que **se renueva cada cin
 
 Si no alcanzaste a escribir el prompt bueno, cópialo de [prompts.md](prompts.md) después del taller y pruébalo en casa. Lo importante de este paso es la comparación: la ves en la pantalla de quien tengas al lado.
 
-Cuando escribas tus propios prompts y no sepas qué poner en alguna parte, contesta su pregunta en voz alta y escríbelo tal cual: *"¿quién soy yo y para quién es?"* → *"Soy secretaria de una telesecundaria y el oficio es para la Supervisión Escolar"*. La receta proyectada se queda en pantalla durante el paso 4.
+Cuando escribas tus propios prompts y no sepas qué poner en alguna parte, contesta su pregunta en voz alta y escríbelo tal cual: *"¿quién soy yo y para quién es?"* → *"Soy secretaria de una telesecundaria y el oficio es para la Supervisión Escolar"*. En el paso 4 vas a tener en pantalla la receta con un ejemplo de tu perfil.
 
 ---
 
@@ -85,6 +85,6 @@ Cuando escribas tus propios prompts y no sepas qué poner en alguna parte, conte
 - **Los prompts malos tienen que fallar de verdad.** Pruébalos antes en una cuenta gratuita y guarda capturas como respaldo: las IA no siempre fallan igual.
 - **Practiquen editar:** en el chat del prompt bueno, que pasen el mouse sobre su mensaje, den clic en el lápiz, cambien algo ("máximo 4 frases") y guarden. Así ven que no hace falta mandar otro mensaje.
 - **El paso 4 es su primer prompt propio:** aquí solo copian la receta; allá la llenan con su tema.
-- **Al terminar,** deja proyectada la diapositiva de la receta: se queda durante todo el paso 4.
+- **En el paso 4** se proyecta la receta con un ejemplo por perfil mientras escriben su propio prompt.
 
 </details>

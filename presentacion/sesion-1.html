@@ -127,6 +127,9 @@
   .par .quien{white-space:nowrap;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.5em;color:var(--suave);margin-bottom:.4em;}
   .par .malo{margin:0;font-size:1.05em;}
   .prompt.chico{font-size:.5em;padding:30px 34px;line-height:1.45;}
+  .mini{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:0 0 .5em;}
+  .mini div{background:#fff;border-radius:16px;border-left:10px solid var(--c);padding:12px 16px;font-size:.5em;font-weight:700;box-shadow:0 6px 14px rgba(30,42,58,.07);}
+  .mini b{display:block;color:var(--c);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.85em;}
   .reveal .progress{color:var(--acento);height:6px;}
   .reveal .controls{color:var(--tinta);}
 </style>
@@ -472,16 +475,56 @@
     <aside class="notes">Que lo practiquen: en su chat del prompt bueno, pasen el mouse sobre su mensaje, den clic en el lápiz, cambien algo (por ejemplo, "máximo 4 frases") y guarden. Claude crea una nueva versión y conserva la anterior; con las flechas se cambia entre versiones.</aside>
   </section>
 
+  <!-- ===================== PASO 4: PRODUCTO 1 ===================== -->
   <section>
-    <div class="eyebrow">Tenla a la vista</div>
-    <h2>Tu receta</h2>
-    <div class="receta">
-      <div class="ing" style="--c:var(--rol)"><span class="nombre">Rol</span><div class="pregunta">¿Quién quiero que sea?</div></div>
-      <div class="ing" style="--c:var(--contexto)"><span class="nombre">Contexto</span><div class="pregunta">¿Quién soy yo y para quién es?</div></div>
-      <div class="ing" style="--c:var(--tarea)"><span class="nombre">Tarea</span><div class="pregunta">¿Qué quiero exactamente?</div></div>
-      <div class="ing" style="--c:var(--formato)"><span class="nombre">Formato</span><div class="pregunta">¿Cómo lo quiero recibir?</div></div>
+    <div class="eyebrow">Paso 4 · Producto 1</div>
+    <h2>Tu primer prompt</h2>
+    <p class="clave" style="margin-bottom:.6em">¿Qué vas a dar la próxima semana? ¿Qué oficio tienes pendiente?</p>
+    <div class="perfiles">
+      <div class="perfil"><div class="quien">Docentes</div><div class="texto">Planeación de tu clase</div><p style="font-size:.5em;color:var(--suave);font-weight:700;margin-top:.5em">En el chat, en tabla. En el paso 6 harás su animación.</p></div>
+      <div class="perfil"><div class="quien">Secretarias</div><div class="texto">Un oficio que tengas pendiente</div><p style="font-size:.5em;color:var(--suave);font-weight:700;margin-top:.5em">En Word.</p></div>
+      <div class="perfil"><div class="quien">Directivos</div><div class="texto">Planeación o un comunicado</div><p style="font-size:.5em;color:var(--suave);font-weight:700;margin-top:.5em">El comunicado, en Word.</p></div>
     </div>
-    <aside class="notes">Esta diapositiva se queda proyectada durante todo el paso 4.</aside>
+    <p class="remate">Tu tema real · tu receta · un <b>chat nuevo</b></p>
+    <aside class="notes">Dales 2 o 3 minutos para elegir el tema. A los docentes: elijan bien, porque en el paso 6 harán la animación de esta clase. Directivos: casi todos dan clase, pueden hacer la planeación.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Tenla a la vista · la receta con un ejemplo</div>
+    <div class="mini">
+      <div style="--c:var(--rol)"><b>Rol</b>¿Quién quiero que sea?</div>
+      <div style="--c:var(--contexto)"><b>Contexto</b>¿Quién soy y para quién es?</div>
+      <div style="--c:var(--tarea)"><b>Tarea</b>¿Qué quiero exactamente?</div>
+      <div style="--c:var(--formato)"><b>Formato</b>¿Cómo lo quiero recibir?</div>
+    </div>
+    <div class="par">
+      <div><div class="quien">Docentes · ejemplo</div><div class="prompt chico">
+          <p><span class="parte rol">Rol</span>Eres asesor pedagógico de telesecundaria en México.</p>
+          <p><span class="parte contexto">Contexto</span>Doy Matemáticas. Tengo 50 minutos de clase, mis alumnos confunden qué fracción es más grande y en el salón solo hay pizarrón y cartulinas.</p>
+          <p><span class="parte tarea">Tarea</span>Haz la planeación de una clase para comparar fracciones, con inicio, desarrollo y cierre.</p>
+          <p><span class="parte formato">Formato</span>Una tabla con momento, actividad y tiempo, y al final 3 preguntas para evaluar.</p>
+      </div></div>
+      <div><div class="quien">Secretarias · ejemplo</div><div class="prompt chico">
+          <p><span class="parte rol">Rol</span>Eres secretaria de una escuela secundaria en México.</p>
+          <p><span class="parte contexto">Contexto</span>Trabajo en la Telesecundaria "Ejemplo". Los oficios se dirigen a la Supervisión Escolar y los firma el director.</p>
+          <p><span class="parte tarea">Tarea</span>Redacta un oficio para informar que la escuela participará en el desfile del 20 de noviembre con 45 alumnos y 4 docentes.</p>
+          <p><span class="parte formato">Formato</span>Documento de Word (.docx), tamaño carta, listo para imprimir, con número de oficio, asunto, destinatario y espacio para la firma.</p>
+      </div></div>
+    </div>
+    <p class="remate" style="font-size:.6em">Cambia cada parte por <b>tu</b> tema, <b>tus</b> alumnos y <b>tu</b> escuela.</p>
+    <aside class="notes">Se queda proyectada mientras escriben (unos 17 minutos). Recorre el salón y fíjate en el contexto: es donde más se quedan cortos. El ejemplo de comunicado para directivos está en prompts.md del paso 4.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Antes de usarlo</div>
+    <h2>Revísalo con lupa</h2>
+    <div class="lista3">
+      <div><span class="num">1</span><span>¿Lo usarías mañana?</span></div>
+      <div><span class="num">2</span><span>¿Inventó algo, o algo no coincide con lo que tú sabes?</span></div>
+      <div><span class="num">3</span><span>¿Qué le cambiarías?</span></div>
+    </div>
+    <p class="remate" style="color:var(--tinta)">Anota <span class="subrayado">dos cambios</span> en tu libreta: en el paso 5 se los vas a pedir.</p>
+    <aside class="notes">7 minutos. Luego un voluntario (de preferencia a quien le salió bien a la primera) lee su prompt en voz alta y muestra el resultado: ¿qué parte de la receta hizo la diferencia?</aside>
   </section>
 
 </div></div>
