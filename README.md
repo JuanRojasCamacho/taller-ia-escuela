@@ -49,4 +49,4 @@ taller-ia-escuela/
 
 ## Privacidad
 
-En este taller **nunca** se suben datos de alumnos (nombres, calificaciones, CURP) ni datos personales de nadie. Los ejemplos usan datos inventados.
+Para calificar o llevar registros con la IA, **usa números de lista, no nombres**: la IA trabaja igual con "Alumno 7" que con un nombre, y así los datos de tus alumnos no salen de la escuela. Los ejemplos de este taller usan datos inventados.
