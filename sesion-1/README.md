@@ -13,7 +13,7 @@
 | 4 | [Producto 1](04-producto-1/) | 30 | Planeación, oficio o comunicado con la receta |
 | | Descanso | 15 | |
 | 5 | [Pedir cambios](05-pedir-cambios/) | 20 | Corregir sin empezar de cero y pasarlo a Word |
-| 6 | [Producto 2: la animación](06-producto-2/) | 35 | Un material interactivo a partir de tu planeación |
+| 6 | [Producto 2: la animación o el anuncio](06-producto-2/) | 35 | Una animación de tu clase o un anuncio para los padres |
 | 7 | [Probar y cierre](07-cierre/) | 15 | Intercambio de equipos y regla "revisa antes de usar" |
 
 ## Lo que te llevas
@@ -21,5 +21,5 @@
 | Perfil | Producto 1 | Producto 2 |
 | --- | --- | --- |
 | Docentes | Planeación de una clase | Animación o quiz interactivo |
-| Secretarias | Oficio | *Por definir* |
-| Directivos | Comunicado | *Por definir* |
+| Secretarias | Oficio | Anuncio o cartel para padres |
+| Directivos | Planeación o comunicado | Animación o anuncio |
