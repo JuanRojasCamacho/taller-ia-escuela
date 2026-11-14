@@ -99,6 +99,19 @@
   .col li span{display:block;font-weight:400;color:var(--suave);}
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:.45em;}
   .chip{background:var(--papel);border:2px solid #E6DECF;border-radius:999px;padding:4px 16px;font-size:.85em;font-weight:800;color:var(--tinta);}
+  /* paso 2: como funciona */
+  .frase{font-family:'Fraunces',serif;font-weight:800;font-size:1.9em;line-height:1.2;}
+  .blanco{display:inline-block;min-width:3.2em;border-bottom:8px solid var(--tinta);text-align:center;}
+  .respuesta{background:var(--acento);border-radius:14px;padding:0 .3em;}
+  .remate{font-size:.85em;font-weight:700;color:var(--suave);margin-top:1.2em;}
+  .termometro{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:.6em;}
+  .lugar{background:#fff;border-radius:26px;padding:36px 40px;box-shadow:0 12px 26px rgba(30,42,58,.09);}
+  .lugar.aqui{background:var(--acento);}
+  .lugar .grados{font-family:'Fraunces',serif;font-weight:800;font-size:2.4em;line-height:1;}
+  .lugar .donde{font-weight:800;font-size:.7em;margin-top:.4em;}
+  .lugar .altura{font-size:.55em;font-weight:700;color:var(--suave);text-transform:uppercase;letter-spacing:.1em;}
+  .lugar.aqui .altura{color:var(--tinta);}
+  .boton-link{display:inline-block;background:var(--tinta);color:#fff !important;border-radius:16px;padding:14px 28px;font-weight:800;font-size:.6em;text-decoration:none;}
   .reveal .progress{color:var(--acento);height:6px;}
   .reveal .controls{color:var(--tinta);}
 </style>
@@ -298,6 +311,92 @@
       <div class="paso"><b>6</b>Producto 2</div>
       <div class="paso"><b>7</b>Cierre</div>
     </div>
+  </section>
+
+
+  <!-- ===================== PASO 2: COMO FUNCIONA ===================== -->
+  <section>
+    <section>
+      <div class="eyebrow">Paso 2 · Cómo funciona</div>
+      <h2>Un juego:<br><span class="subrayado">escribe como una IA</span></h2>
+      <div class="lista3">
+        <div><span class="num">1</span><span>Cada quien agrega <b>una sola palabra</b> y pasa la hoja.</span></div>
+        <div><span class="num">2</span><span>Lee todo lo que ya está escrito, <b>sin hablar</b>.</span></div>
+        <div><span class="num">3</span><span>La hoja da <b>tres vueltas</b> al equipo.</span></div>
+      </div>
+      <aside class="notes">Equipos por mesa, unos 5 por equipo. Una hoja impresa por equipo (hoja-juego.pdf). La hoja va abierta: cada quien ve toda la frase, igual que la IA lee todo lo anterior.</aside>
+    </section>
+
+    <section class="centro">
+      <div class="eyebrow">Todos empiezan igual</div>
+      <p class="frase">El agua hierve a <span class="blanco">&nbsp;</span> …</p>
+      <p class="remate">Una palabra cada quien · sin hablar · tres vueltas</p>
+      <aside class="notes">Deja esta diapositiva mientras escriben (unos 4 minutos). Recorre las mesas.</aside>
+    </section>
+
+    <section>
+      <div class="eyebrow">Lean su frase</div>
+      <h2>Mismo inicio,<br>¿mismo final?</h2>
+      <div class="dos">
+        <div class="col fragment"><h3>Empezaron igual</h3><ul><li>Casi todos escribieron "cien grados"<span>Es lo más probable: lo que siempre hemos oído.</span></li></ul></div>
+        <div class="col ojo fragment"><h3>Terminaron distinto</h3><ul><li>Cada equipo se fue por su lado<span>Igual que la IA: no responde igual dos veces.</span></li></ul></div>
+      </div>
+      <aside class="notes">Cada equipo lee su frase en voz alta. Si alguno NO escribió "cien", mejor: úsalo en el giro de Huajuapan. Retoma el gancho: "por eso su animación puede verse distinta a la mía".</aside>
+    </section>
+
+    <section class="centro">
+      <div class="eyebrow">Así escribe la IA</div>
+      <p class="gigante">Escribe la palabra<br><span class="subrayado">más probable,</span><br>una tras otra.</p>
+      <p class="remate">Igual que ustedes: leyendo todo lo que ya está escrito.</p>
+      <p class="remate fragment" style="color:var(--tinta)">Pero probable no es lo mismo que verdadero.</p>
+      <aside class="notes">Casi siempre lo probable coincide con la verdad, y por eso parece que sabe. Siguiente diapositiva: el giro.</aside>
+    </section>
+
+    <section>
+      <div class="eyebrow">¿Y aquí?</div>
+      <h2>Todos escribieron "cien".<br>¿Y en Huajuapan?</h2>
+      <div class="termometro fragment">
+        <div class="lugar"><div class="grados">100 °C</div><div class="donde">A nivel del mar</div><div class="altura">Veracruz, Acapulco</div></div>
+        <div class="lugar aqui"><div class="grados">≈ 95 °C</div><div class="donde">En Huajuapan</div><div class="altura">≈ 1,600 m de altura</div></div>
+      </div>
+      <aside class="notes">"Cien" era lo más probable, pero no lo verdadero AQUÍ. Siembra la idea: en la sesión 2 veremos que lo local es donde la IA más inventa.</aside>
+    </section>
+  </section>
+
+  <section>
+    <section>
+      <div class="eyebrow">Tokens</div>
+      <h2>No lee palabras:<br><span class="subrayado">lee pedazos</span></h2>
+      <p style="font-size:.75em">A cada pedazo se le llama <b>token</b>. Todo lo que escribes y todo lo que te responde se cuenta en tokens.</p>
+      <p style="margin-top:1em"><a class="boton-link" href="https://platform.openai.com/tokenizer" target="_blank">Abrir el tokenizador (en vivo)</a></p>
+      <aside class="notes">Aclara: es la herramienta de OpenAI (ChatGPT); Claude no tiene una pública y corta distinto, pero la idea es la misma. Escribe en orden: "telesecundaria", "Huajuapan de León", y una misma frase en español y en inglés. Si falla, flecha abajo: captura.</aside>
+    </section>
+
+    <section>
+      <div class="eyebrow">Plan B · captura del tokenizador</div>
+      <div class="marco">
+        Aquí va la captura del tokenizador:&nbsp;<code>sesion-1/02-como-funciona/tokenizador.png</code>
+      </div>
+      <aside class="notes">Solo si no hay internet o la página cambió.</aside>
+    </section>
+  </section>
+
+  <section>
+    <div class="eyebrow">Lo que esto significa para ti</div>
+    <h2>Tres reglas</h2>
+    <div class="acuerdos">
+      <div class="acuerdo fragment"><div class="icono">🔎</div><div class="titulo">Predice, no sabe:<br>revisa</div><p>Puede equivocarse con total seguridad. Tú eres el responsable.</p></div>
+      <div class="acuerdo fragment"><div class="icono">🪙</div><div class="titulo">Todo cuesta:<br>piensa antes de enviar</div><p>Cada mensaje y cada respuesta gastan. La versión gratuita tiene un límite.</p></div>
+      <div class="acuerdo fragment"><div class="icono">💬</div><div class="titulo">Tema nuevo,<br>chat nuevo</div><p>En cada mensaje vuelve a leer toda la conversación. Mismo tema, mismo chat.</p></div>
+    </div>
+    <aside class="notes">Regla 3: retoma el gancho. "¿Se acuerdan de que no le repetimos el tema para el aviso? Por eso." No te extiendas en la regla 2: el paso 3 explica cómo cuidar la versión gratuita.</aside>
+  </section>
+
+  <section class="centro">
+    <div class="eyebrow">Para el paso 3</div>
+    <p class="gigante">Si escribe lo más probable<br>con lo que le das…</p>
+    <p class="remate fragment" style="font-size:1em">¿qué tanto importa <span class="subrayado">cómo le pides?</span></p>
+    <aside class="notes">Puente al paso 3 (pedir bien).</aside>
   </section>
 
 </div></div>
