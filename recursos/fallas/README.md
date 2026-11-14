@@ -9,7 +9,6 @@ La IA no es perfecta. Hay dos tipos de fallas:
 | --- | --- | --- |
 | A | Muy técnico para niños | Sin contexto, la IA habla para cualquiera, no para tus alumnos |
 | A | Oficio genérico | Si no le das tu formato, inventa uno que no es el de tu escuela |
-| A | Planeación de manual | Lo genérico sale genérico |
 | B | Contar letras | La IA no ve letras, ve pedazos de palabras (tokens) |
 | B | Premisa falsa | Si le das un dato equivocado, puede construir sobre él |
 | B | Algo local | Lo que no está en internet, se lo inventa |

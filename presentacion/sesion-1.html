@@ -112,6 +112,21 @@
   .lugar .altura{font-size:.55em;font-weight:700;color:var(--suave);text-transform:uppercase;letter-spacing:.1em;}
   .lugar.aqui .altura{color:var(--tinta);}
   .boton-link{display:inline-block;background:var(--tinta);color:#fff !important;border-radius:16px;padding:14px 28px;font-weight:800;font-size:.6em;text-decoration:none;}
+  .reveal p.remate{margin-top:1em;}
+  /* paso 3: pedir bien */
+  .receta{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:.5em;}
+  .ing{background:#fff;border-radius:26px;padding:34px 30px;box-shadow:0 12px 26px rgba(30,42,58,.09);border-top:14px solid var(--c);}
+  .ing .nombre{display:inline-block;font-weight:800;color:#fff;background:var(--c);border-radius:999px;padding:4px 18px;font-size:.62em;margin-bottom:.6em;}
+  .ing .pregunta{font-family:'Fraunces',serif;font-weight:800;font-size:.95em;line-height:1.2;}
+  .malo{background:#fff;border-radius:24px;padding:40px 48px;box-shadow:0 14px 30px rgba(30,42,58,.10);font-family:'Fraunces',serif;font-weight:800;font-size:1.5em;border-left:14px solid #C9C2B5;margin:.3em 0 .6em;}
+  .perfiles{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:.5em;}
+  .perfil{background:#fff;border-radius:26px;padding:34px 32px;box-shadow:0 12px 26px rgba(30,42,58,.09);}
+  .perfil .quien{font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.5em;color:var(--suave);margin-bottom:.5em;}
+  .perfil .texto{font-family:'Fraunces',serif;font-weight:800;font-size:.85em;line-height:1.2;}
+  .par{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:.3em;}
+  .par .quien{white-space:nowrap;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.5em;color:var(--suave);margin-bottom:.4em;}
+  .par .malo{margin:0;font-size:1.05em;}
+  .prompt.chico{font-size:.5em;padding:30px 34px;line-height:1.45;}
   .reveal .progress{color:var(--acento);height:6px;}
   .reveal .controls{color:var(--tinta);}
 </style>
@@ -397,6 +412,76 @@
     <p class="gigante">Si escribe lo más probable<br>con lo que le das…</p>
     <p class="remate fragment" style="font-size:1em">¿qué tanto importa <span class="subrayado">cómo le pides?</span></p>
     <aside class="notes">Puente al paso 3 (pedir bien).</aside>
+  </section>
+
+
+  <!-- ===================== PASO 3: PEDIR BIEN ===================== -->
+  <section>
+    <div class="eyebrow">Paso 3 · Pedir bien</div>
+    <h2>La receta del prompt</h2>
+    <div class="receta">
+      <div class="ing" style="--c:var(--rol)"><span class="nombre">Rol</span><div class="pregunta">¿Quién quiero que sea?</div></div>
+      <div class="ing" style="--c:var(--contexto)"><span class="nombre">Contexto</span><div class="pregunta">¿Quién soy yo y para quién es?</div></div>
+      <div class="ing" style="--c:var(--tarea)"><span class="nombre">Tarea</span><div class="pregunta">¿Qué quiero exactamente?</div></div>
+      <div class="ing" style="--c:var(--formato)"><span class="nombre">Formato</span><div class="pregunta">¿Cómo lo quiero recibir?</div></div>
+    </div>
+    <p class="remate">Son los cuatro colores del gancho. La IA es un practicante brillante que <b>nunca ha pisado tu escuela</b>: lo que no le dices, lo inventa.</p>
+    <aside class="notes">Retoma el gancho: "¿Se acuerdan de los cuatro colores? Hoy vemos para qué sirve cada uno". El saludo del paso 0 ("soy ___ y trabajo en ___") ya era contexto.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Pruébalo tú · 1 de 2</div>
+    <h2>Primero, el prompt malo</h2>
+    <div class="par">
+      <div><div class="quien">Docentes</div><div class="malo">Explícame la fotosíntesis.</div></div>
+      <div><div class="quien">Secretarias y directivos</div><div class="malo">Hazme un oficio para pedir permiso.</div></div>
+    </div>
+    <p class="remate">Escríbelo en un <b>chat nuevo</b> y envíalo. ¿Te sirve lo que salió?</p>
+    <aside class="notes">Cada quien escribe el de su perfil. Mientras se genera, pregunta: ¿qué parte de la receta le falta? Al final pregunta en voz alta: ¿le servía a sus alumnos? ¿así son sus oficios? Cuenta sin nombre que a una compañera la IA le dio contenido muy técnico para sus alumnos.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Pruébalo tú · 2 de 2</div>
+    <h2 style="font-size:1.6em">Ahora, el prompt bueno <span style="font-size:.5em;color:var(--suave)">· en otro chat nuevo</span></h2>
+    <div class="par">
+      <div><div class="quien">Docentes</div><div class="prompt chico">
+          <p><span class="parte rol">Rol</span>Eres profesor de Ciencias de secundaria en México.</p>
+          <p><span class="parte contexto">Contexto</span>Doy clases en una telesecundaria. Mis alumnos leen poco y se pierden con palabras técnicas.</p>
+          <p><span class="parte tarea">Tarea</span>Explícales la fotosíntesis como si fuera una receta de cocina: ingredientes, dónde se cocina y qué sale.</p>
+          <p><span class="parte formato">Formato</span>Máximo 6 frases cortas y una pregunta al final para ver si entendieron.</p>
+      </div></div>
+      <div><div class="quien">Secretarias y directivos</div><div class="prompt chico">
+          <p><span class="parte rol">Rol</span>Eres secretaria de una escuela secundaria en México.</p>
+          <p><span class="parte contexto">Contexto</span>Trabajo en la dirección de la Telesecundaria "Ejemplo". Los oficios se dirigen a la Supervisión Escolar y los firma el director.</p>
+          <p><span class="parte tarea">Tarea</span>Redacta un oficio para pedir permiso de salir con los alumnos de tercero a una visita al museo el viernes 28 de noviembre, de 9:00 a 13:00.</p>
+          <p><span class="parte formato">Formato</span>Oficio formal con número de oficio, lugar y fecha, asunto, destinatario, cuerpo de máximo dos párrafos, despedida y espacio para la firma.</p>
+      </div></div>
+    </div>
+    <aside class="notes">Otro chat nuevo: si lo escriben en el mismo, la IA ya sabe lo que querían y la comparación no es justa. Escribirlo tarda: recorre el salón y ayuda a los más lentos. Al terminar, que comparen las dos respuestas: largo, palabras, para quién está escrito, si ya lo podrían usar. Datos del oficio inventados.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Cuida tu versión gratuita</div>
+    <h2>Que te rinda</h2>
+    <div class="acuerdos">
+      <div class="acuerdo"><div class="icono">📝</div><div class="titulo">Un mensaje completo, no cinco cortos</div><p>Usa la receta desde el primer mensaje.</p></div>
+      <div class="acuerdo"><div class="icono">✏️</div><div class="titulo">¿Te equivocaste? Edita tu mensaje</div><p>Con el lápiz que aparece sobre tu mensaje, en lugar de mandar otro.</p></div>
+      <div class="acuerdo"><div class="icono">💬</div><div class="titulo">Tema nuevo, chat nuevo</div><p>Las conversaciones largas gastan más.</p></div>
+    </div>
+    <p class="remate">El límite de la versión gratuita se renueva cada cinco horas.</p>
+    <aside class="notes">Que lo practiquen: en su chat del prompt bueno, pasen el mouse sobre su mensaje, den clic en el lápiz, cambien algo (por ejemplo, "máximo 4 frases") y guarden. Claude crea una nueva versión y conserva la anterior; con las flechas se cambia entre versiones.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Tenla a la vista</div>
+    <h2>Tu receta</h2>
+    <div class="receta">
+      <div class="ing" style="--c:var(--rol)"><span class="nombre">Rol</span><div class="pregunta">¿Quién quiero que sea?</div></div>
+      <div class="ing" style="--c:var(--contexto)"><span class="nombre">Contexto</span><div class="pregunta">¿Quién soy yo y para quién es?</div></div>
+      <div class="ing" style="--c:var(--tarea)"><span class="nombre">Tarea</span><div class="pregunta">¿Qué quiero exactamente?</div></div>
+      <div class="ing" style="--c:var(--formato)"><span class="nombre">Formato</span><div class="pregunta">¿Cómo lo quiero recibir?</div></div>
+    </div>
+    <aside class="notes">Esta diapositiva se queda proyectada durante todo el paso 4.</aside>
   </section>
 
 </div></div>
