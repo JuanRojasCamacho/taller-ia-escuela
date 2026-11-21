@@ -2,7 +2,7 @@
 
 [← Volver al paso 1](README.md)
 
-Siguen la receta de ayer: **rol, contexto, tarea y formato**. Son dos chats de tres mensajes cada uno.
+Siguen la receta de ayer: **rol, contexto, tarea y formato**. Son dos chats: cuatro mensajes en el primero y tres en el segundo.
 
 ## Chat 1, hoy: ejercicios con el libro
 
@@ -28,6 +28,12 @@ Perfecto, dame esto en un archivo de Word listo para imprimirlo.
 ```
 
 Descarga el Word: lo vas a necesitar en el chat 2.
+
+**Mensaje 4.** La presentación para la clase:
+
+```
+Tomando en cuenta estos ejercicios, hazme una presentación de PowerPoint para que los vayamos haciendo en clase. Dame 3 ejercicios resueltos paso a paso, distintos a los que me mostraste, que sirvan de base para que los alumnos puedan hacer bien los ejercicios.
+```
 
 ## Chat 2, al cerrar el trimestre: el examen
 

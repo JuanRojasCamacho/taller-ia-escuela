@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA para la escuela · Sesión 2</title>
+<link rel="stylesheet" href="lib/reset.css">
+<link rel="stylesheet" href="lib/reveal.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#FBF7EF; --tinta:#1E2A3A; --suave:#5B6676;
+    --rol:#E4572E; --contexto:#2E86AB; --tarea:#3BA55C; --formato:#9B5DE5;
+    --acento:#FFD60A;
+  }
+  .reveal-viewport{background:var(--papel);}
+  .reveal{font-family:'Nunito',system-ui,sans-serif;color:var(--tinta);font-size:46px;}
+  .reveal .slides{text-align:left;}
+  .reveal h1,.reveal h2,.reveal h3{font-family:'Fraunces',Georgia,serif;color:var(--tinta);letter-spacing:-.01em;line-height:1.05;margin:0 0 .4em;}
+  .reveal h1{font-size:3.1em;font-weight:800;}
+  .reveal h2{font-size:2.1em;font-weight:800;}
+  .reveal h3{font-size:1.2em;font-weight:600;}
+  .reveal p{margin:0 0 .5em;line-height:1.35;}
+  .eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.55em;color:var(--suave);margin-bottom:.8em;}
+  .centro{text-align:center;}
+  .gigante{font-family:'Fraunces',serif;font-size:2.6em;font-weight:800;line-height:1.1;}
+  .subrayado{background:linear-gradient(transparent 62%, var(--acento) 62%);padding:0 .1em;}
+  /* portada */
+  .portada{display:flex;flex-direction:column;justify-content:center;height:100%;}
+  .portada .linea{width:140px;height:10px;background:var(--acento);border-radius:6px;margin:.4em 0 .8em;}
+  .portada .pie{font-size:.6em;color:var(--suave);margin-top:1.4em;}
+  /* tarjetas de voto */
+  .tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:1em;}
+  .tarjeta{background:#fff;border-radius:28px;padding:44px 28px;text-align:center;box-shadow:0 14px 30px rgba(30,42,58,.10);border-top:12px solid var(--c);}
+  .tarjeta .icono{font-size:2.8em;line-height:1;margin-bottom:.3em;}
+  .tarjeta .nombre{font-family:'Fraunces',serif;font-weight:800;font-size:1.1em;}
+  .tarjeta .materia{color:var(--suave);font-size:.6em;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-top:.4em;}
+  /* prompt con colores */
+  .prompt{background:#fff;border-radius:24px;padding:40px 48px;box-shadow:0 14px 30px rgba(30,42,58,.10);font-size:.7em;line-height:1.5;}
+  .prompt p{margin:0 0 .55em;}
+  .prompt p:last-child{margin:0;}
+  .parte{font-weight:800;padding:2px 12px;border-radius:999px;color:#fff;margin-right:.35em;font-size:.85em;}
+  .rol{background:var(--rol);} .contexto{background:var(--contexto);}
+  .tarea{background:var(--tarea);} .formato{background:var(--formato);}
+  .leyenda{display:flex;gap:14px;margin-top:.8em;font-size:.55em;font-weight:800;}
+  .leyenda span{padding:6px 16px;border-radius:999px;color:#fff;}
+  /* resultado */
+  .marco{background:#fff;border-radius:24px;box-shadow:0 14px 30px rgba(30,42,58,.10);height:560px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--suave);font-size:.6em;border:3px dashed #D9D2C3;}
+  .marco iframe{width:100%;height:100%;border:0;}
+  /* mapa del día */
+  .mapa{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:.6em;}
+  .paso{background:#fff;border-radius:20px;padding:26px 28px;box-shadow:0 8px 18px rgba(30,42,58,.08);font-size:.68em;font-weight:700;}
+  .paso b{display:inline-block;font-family:'Fraunces',serif;font-size:1.6em;font-weight:800;color:var(--tinta);background:var(--acento);border-radius:14px;padding:4px 16px;line-height:1.1;margin-right:14px;}
+  .paso.hoy{background:var(--acento);}
+  .paso.hoy b{background:var(--tinta);color:var(--acento);}
+
+  /* bienvenida */
+  .quien{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:.6em;}
+  .dato{background:#fff;border-radius:22px;padding:28px 32px;box-shadow:0 10px 24px rgba(30,42,58,.08);font-size:.7em;font-weight:700;border-left:12px solid var(--acento);}
+  .dato small{display:block;color:var(--suave);font-weight:700;font-size:.75em;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3em;}
+  /* esquema de claude */
+  .pantalla{display:grid;grid-template-columns:260px 1fr;height:520px;background:#fff;border-radius:24px;box-shadow:0 14px 30px rgba(30,42,58,.12);overflow:hidden;font-size:.5em;}
+  .lateral{background:#F1ECE2;padding:24px;display:flex;flex-direction:column;gap:14px;}
+  .lateral .item{height:22px;border-radius:8px;background:#DDD5C6;}
+  .boton-nuevo{background:var(--tinta);color:#fff;border-radius:12px;padding:12px 16px;font-weight:800;text-align:center;}
+  .principal{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;}
+  .caja{border:3px solid #D9D2C3;border-radius:18px;padding:22px 24px;color:var(--suave);}
+  .num{position:absolute;width:64px;height:64px;border-radius:50%;background:var(--acento);color:var(--tinta);font-family:'Fraunces',serif;font-weight:800;font-size:2.4em;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(0,0,0,.18);}
+  .lista3{display:flex;flex-direction:column;gap:22px;justify-content:center;font-size:.72em;font-weight:700;}
+  .lista3 div{display:flex;align-items:center;gap:18px;}
+  .lista3.llm{font-weight:400;}
+  .lista3.llm b{font-weight:800;}
+  .lista3 .num{position:static;flex:none;width:56px;height:56px;font-size:1.3em;}
+  /* primer mensaje */
+  .mensaje{background:#fff;border-radius:28px;padding:56px 60px;box-shadow:0 14px 30px rgba(30,42,58,.12);font-size:1.15em;font-weight:700;line-height:1.5;}
+  .hueco{background:var(--acento);border-radius:10px;padding:0 .5em;}
+  /* acuerdos */
+  .acuerdos{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:.6em;}
+  .acuerdo{background:#fff;border-radius:28px;padding:40px 32px;box-shadow:0 14px 30px rgba(30,42,58,.10);}
+  .acuerdo .icono{font-size:2.4em;line-height:1;margin-bottom:.35em;}
+  .acuerdo .titulo{font-family:'Fraunces',serif;font-weight:800;font-size:1em;line-height:1.15;margin-bottom:.45em;}
+  .acuerdo p{font-size:.58em;color:var(--suave);font-weight:700;}
+
+  /* que es claude */
+  .ias{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:.4em 0 .9em;}
+  .ia{background:#fff;border-radius:24px;padding:30px;text-align:center;box-shadow:0 10px 24px rgba(30,42,58,.08);}
+  .ia.yo{background:var(--acento);}
+  .ia .n{font-family:'Fraunces',serif;font-weight:800;font-size:1.25em;}
+  .ia .e{font-size:.58em;font-weight:700;color:var(--suave);text-transform:uppercase;letter-spacing:.1em;margin-top:.3em;}
+  .ia.yo .e{color:var(--tinta);}
+  .clave{font-family:'Fraunces',serif;font-weight:600;font-size:1.05em;line-height:1.3;}
+  /* hace / ojo */
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:.4em;}
+  .col{background:#fff;border-radius:26px;padding:34px 38px;box-shadow:0 12px 26px rgba(30,42,58,.09);}
+  .col h3{margin-bottom:.5em;}
+  .col ul{margin:0;padding:0;list-style:none;font-size:.62em;font-weight:700;}
+  .col li{margin:0 0 .75em;padding-left:1.4em;position:relative;line-height:1.35;}
+  .col li::before{content:"";position:absolute;left:0;top:.35em;width:.7em;height:.7em;border-radius:50%;background:var(--tarea);}
+  .col.ojo li::before{background:var(--rol);}
+  .col li span{display:block;font-weight:400;color:var(--suave);}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:.45em;}
+  .chip{background:var(--papel);border:2px solid #E6DECF;border-radius:999px;padding:4px 16px;font-size:.85em;font-weight:800;color:var(--tinta);}
+  /* paso 2: como funciona */
+  .frase{font-family:'Fraunces',serif;font-weight:800;font-size:1.9em;line-height:1.2;}
+  .blanco{display:inline-block;min-width:3.2em;border-bottom:8px solid var(--tinta);text-align:center;}
+  .respuesta{background:var(--acento);border-radius:14px;padding:0 .3em;}
+  .remate{font-size:.85em;font-weight:700;color:var(--suave);margin-top:1.2em;}
+  .termometro{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:.6em;}
+  .lugar{background:#fff;border-radius:26px;padding:36px 40px;box-shadow:0 12px 26px rgba(30,42,58,.09);}
+  .lugar.aqui{background:var(--acento);}
+  .lugar .grados{font-family:'Fraunces',serif;font-weight:800;font-size:2.4em;line-height:1;}
+  .lugar .donde{font-weight:800;font-size:.7em;margin-top:.4em;}
+  .lugar .altura{font-size:.55em;font-weight:700;color:var(--suave);text-transform:uppercase;letter-spacing:.1em;}
+  .lugar.aqui .altura{color:var(--tinta);}
+  .boton-link{display:inline-block;background:var(--tinta);color:#fff !important;border-radius:16px;padding:14px 28px;font-weight:800;font-size:.6em;text-decoration:none;}
+  .reveal p.remate{margin-top:1em;}
+  /* paso 3: pedir bien */
+  .receta{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:.5em;}
+  .ing{background:#fff;border-radius:26px;padding:34px 30px;box-shadow:0 12px 26px rgba(30,42,58,.09);border-top:14px solid var(--c);}
+  .ing .nombre{display:inline-block;font-weight:800;color:#fff;background:var(--c);border-radius:999px;padding:4px 18px;font-size:.62em;margin-bottom:.6em;}
+  .ing .pregunta{font-family:'Fraunces',serif;font-weight:800;font-size:.95em;line-height:1.2;}
+  .malo{background:#fff;border-radius:24px;padding:40px 48px;box-shadow:0 14px 30px rgba(30,42,58,.10);font-family:'Fraunces',serif;font-weight:800;font-size:1.5em;border-left:14px solid #C9C2B5;margin:.3em 0 .6em;}
+  .perfiles{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:.5em;}
+  .perfil{background:#fff;border-radius:26px;padding:34px 32px;box-shadow:0 12px 26px rgba(30,42,58,.09);}
+  .perfil .quien{font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.5em;color:var(--suave);margin-bottom:.5em;}
+  .perfil .texto{font-family:'Fraunces',serif;font-weight:800;font-size:.85em;line-height:1.2;}
+  .par{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:.3em;}
+  .par .quien{white-space:nowrap;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.5em;color:var(--suave);margin-bottom:.4em;}
+  .par .malo{margin:0;font-size:1.05em;}
+  .prompt.chico{font-size:.5em;padding:30px 34px;line-height:1.45;}
+  .mini{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:0 0 .5em;}
+  .mini div{background:#fff;border-radius:16px;border-left:10px solid var(--c);padding:12px 16px;font-size:.5em;font-weight:700;box-shadow:0 6px 14px rgba(30,42,58,.07);}
+  .mini b{display:block;color:var(--c);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.85em;}
+  .reveal .progress{color:var(--acento);height:6px;}
+  .reveal .controls{color:var(--tinta);}
+</style>
+<style>
+  /* sesion 2 */
+  .adjuntos{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 .6em;}
+  .archivo{display:inline-flex;align-items:center;gap:10px;background:#fff;border:3px solid #E6DECF;border-radius:16px;padding:10px 20px;font-size:.5em;font-weight:800;box-shadow:0 6px 14px rgba(30,42,58,.06);}
+  .archivo i{font-style:normal;font-size:1.3em;}
+  .archivo.nuevo{border-color:var(--acento);background:#FFF8CC;}
+  .chat-tag{display:inline-block;background:var(--tinta);color:var(--acento);font-weight:800;border-radius:999px;padding:6px 22px;font-size:.5em;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6em;}
+  .libro{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:.6em;}
+  .cuenta{background:#fff;border-radius:28px;padding:44px 40px;box-shadow:0 14px 30px rgba(30,42,58,.10);text-align:center;}
+  .cuenta .n{font-family:'Fraunces',serif;font-weight:800;font-size:4em;line-height:1;}
+  .cuenta .q{font-weight:800;font-size:.75em;margin-top:.3em;}
+  .cuenta .d{font-size:.55em;font-weight:700;color:var(--suave);margin-top:.4em;}
+  .cuenta.cero{background:var(--acento);}
+  .cuenta.cero .d{color:var(--tinta);}
+  .msgs{display:flex;flex-direction:column;gap:26px;}
+  .msg{background:#fff;border-radius:24px;padding:30px 40px;box-shadow:0 12px 26px rgba(30,42,58,.09);font-size:.66em;line-height:1.45;display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start;}
+  .msg .etq{font-family:'Fraunces',serif;font-weight:800;font-size:1.05em;}
+  .msg .etq small{display:block;font-family:'Nunito',sans-serif;font-size:.6em;font-weight:800;color:var(--suave);text-transform:uppercase;letter-spacing:.1em;}
+  .msg .adjuntos{margin:0 0 .5em;font-size:1.25em;}
+  .mapa.s2{grid-template-columns:repeat(4,1fr);}
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+  <!-- ===================== PORTADA ===================== -->
+  <section>
+    <div class="portada">
+      <div class="eyebrow">Taller práctico · Sesión 2 de 2</div>
+      <h1>IA para<br>la escuela</h1>
+      <div class="linea"></div>
+      <p style="font-size:.9em">Hoy: <span class="subrayado">dale lo que sabes.</span></p>
+      <p class="pie">Ing. Juan Pablo Rojas</p>
+    </div>
+    <aside class="notes">Proyectar mientras llegan. Que todos abran claude.ai con su cuenta de ayer.</aside>
+  </section>
+
+
+  <!-- ===================== PASO 1: GANCHO ===================== -->
+  <section class="centro">
+    <div class="eyebrow">Ayer y hoy</div>
+    <p class="gigante">Ayer le dijiste <span class="subrayado">quién eres.</span><br>Hoy le vas a dar <span class="subrayado">lo que sabes.</span></p>
+    <aside class="notes">Frase puente, minuto 0–1. Decirla en voz alta y pasar.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">2° · Trimestre 1 · Matemáticas</div>
+    <h2>"El libro viene muy corto"</h2>
+    <p style="font-size:.7em;font-weight:700;color:var(--suave)">Sistemas de dos ecuaciones lineales con dos incógnitas · <i>Saberes y pensamiento científico</i>, <span style="white-space:nowrap">págs. 33–40</span></p>
+    <div class="libro">
+      <div class="cuenta"><div class="n">3</div><div class="q">ejemplos resueltos</div><div class="d">Uno por método: reducción, igualación y sustitución.</div></div>
+      <div class="cuenta cero"><div class="n">0</div><div class="q">ejercicios para practicar</div><div class="d">Y los alumnos necesitan practicar.</div></div>
+    </div>
+    <aside class="notes">Es la queja que salió en las entrevistas. Preguntar: "¿a quién le pasa con otro tema?".</aside>
+  </section>
+
+  <!-- chat 1 -->
+  <section>
+    <section>
+      <span class="chat-tag">Chat 1 · hoy</span>
+      <div class="adjuntos"><span class="archivo nuevo"><i>📎</i>Libro de Saberes 2° (completo)</span></div>
+      <div class="prompt">
+        <p><span class="parte rol">Rol</span>Eres profesor de matemáticas de secundaria en México.</p>
+        <p><span class="parte contexto">Contexto</span>Doy Matemáticas a 2° de telesecundaria. Te adjunto nuestro libro completo de Saberes y pensamiento científico. Vamos a trabajar el tema "Sistemas de dos ecuaciones lineales con dos incógnitas". El libro solo trae tres ejemplos resueltos, uno por método, y mis alumnos necesitan practicar más.</p>
+        <p><span class="parte tarea">Tarea</span>Hazme 15 ejercicios adicionales: 5 por cada método del libro (reducción, igualación y sustitución), del mismo nivel que los ejemplos. Que sean distintos a los del libro: no cambies solo los números de sus ejemplos.</p>
+        <p><span class="parte formato">Formato</span>Una lista numerada, agrupada por método.</p>
+      </div>
+      <aside class="notes">Minuto 1–8. Adjuntar el libro .md y pegar el prompt de prompts.md (no escribirlo en vivo). Usar la cuenta Pro. Señalar el clip: hoy la novedad es el archivo.</aside>
+    </section>
+
+    <section>
+      <span class="chat-tag">Chat 1 · hoy</span>
+      <h2 style="font-size:1.5em">Un ajuste y a Word</h2>
+      <div class="msgs">
+        <div class="msg"><div class="etq"><small>Mensaje 2</small>El ajuste</div><div>Mis alumnos se confunden si cambio las variables por otras letras del alfabeto. Quiero que entiendan que es lo mismo, así que cambia las variables de algunos ejercicios para que en el examen no se confundan.</div></div>
+        <div class="msg"><div class="etq"><small>Mensaje 3</small>A Word</div><div>Perfecto, dame esto en un archivo de Word listo para imprimirlo.</div></div>
+      </div>
+      <aside class="notes">Descargar el Word: se usa en el chat 2. Si alguien pregunta por la clave, sembrar: "¿alguien la revisó?". Se revisa más adelante, en el paso de revisión.</aside>
+    </section>
+
+    <section>
+      <span class="chat-tag">Chat 1 · hoy</span>
+      <h2 style="font-size:1.5em">Y para dar la clase</h2>
+      <div class="msgs">
+        <div class="msg"><div class="etq"><small>Mensaje 4</small>PowerPoint</div><div>Tomando en cuenta estos ejercicios, hazme una presentación de PowerPoint para que los vayamos haciendo en clase. Dame 3 ejercicios resueltos paso a paso, distintos a los que me mostraste, que sirvan de base para que los alumnos puedan hacer bien los ejercicios.</div></div>
+      </div>
+      <p class="remate">Mismo chat, mismo tema: <span class="subrayado">no le repetimos nada.</span></p>
+      <aside class="notes">Abrir el PowerPoint y pasar 2 o 3 diapositivas. Es el adelanto del paso de formatos: Word para editar, PowerPoint para proyectar.</aside>
+    </section>
+  </section>
+
+  <section class="centro">
+    <div class="eyebrow">⏳</div>
+    <p class="gigante">Pasaron unas semanas<br>y <span class="subrayado">se acaba el trimestre…</span></p>
+    <aside class="notes">Minuto 8–9. Abrir un CHAT NUEVO a la vista de todos.</aside>
+  </section>
+
+  <!-- chat 2 -->
+  <section>
+    <section>
+      <span class="chat-tag">Chat 2 · chat nuevo</span>
+      <div class="adjuntos">
+        <span class="archivo nuevo"><i>📎</i>Libro de Saberes 2°</span>
+        <span class="archivo"><i>📄</i>Sistemas de ecuaciones</span>
+        <span class="archivo"><i>📄</i>Propiedades de los exponentes</span>
+        <span class="archivo"><i>📄</i>Múltiplos y submúltiplos</span>
+        <span class="archivo"><i>📄</i>Proporcionalidad inversa</span>
+        <span class="archivo"><i>📄</i>Medidas de tendencia central</span>
+      </div>
+      <div class="prompt" style="font-size:.62em">
+        <p><span class="parte rol">Rol</span>Eres profesor de matemáticas de secundaria en México.</p>
+        <p><span class="parte contexto">Contexto</span>Doy Matemáticas a 2° de telesecundaria y vamos a cerrar el primer trimestre. Te adjunto nuestro libro de Saberes y pensamiento científico y mis listas de ejercicios de los temas que vimos.</p>
+        <p><span class="parte tarea">Tarea</span>Quiero un examen del trimestre con ejercicios parecidos a los de mis listas. 20 reactivos, 4 por tema. Tiempo: 50 minutos. En sistemas de ecuaciones pide el procedimiento; en los demás solo el resultado. Mezcla ejercicios directos y problemas. Que los números no sean iguales a los de mis listas. En dos ejercicios de sistemas usa otras letras en lugar de x y y. Valor: 5 puntos cada reactivo.</p>
+      </div>
+      <aside class="notes">Minuto 9–15. Otra vez el libro: el chat nuevo no sabe nada del chat 1. Las listas están en sesion-2/01-gancho/archivos/.</aside>
+    </section>
+
+    <section>
+      <span class="chat-tag">Chat 2 · chat nuevo</span>
+      <h2 style="font-size:1.5em">Un ajuste y tu formato</h2>
+      <div class="msgs">
+        <div class="msg"><div class="etq"><small>Mensaje 2</small>El ajuste</div><div>Que los ejercicios no lleven el título del tema y que estén revueltos. Dámelo en un formato de Word listo para imprimir.</div></div>
+        <div class="msg"><div class="etq"><small>Mensaje 3</small>Tu formato</div><div><div class="adjuntos"><span class="archivo nuevo"><i>📎</i>Formato de examen · Telesecundaria.docx</span></div>Te adjunto el formato que uso. Dame el examen en ese formato y listo para imprimir. Escribe las ecuaciones con el tipo "Ecuación" de Word.</div></div>
+      </div>
+      <aside class="notes">El formato se adjunta EN ESTE MISMO mensaje: si no, Claude no lo ve. Lo de "Ecuación" de Word responde al problema de las ecuaciones que se rompen al pasarlas a Word.</aside>
+    </section>
+  </section>
+
+  <section>
+    <div class="eyebrow">El resultado</div>
+    <div class="marco">
+      Aquí van la presentación y el examen ya hechos (plan B):&nbsp;<code>sesion-2/01-gancho/resultados/</code>
+    </div>
+    <aside class="notes">Minuto 15–18. Lo normal es abrir el Word en vivo. Plan B: "este lo hice ayer con los mismos prompts". Una IA no responde igual dos veces.</aside>
+  </section>
+
+  <section class="centro">
+    <div class="eyebrow">Fíjate</div>
+    <p class="gigante">Un chat nuevo<br><span class="subrayado">no recuerda nada.</span></p>
+    <p class="remate">Por eso en el chat 2 le volvimos a dar el libro.</p>
+    <aside class="notes">No contradice "mismo tema, mismo chat" de ayer: el chat 2 es otro momento. Si preguntan "¿tengo que subirlo cada vez?", guardarlo para el cierre (Proyectos).</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">La promesa</div>
+    <h2>Hoy, antes de irte,<br>harás esto <span class="subrayado">con tu tema.</span></h2>
+  </section>
+
+</div></div>
+<script src="lib/reveal.js"></script>
+<script src="lib/notes.js"></script>
+<script>
+  Reveal.initialize({hash:true, width:1600, height:900, margin:0.06, transition:'slide', plugins:[RevealNotes]});
+</script>
+</body>
+</html>
