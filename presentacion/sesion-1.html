@@ -69,6 +69,8 @@
   .num{position:absolute;width:64px;height:64px;border-radius:50%;background:var(--acento);color:var(--tinta);font-family:'Fraunces',serif;font-weight:800;font-size:2.4em;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(0,0,0,.18);}
   .lista3{display:flex;flex-direction:column;gap:22px;justify-content:center;font-size:.72em;font-weight:700;}
   .lista3 div{display:flex;align-items:center;gap:18px;}
+  .lista3.llm{font-weight:400;}
+  .lista3.llm b{font-weight:800;}
   .lista3 .num{position:static;flex:none;width:56px;height:56px;font-size:1.3em;}
   /* primer mensaje */
   .mensaje{background:#fff;border-radius:28px;padding:56px 60px;box-shadow:0 14px 30px rgba(30,42,58,.12);font-size:1.15em;font-weight:700;line-height:1.5;}
@@ -373,8 +375,8 @@
     <section>
       <div class="eyebrow">Eso que hicieron tiene nombre</div>
       <h2>Esto es un<br><span class="subrayado">modelo de lenguaje</span></h2>
-      <div class="lista3">
-        <div class="fragment"><span class="num">1</span><span><b>La IA es un campo grande:</b> el GPS que calcula tu ruta, el celular que reconoce tu cara. La que usamos hoy es un modelo de lenguaje <span style="color:var(--suave);font-weight:400">(en inglés, <i>LLM</i>)</span>.</span></div>
+      <div class="lista3 llm">
+        <div class="fragment"><span class="num">1</span><span><b>La IA es un campo grande:</b> el GPS que calcula tu ruta, el celular que reconoce tu cara. La que usamos hoy es un modelo de lenguaje <span style="color:var(--suave)">(en inglés, <i>LLM</i>)</span>.</span></div>
         <div class="fragment"><span class="num">2</span><span><b>Cómo aprendió:</b> leyó muchísimo texto y aprendió qué palabra suele seguir a otra.</span></div>
         <div class="fragment"><span class="num">3</span><span><b>Lo que no tiene:</b> no busca en un libro, no conoce tu escuela y no sabe cuándo no sabe.</span></div>
       </div>
