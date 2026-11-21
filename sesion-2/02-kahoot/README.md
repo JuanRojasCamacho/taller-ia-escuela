@@ -8,14 +8,14 @@ Repasar **lo que ya sabes** de la sesión 1 y del gancho, jugando.
 
 ## La idea
 
-Después del gancho toca moverse. Son 20 preguntas: 18 de opción múltiple y 2 de verdadero o falso. Repasan la sesión 1 y el gancho, y **miden qué saben ya** de Word, PDF, PowerPoint y Excel antes de explicarlos en el paso 3. Las respuestas incorrectas **suenan lógicas a propósito**, y las más difíciles valen puntos dobles.
+Después del gancho toca moverse. Son 20 preguntas: 18 de opción múltiple y 2 de verdadero o falso. Repasan la sesión 1 y el gancho, y **miden qué saben ya** de Word, PDF y PowerPoint antes de explicarlos en el paso 3. Las respuestas incorrectas **suenan lógicas a propósito**, y las más difíciles valen puntos dobles.
 
 | Bloque | Preguntas | De qué trata |
 | --- | --- | --- |
 | Cómo funciona | 1–6 | Cómo escribe la IA, qué es Claude, tokens, límite, por qué se equivoca |
 | Pedir bien | 7–9 | La receta, el rol y lo que no le dices |
 | Gancho y chats | 10–13 | Chat nuevo, archivos adjuntos, soluciones de la IA y chats largos |
-| Formatos | 14–17 | Word, PDF, PowerPoint y Excel (Markdown no: se ve en el paso 3) |
+| Formatos | 14–17 | Word, PDF y PowerPoint (Markdown no: se ve en el paso 3) |
 | IA en general | 18–20 | Imágenes, respuestas distintas y quién es responsable |
 
 ## Qué hacemos

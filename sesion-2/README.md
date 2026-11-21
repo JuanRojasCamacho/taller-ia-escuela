@@ -9,7 +9,7 @@
 | # | Paso | Min | Qué pasa |
 | --- | --- | --- | --- |
 | 1 | [Gancho](01-gancho/) | 16 | Del libro a una presentación para la clase (PowerPoint y PDF), un examen del trimestre en Word y su Excel de calificaciones, en dos chats |
-| 2 | [Kahoot](02-kahoot/) | 16 | 20 preguntas: repaso de la sesión 1 y del gancho, y sondeo de Word, PDF, PowerPoint y Excel |
+| 2 | [Kahoot](02-kahoot/) | 16 | 20 preguntas: repaso de la sesión 1 y del gancho, y sondeo de Word, PDF y PowerPoint |
 | 3 | Los archivos | 18 | Explicamos brevemente Word, PDF, PowerPoint, Excel y Markdown con los archivos del gancho y practicamos: las secretarias pasan su PDF a Word |
 | 4 | El reto | 48 | Dices tu meta, la IA te entrevista y sale tu examen o tu documento en Word. Si terminas antes: el PowerPoint o la animación de tu tema |
 | | Descanso | 15 | |
