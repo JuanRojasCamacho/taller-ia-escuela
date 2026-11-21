@@ -267,6 +267,29 @@
   .ias4.tres .ia4{padding:32px 34px 28px;}
   .ias4.tres .preg{font-size:.95em;}
   .ias4.tres p{font-size:.56em;}
+  /* paso 6: poster con gemini */
+  .pasos5{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:.5em;}
+  .pasos5 .etapa{padding:26px 24px;}
+  .pasos5 .etapa .t{font-size:.85em;}
+  .revisa4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:.5em;}
+  .revisa4 .etapa{padding:28px 26px;}
+  .revisa4 .etapa .t{font-size:.9em;}
+  .mitades.tercios{grid-template-columns:repeat(3,1fr);gap:22px;}
+  .tercios .mitad{font-size:.44em;padding:20px 24px;}
+  .tercios .pb{margin-top:6px;padding:12px 16px 8px;}
+  .tercios .pb .archivo{margin:0 0 .5em;}
+  .tercios .op{margin-top:.7em;}
+  .tercios .mitad p b{font-weight:800;}
+  .prompt.p6{font-size:.64em;padding:32px 44px;}
+  .prompt.p6 p.estilo{background:var(--papel);border-left:8px solid var(--acento);border-radius:12px;padding:12px 18px;margin-top:.4em;}
+  .prompt.p6 b{font-weight:800;}
+  .mitades.dos6{gap:26px;margin-top:.2em;}
+  .dos6 .mitad{font-size:.52em;padding:22px 28px;}
+  .dos6 .pb{margin-top:6px;padding:12px 18px 10px;}
+  .dos6 .pb .archivo{margin:0 0 .5em;}
+  .dos6 .mitad p b{font-weight:800;}
+  .dos6 p.estilo{background:#fff;border-radius:10px;padding:8px 14px;}
+  .dos6 .op{margin-top:.7em;}
 </style>
 </head>
 <body>
@@ -748,6 +771,90 @@
     </div>
     <p class="remate">En 1 y 2 es un chat nuevo: <span class="subrayado">vuelve a adjuntar tus archivos.</span></p>
     <aside class="notes">Minuto 7–10. Sin demostración: solo explicar. Otra IA responde distinto: revisar igual. "Cópialo a Word" porque no verificamos que ChatGPT y Gemini gratuitos entreguen Word o Excel como Claude. Segunda cuenta: necesita otro correo; las condiciones de Claude no la prohíben de forma explícita, pero sí prohíben eludir sus sistemas (revisado 21 nov 2026). Cierre del paso: "Para imágenes, Gemini. Vamos a hacer su póster."</aside>
+  </section>
+  <!-- ===================== PASO 6: TU PÓSTER CON GEMINI ===================== -->
+  <section class="centro" data-p6="1">
+    <div class="eyebrow">Paso 6 · Tu póster con Gemini</div>
+    <p class="gigante">Claude no hace imágenes.<br><span class="subrayado">Gemini sí.</span></p>
+    <p class="remate">Hoy sales con una imagen para tu escuela, con su logo.</p>
+    <aside class="notes">Minuto 0–2. Enseñar el póster de la posada hecho antes con los mismos prompts (plan B si falla el internet). Que todos abran gemini.google.com con el mismo Gmail de Claude. Los tres se hacen juntos: tú en un proyector con las diapositivas y en el otro haciéndolo en vivo.</aside>
+  </section>
+
+  <section data-p6="2">
+    <div class="eyebrow">Paso 6 · Cómo se usa</div>
+    <h2 style="font-size:1.6em">En Gemini, paso a paso</h2>
+    <div class="pasos5">
+      <div class="etapa"><div class="num">1</div><div class="t">Entra</div><p>gemini.google.com con tu Gmail.</p></div>
+      <div class="etapa"><div class="num">2</div><div class="t">Crear imagen</div><p>En las herramientas, junto a la caja del chat.</p></div>
+      <div class="etapa"><div class="num">3</div><div class="t">Adjunta y pide</div><p>Tu logo o tu documento, y tu prompt.</p></div>
+      <div class="etapa"><div class="num">4</div><div class="t">¿No te gustó?</div><p>"Cambia solo ___. No cambies nada más."</p></div>
+      <div class="etapa"><div class="num">5</div><div class="t">Descarga</div><p>Sirve para WhatsApp o una hoja carta.</p></div>
+    </div>
+    <p class="pista">El texto que debe llevar, <b>exacto y entre comillas</b>. Para que no se vea "hecha por IA": <b>un estilo concreto y lo que no quieres</b>.</p>
+    <aside class="notes">Minuto 2–4. La versión gratuita descarga en 1K: alcanza para WhatsApp o una hoja carta, no para una lona. Son tres imágenes en 13 minutos: un ajuste solo si hace falta; si la imagen sale muy mal, mejor editar el prompt y volver a pedirla. Las imágenes llevan la marca de Gemini en una esquina: se deja, dice que la hizo una IA (si preguntan, se quita en Configuración, pero la marca invisible SynthID sigue).</aside>
+  </section>
+
+  <section data-p6="3">
+    <span class="chat-tag">Todos juntos · 1 de 3</span>
+    <h2 style="font-size:1.6em">Un póster</h2>
+    <div class="adjuntos"><span class="archivo nuevo"><i>📎</i>Logo de la escuela</span></div>
+    <div class="prompt p6">
+      <p>Haz un póster vertical, tamaño carta, para <span class="lleno">la posada</span> de la telesecundaria <span class="lleno">[nombre]</span>. Te adjunto el logo de la escuela: ponlo arriba y no lo cambies.</p>
+      <p>El texto debe decir exactamente: "<span class="lleno">Posada navideña 2026</span>", "<span class="lleno">Viernes 18 de diciembre, 4:00 p. m.</span>", "<span class="lleno">Patio de la escuela</span>".</p>
+      <p class="estilo"><b>Estilo:</b> cartel de serigrafía mexicana a tres tintas (rojo, verde y crema), con <span class="lleno">papel picado y faroles</span> en formas planas y sencillas. Textura de papel y tinta un poco desalineada, como impreso a mano. Letras grandes y gruesas. Sin degradados, sin brillos, sin efecto 3D y sin personas.</p>
+    </div>
+    <aside class="notes">Minuto 4–9. Tú lo haces en el otro proyector al mismo tiempo. Lo amarillo es lo suyo: la fecha es de ejemplo (el 18 dic 2026 sí es viernes). El estilo es lo que evita que "se vea IA": pocas tintas, formas planas, textura, y decir lo que NO queremos (degradados, brillos, 3D). Si Gemini deforma el logo: "deja un espacio en blanco arriba" y pegar el logo real en Word.</aside>
+  </section>
+
+  <section data-p6="4">
+    <span class="chat-tag">Todos juntos · 2 de 3</span>
+    <h2 style="font-size:1.6em">Con tu documento</h2>
+    <div class="adjuntos"><span class="archivo nuevo"><i>📎</i>Tu tema en .md</span></div>
+    <div class="prompt p6">
+      <p>Te adjunto el tema "<span class="lleno">Sistemas nervioso y endocrino</span>" de nuestro libro. Hazme una infografía vertical, tamaño carta, para pegar en el salón de <span class="lleno">1°</span>, que explique <span class="lleno">qué hace cada sistema y en qué se parecen</span>.</p>
+      <p><b>Usa solo la información del documento.</b> Textos cortos y letra grande.</p>
+      <p class="estilo"><b>Estilo:</b> lámina escolar dibujada a mano, con dibujos de línea en tinta y acuarela suave, sobre fondo de papel crema. Títulos con letra de molde, como escrita con plumón. Sin degradados, sin brillos, sin efecto 3D y sin fotos.</p>
+    </div>
+    <p class="pista">Secretarias: adjunten un aviso o circular suya y pidan un cartel con su información.</p>
+    <aside class="notes">Minuto 9–13. Es la opción que más datos puede inventar: buena para el paso 7. Si Gemini no acepta el .md en "Crear imagen", que adjunten el mismo tema en PDF o Word.</aside>
+  </section>
+
+  <section data-p6="5">
+    <span class="chat-tag">Todos juntos · 3 de 3</span>
+    <h2 style="font-size:1.6em">Algo formal, que puedas editar</h2>
+    <div class="mitades dos6">
+      <div class="mitad">
+        <span class="quien">1 · En Gemini: el fondo</span>
+        <div class="pb">
+          <span class="archivo"><i>📎</i>Logo de la escuela</span>
+          <p>Haz el fondo de un reconocimiento horizontal, tamaño carta. Te adjunto el logo: ponlo arriba al centro y no lo cambies. <b>No escribas ningún texto</b>; deja el centro en blanco.</p>
+          <p class="estilo"><b>Estilo:</b> diploma clásico de imprenta, fondo blanco, un marco de línea fina doble en <span class="lleno">azul marino</span> y mucho espacio en blanco. Sin dibujos, sin medallas ni listones, sin dorados brillantes y sin degradados.</p>
+        </div>
+        <p class="op">Descarga la imagen.</p>
+      </div>
+      <div class="mitad">
+        <span class="quien">2 · En Claude: el PowerPoint</span>
+        <div class="pb">
+          <span class="archivo"><i>📎</i>El fondo de Gemini</span>
+          <p>Te adjunto el fondo de un reconocimiento. Hazme un PowerPoint de una diapositiva, tamaño carta horizontal, con esta imagen de fondo y <b>cuadros de texto editables</b> encima: "Reconocimiento", "a: <span class="lleno">[nombre]</span>", "por <span class="lleno">[motivo]</span>", "<span class="lleno">[lugar y fecha]</span>" y dos líneas para firmas: "<span class="lleno">Director</span>" y "<span class="lleno">Docente</span>". Letra con remates, en negro y azul marino.</p>
+        </div>
+        <p class="op">Después solo cambias el texto en PowerPoint. El diseño no se mueve.</p>
+      </div>
+    </div>
+    <aside class="notes">Minuto 13–17. Si no da tiempo, se omite. Idea: Gemini hace el diseño sin texto y Claude lo vuelve editable; así no hay que generar otra imagen para cada diploma (era la queja de una secretaria). Los corchetes se dejan así: el nombre lo escribe cada quien en PowerPoint, no se le da a la IA. Si ya no tienen mensajes de Claude: a mano en PowerPoint, Diseño > Formato del fondo > Relleno con imagen, y cuadros de texto encima. Para muchos diplomas con nombres distintos: Combinar correspondencia de Word con una lista de Excel (sin IA). Por probar: que Gemini respete "no escribas ningún texto" y que Claude gratuito ponga la imagen como fondo del PowerPoint.</aside>
+  </section>
+
+  <section data-p6="6">
+    <div class="eyebrow">Paso 6 · Antes de imprimir</div>
+    <h2 style="font-size:1.6em">Revísalo</h2>
+    <div class="revisa4">
+      <div class="etapa"><div class="num">1</div><div class="t">El texto</div><p>Letra por letra: acentos y palabras inventadas.</p></div>
+      <div class="etapa"><div class="num">2</div><div class="t">Los datos</div><p>¿La fecha cae en ese día? ¿La infografía dice lo que dice tu libro?</p></div>
+      <div class="etapa"><div class="num">3</div><div class="t">El logo</div><p>Compáralo con el original. ¿Lo cambió?</p></div>
+      <div class="etapa"><div class="num">4</div><div class="t">Las personas</div><p>Nada de fotos ni nombres de alumnos.</p></div>
+    </div>
+    <p class="remate">En el paso 7 lo revisamos <span class="subrayado">entre todos.</span></p>
+    <aside class="notes">Minuto 17–20: revisar y descargar. Ubicar voluntarios para el paso 7: uno con póster, uno con infografía y uno con reconocimiento, si se puede.</aside>
   </section>
 </div></div>
 <script src="lib/reveal.js"></script>

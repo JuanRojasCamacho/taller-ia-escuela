@@ -1,6 +1,6 @@
 # Paso 5: ¿Qué IA usar?
 
-**Duración:** 10 minutos · [← Paso 4](../04-reto/) · Paso 6 →
+**Duración:** 10 minutos · [← Paso 4](../04-reto/) · [Paso 6 →](../06-poster/)
 
 ## Objetivo
 
