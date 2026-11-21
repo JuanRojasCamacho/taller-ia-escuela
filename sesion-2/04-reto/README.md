@@ -1,6 +1,6 @@
 # Paso 4: El reto
 
-**Duración:** 48 minutos · [← Paso 3](../03-archivos/) · Paso 5 →
+**Duración:** 48 minutos · [← Paso 3](../03-archivos/) · [Paso 5 →](../05-que-ia/)
 
 ## Objetivo
 

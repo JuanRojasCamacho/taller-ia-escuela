@@ -13,7 +13,7 @@
 | 3 | [Los archivos](03-archivos/) | 18 | Qué es cada formato y cuándo pedirlo: Word, PDF, PowerPoint, Excel y, sobre todo, Markdown (el libro en `.md`) |
 | 4 | [El reto](04-reto/) | 48 | Tres chats con tu tema y tu material. Docentes: material para hoy, examen de lo que ya vimos y plan del siguiente trimestre. Secretarias: documento con su formato, PDF a Word y lista a Excel. La IA te entrevista antes de empezar |
 | | Descanso | 15 | |
-| 5 | ¿Qué IA usar? | 10 | Claude, ChatGPT, Gemini y NotebookLM: para qué sirve mejor cada una |
+| 5 | [¿Qué IA usar?](05-que-ia/) | 10 | Claude, ChatGPT y Gemini: para qué sirve mejor cada una, y tres salidas si se te acaba el límite (otra IA, otra cuenta de Claude o esperar) |
 | 6 | Tu póster con Gemini | 20 | Ejemplo: la posada de la escuela. Después, cada quien el suyo, con el logo de la escuela |
 | 7 | Revisar antes de usar | 20 | Proyectamos el trabajo de algunos voluntarios y el grupo revisa la clave y el póster |
 | 8 | Cierre | 15 | Las tres reglas, Proyectos ("para no subirlo cada vez") y cómo seguir |

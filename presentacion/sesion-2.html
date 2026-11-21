@@ -255,6 +255,18 @@
   .comp td.r{background:transparent;color:var(--suave);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.75em;width:15%;}
   .comp td.md{background:var(--acento);}
   .reveal p.k-por{margin-top:1em;}
+  /* paso 5: que ia usar */
+  .ias4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:.4em;}
+  .ia4{background:#fff;border-radius:26px;padding:28px 28px 24px;box-shadow:0 12px 26px rgba(30,42,58,.09);display:flex;flex-direction:column;}
+  .ia4 .ia-nom{align-self:flex-start;background:var(--tinta);color:var(--acento);font-weight:800;border-radius:12px;padding:6px 18px;font-size:.6em;}
+  .ia4 .antes{font-size:.42em;font-weight:700;color:var(--suave);margin-top:.4em;}
+  .ia4 .preg{font-family:'Fraunces',serif;font-weight:800;font-size:.82em;line-height:1.2;margin:.6em 0 .5em;}
+  .ia4 p{font-size:.5em;font-weight:700;line-height:1.35;margin:0 0 .5em;}
+  .ia4 p.lim{margin-top:auto;padding-top:.7em;border-top:3px solid #EEE7DA;color:var(--suave);}
+  .ias4.tres{grid-template-columns:repeat(3,1fr);gap:30px;}
+  .ias4.tres .ia4{padding:32px 34px 28px;}
+  .ias4.tres .preg{font-size:.95em;}
+  .ias4.tres p{font-size:.56em;}
 </style>
 </head>
 <body>
@@ -691,6 +703,52 @@
     <aside class="notes">Docentes minuto 34–46; secretarias 32–46. "5 horas" es un número de ejemplo. Dosificación opcional: faltan 3° Lenguajes, la división por trimestre de 2° y 3° Ética, y en 2° Lo Humano los contenidos 3–4 son supuestos. El .md sirve para pegarlo en otro chat como contexto. Listas con nombres de alumnos: "números de lista, no nombres"; camino sin IA: copiar la tabla de Word y pegarla en Excel (probarlo antes en la sala).</aside>
   </section>
 
+  <!-- ===================== PASO 5: ¿QUÉ IA USAR? ===================== -->
+  <section class="centro" data-p5="1">
+    <div class="eyebrow">Paso 5 · ¿Qué IA usar?</div>
+    <p class="gigante">Claude <span class="subrayado">no es la única.</span></p>
+    <p class="remate">Tu receta sirve en todas. Cambia para qué es mejor cada una.</p>
+    <aside class="notes">Minuto 0–1. Viene después del descanso: frase puente y pasar. "Ayer vimos que Claude, ChatGPT y Gemini son modelos de lenguaje: en lo básico hacen lo mismo. Hoy: cuál conviene para qué."</aside>
+  </section>
+
+  <section data-p5="2">
+    <div class="eyebrow">Paso 5 · Versiones gratuitas</div>
+    <h2 style="font-size:1.6em">Elige con una pregunta</h2>
+    <div class="ias4 tres">
+      <div class="ia4">
+        <span class="ia-nom">Claude</span>
+        <div class="preg">¿Necesito un <span class="subrayado">documento listo</span>?</div>
+        <p>Escribe muy bien y te da Word, Excel y PowerPoint.</p>
+        <p class="lim">Límite: se recarga cada 5 horas.</p>
+      </div>
+      <div class="ia4">
+        <span class="ia-nom">ChatGPT</span>
+        <div class="preg">¿Se acabó Claude y solo necesito <span class="subrayado">texto</span>?</div>
+        <p>Para chatear y escribir.</p>
+        <p class="lim">Límite: el texto no tiene; archivos e imágenes, sí.</p>
+      </div>
+      <div class="ia4">
+        <span class="ia-nom">Gemini</span>
+        <div class="preg">¿Necesito una <span class="subrayado">imagen</span>?</div>
+        <p>Crea imágenes y pósters. Lo usamos en el paso 6.</p>
+        <p class="lim">Límite: se recarga cada 5 horas.</p>
+      </div>
+    </div>
+    <p class="pista">Todas se equivocan: <b>revisa siempre</b>. Y en todas: números de lista, no nombres.</p>
+    <aside class="notes">Minuto 1–7. Datos verificados el 21 nov 2026 en las páginas de ayuda de cada empresa; los planes gratuitos cambian seguido, revisar la víspera. Claude: límite por sesión que se recarga cada 5 horas (support.claude.com). ChatGPT gratuito: chat de texto sin límite desde agosto 2026; archivos, imágenes y voz tienen límites aparte (help.openai.com). Gemini gratuito: límites estándar que se recargan cada 5 horas hasta un límite semanal; crea imágenes con Nano Banana 2, sin número publicado (support.google.com/gemini). Si preguntan por NotebookLM: ahora se llama Gemini Notebook (desde el 16 jul 2026) y responde solo con los documentos que subes; no entra en el taller.</aside>
+  </section>
+
+  <section data-p5="3">
+    <div class="eyebrow">Paso 5 · Si se te acaba el límite</div>
+    <h2 style="font-size:1.6em">Tres salidas</h2>
+    <div class="camino">
+      <div class="etapa"><div class="num">1</div><div class="t">Otra IA</div><p>Copia tu prompt y pégalo en ChatGPT o Gemini, con los mismos archivos. Si no te da el archivo, cópialo a Word.</p></div>
+      <div class="etapa"><div class="num">2</div><div class="t">Otra cuenta de Claude</div><p>Entra con otro correo. Créala antes, no a la mitad del trabajo.</p></div>
+      <div class="etapa"><div class="num">3</div><div class="t">Espera</div><p>El límite de Claude se recarga cada 5 horas.</p></div>
+    </div>
+    <p class="remate">En 1 y 2 es un chat nuevo: <span class="subrayado">vuelve a adjuntar tus archivos.</span></p>
+    <aside class="notes">Minuto 7–10. Sin demostración: solo explicar. Otra IA responde distinto: revisar igual. "Cópialo a Word" porque no verificamos que ChatGPT y Gemini gratuitos entreguen Word o Excel como Claude. Segunda cuenta: necesita otro correo; las condiciones de Claude no la prohíben de forma explícita, pero sí prohíben eludir sus sistemas (revisado 21 nov 2026). Cierre del paso: "Para imágenes, Gemini. Vamos a hacer su póster."</aside>
+  </section>
 </div></div>
 <script src="lib/reveal.js"></script>
 <script src="lib/notes.js"></script>
