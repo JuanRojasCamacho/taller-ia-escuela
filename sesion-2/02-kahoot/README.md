@@ -1,6 +1,6 @@
 # Paso 2: Kahoot
 
-**Duración:** 16 minutos · [← Paso 1](../01-gancho/) · Paso 3 →
+**Duración:** 16 minutos · [← Paso 1](../01-gancho/) · [Paso 3 →](../03-archivos/)
 
 ## Objetivo
 
