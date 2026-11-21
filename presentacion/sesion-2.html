@@ -169,35 +169,22 @@
   .k-resp{display:flex;align-items:center;gap:22px;font-size:.78em;font-weight:800;}
   .k-resp .ok{background:var(--tarea);color:#fff;border-radius:999px;padding:6px 22px;font-size:.75em;white-space:nowrap;}
   .k-por{font-size:.62em;font-weight:700;color:var(--suave);margin-top:.8em;}
-  .lado{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:.4em;align-items:stretch;}
-  .vista{background:#fff;border-radius:24px;padding:30px 38px;box-shadow:0 12px 26px rgba(30,42,58,.09);}
-  .vista small{display:block;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.45em;color:var(--suave);margin-bottom:.8em;}
-  .vista.codigo{background:var(--tinta);color:#F4EFE4;}
-  .vista.codigo small{color:var(--acento);}
-  .mono{font-family:'Courier New',monospace;font-size:.6em;line-height:1.7;white-space:pre-wrap;font-weight:700;}
-  .mono .m{color:var(--acento);}
-  .mono .c{color:#8FA3BA;}
-  .rend{font-size:.62em;line-height:1.5;}
-  .rend .t{font-family:'Fraunces',serif;font-weight:800;font-size:1.5em;line-height:1.1;margin-bottom:.4em;}
-  .rend ul{margin:.3em 0 0 1.1em;padding:0;}
-  .marcas{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:.7em;}
-  .marca{background:#fff;border-radius:18px;padding:18px 24px;box-shadow:0 6px 14px rgba(30,42,58,.07);font-size:.55em;font-weight:700;display:flex;align-items:center;gap:16px;}
-  .marca code{background:var(--tinta);color:var(--acento);border-radius:10px;padding:4px 12px;font-weight:800;font-family:'Courier New',monospace;white-space:nowrap;}
-  .costo{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:.5em;}
-  .caja-c{background:#fff;border-radius:28px;padding:36px 40px;box-shadow:0 14px 30px rgba(30,42,58,.10);}
-  .caja-c.bien{background:var(--acento);}
-  .caja-c .q{font-family:'Fraunces',serif;font-weight:800;font-size:1.3em;margin-bottom:.4em;}
-  .barras{display:flex;flex-direction:column;gap:12px;margin:.3em 0 .6em;}
-  .barra{border-radius:12px;padding:10px 18px;font-size:.5em;font-weight:800;color:#fff;}
-  .barra.txt{background:var(--contexto);}
-  .barra.img{background:var(--rol);}
-  .caja-c .d{font-size:.58em;font-weight:700;}
   .tabla-f{width:100%;border-collapse:separate;border-spacing:0 12px;font-size:.6em;}
   .tabla-f td{background:#fff;padding:14px 24px;font-weight:700;}
   .tabla-f td:first-child{border-radius:16px 0 0 16px;font-family:'Fraunces',serif;font-weight:800;border-left:12px solid var(--c);width:26%;}
   .tabla-f td:last-child{border-radius:0 16px 16px 0;}
   .tabla-f tr.md td{background:#FFF8CC;}
-  .k-por b,.rend b,.caja-c b,.col li span b,.remate b{font-weight:800;}
+  .k-por b,.col li span b,.remate b{font-weight:800;}
+  .def{background:#fff;border-radius:28px;padding:40px 48px;box-shadow:0 14px 30px rgba(30,42,58,.10);font-family:'Fraunces',serif;font-weight:800;font-size:1.25em;line-height:1.25;border-left:14px solid var(--formato);margin:.2em 0 .7em;}
+  .hechos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .hecho{background:#fff;border-radius:22px;padding:26px 30px;box-shadow:0 8px 18px rgba(30,42,58,.08);font-size:.56em;font-weight:700;line-height:1.35;}
+  .hecho .icono{font-size:1.8em;margin-bottom:.2em;}
+  .hecho b{font-weight:800;}
+  .comp{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:10px 10px;font-size:.6em;margin-top:.2em;}
+  .comp th{font-family:'Fraunces',serif;font-weight:800;font-size:1.25em;text-align:left;padding:6px 18px;}
+  .comp td{background:#fff;padding:18px 22px;font-weight:700;border-radius:14px;line-height:1.3;vertical-align:top;}
+  .comp td.r{background:transparent;color:var(--suave);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.75em;width:15%;}
+  .comp td.md{background:var(--acento);}
   .reveal p.k-por{margin-top:1em;}
 </style>
 </head>
@@ -418,69 +405,26 @@
 
   <section>
     <div class="eyebrow">Y uno que casi nadie conoce · Markdown</div>
-    <h2 style="font-size:1.6em">Ya lo has visto sin saberlo</h2>
-    <div class="lado">
-      <div class="vista">
-        <small>Lo que ves en Claude</small>
-        <div class="rend"><div class="t">Sistemas de ecuaciones</div>Hay tres métodos para resolver un <b>sistema de ecuaciones</b>:<ul><li>Reducción</li><li>Igualación</li><li>Sustitución</li></ul></div>
-      </div>
-      <div class="vista codigo">
-        <small>Lo que a veces sale al copiarlo a Word</small>
-        <div class="mono"><span class="m">#</span> Sistemas de ecuaciones
-
-Hay tres métodos para resolver un <span class="m">**</span>sistema de ecuaciones<span class="m">**</span>:
-<span class="m">-</span> Reducción
-<span class="m">-</span> Igualación
-<span class="m">-</span> Sustitución</div>
-      </div>
+    <h2 style="font-size:1.6em">¿Qué es Markdown?</h2>
+    <div class="def">Una forma de escribir texto con formato usando solo el teclado: unos símbolos dicen qué es título, qué va en negritas y qué es lista.</div>
+    <div class="hechos">
+      <div class="hecho"><div class="icono">📄</div>Los archivos terminan en <b>.md</b></div>
+      <div class="hecho"><div class="icono">💻</div>Se abre con <b>cualquier programa</b>, hasta el Bloc de notas</div>
+      <div class="hecho"><div class="icono">🤖</div>Así escriben <b>Claude y ChatGPT</b>, y así está escrito <b>este manual</b></div>
     </div>
-    <p class="remate">Esos <b>#</b> y <b>**</b> son Markdown: <span class="subrayado">así escribe Claude.</span></p>
-    <aside class="notes">Minuto 6–8. Preguntar: "¿a quién le han salido asteriscos al copiar del chat?". Siempre hay alguien. Esa es la puerta de entrada.</aside>
-  </section>
-
-  <section>
-    <div class="eyebrow">Markdown · .md</div>
-    <h2 style="font-size:1.6em">Texto puro con unas marcas</h2>
-    <div class="lado">
-      <div class="vista codigo">
-        <small>Así se ve un archivo .md</small>
-        <div class="mono"><span class="c">&lt;!-- p. 33 --&gt;</span>
-<span class="m">##</span> Método de reducción
-
-Un <span class="m">**</span>sistema de ecuaciones<span class="m">**</span> son dos
-ecuaciones con las mismas incógnitas…</div>
-      </div>
-      <div class="vista">
-        <small>Cómo se lee</small>
-        <div class="rend"><div class="t" style="font-size:1.2em">Método de reducción</div>Un <b>sistema de ecuaciones</b> son dos ecuaciones con las mismas incógnitas…</div>
-        <p class="k-por" style="margin-top:1em">La marca <b>p. 33</b> no se ve, pero la IA sí la lee: puede decirte <span class="subrayado">de qué página</span> sacó algo.</p>
-      </div>
-    </div>
-    <div class="marcas">
-      <div class="marca"><code>#</code>título</div>
-      <div class="marca"><code>**texto**</code>negritas</div>
-      <div class="marca"><code>- texto</code>lista</div>
-    </div>
-    <aside class="notes">Minuto 8–11. El texto de la diapositiva es un ejemplo, no una cita del libro. Si da tiempo, abre en vivo el libro de 2° (.md) con el Bloc de notas y busca "p. 33" para que vean el real. No hay que aprenderse las marcas: solo reconocerlas.</aside>
+    <aside class="notes">Minuto 6–10. Ejemplos de los símbolos: # para título, **dos asteriscos** para negritas y - para lista. Pregunta: "¿a quién le han salido asteriscos o # al copiar del chat a Word?". Eso era Markdown. Si da tiempo, abre el libro de 2° (.md) con el Bloc de notas para que vean uno real, con sus marcas de página (busca "p. 33").</aside>
   </section>
 
   <section>
     <div class="eyebrow">Markdown · por qué</div>
-    <h2 style="font-size:1.6em">¿Por qué el libro va en .md?</h2>
-    <div class="costo">
-      <div class="caja-c">
-        <div class="q">Un tema en PDF</div>
-        <div class="barras"><div class="barra txt">el texto</div><div class="barra img">+ una imagen de cada página</div></div>
-        <div class="d">La IA "ve" cada página como foto. Gasta más.</div>
-      </div>
-      <div class="caja-c bien">
-        <div class="q">El mismo tema en .md</div>
-        <div class="barras"><div class="barra txt">solo el texto</div></div>
-        <div class="d"><b>Varias veces menos</b> de tu límite gratuito.</div>
-      </div>
-    </div>
-    <p class="remate">¿Se acuerdan de ayer? <span class="subrayado">Todo cuesta.</span></p>
-    <aside class="notes">Minuto 11–13. No des cifras exactas: la comparación es una estimación (un tema de 5 páginas: ~1,500 tokens en .md contra ~10,000 a 12,000 en PDF). Por esto el libro completo cupo en la cuenta gratuita. Precisión por si preguntan: según la ayuda de Claude, en PDF de hasta 100 páginas analiza texto e imágenes; en PDF más largos, solo el texto.</aside>
+    <h2 style="font-size:1.5em">¿Por qué dárselo a la IA en .md?</h2>
+    <table class="comp">
+      <tr><th style="width:16%"></th><th>PDF</th><th>Word</th><th style="background:var(--acento);border-radius:14px">.md</th></tr>
+      <tr><td class="r">Se hizo para</td><td>Verse igual e imprimirse</td><td>Editar e imprimir</td><td class="md">Leerse como texto</td></tr>
+      <tr><td class="r">Qué guarda</td><td>Cómo se ve cada página</td><td>El texto + letra, márgenes y diseño</td><td class="md">Solo el texto y sus títulos</td></tr>
+    </table>
+    <p class="remate">De un tema en PDF la IA recibe también una imagen de cada página. En .md, <span class="subrayado">varias veces menos de tu límite.</span></p>
+    <aside class="notes">Minuto 10–13. "¿Se acuerdan de ayer? Todo cuesta." No des cifras exactas: es una estimación (un tema de 5 páginas: ~1,500 tokens en .md contra ~10,000 a 12,000 en PDF). Por esto el libro completo cupo en la cuenta gratuita. Si preguntan: según la ayuda de Claude, en PDF de hasta 100 páginas analiza texto e imágenes; en PDF más largos, solo el texto. De Word no se compara el gasto: no hay una fuente que lo mida.</aside>
   </section>
 
   <section>
