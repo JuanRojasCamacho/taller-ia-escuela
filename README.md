@@ -22,13 +22,16 @@ La IA es como un practicante brillante, rapidísimo y muy leído, que **nunca ha
 | Sesión | Tema | Qué contexto le das a la IA |
 | --- | --- | --- |
 | [Sesión 1: Crear](sesion-1/) | Cómo funciona la IA, cómo pedirle bien y crear tus primeros materiales | El que **escribes**: quién eres, para quién es, cómo lo quieres |
-| [Sesión 2: Dar contexto](sesion-2/) | Lo que la IA no sabe, subir tus documentos y resolver un reto real | El que **subes**: el libro, tus apuntes, tus formatos |
+| [Sesión 2: Dar contexto](sesion-2/) | Subir tus documentos, conocer los tipos de archivo, resolver un reto real y hacer un póster con imágenes | El que **subes**: el libro, tus apuntes, tus formatos |
 
 ## Presentaciones
 
 Lo que se proyecta en el taller: una presentación por sesión, con todos sus pasos.
 
-- [Sesión 1: Crear](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-1.html)
+| Sesión | Abrir |
+| --- | --- |
+| Sesión 1: Crear | [▶ Abrir la presentación](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-1.html) |
+| Sesión 2: Dar contexto | [▶ Abrir la presentación](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-2.html) *(en construcción)* |
 
 Se avanza con las flechas del teclado. La tecla **S** abre la vista de presentador con las notas.
 

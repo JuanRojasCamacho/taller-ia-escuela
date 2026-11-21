@@ -1,5 +1,7 @@
 # Sesión 1: Crear
 
+**[▶ Abrir la presentación de la sesión 1](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-1.html)** · Flechas para avanzar, tecla **S** para las notas.
+
 > Le dices a la IA **quién eres, para quién es y cómo lo quieres**, y te llevas tus primeros materiales listos.
 
 **Duración:** 180 minutos · **Herramienta:** Claude (versión gratuita)

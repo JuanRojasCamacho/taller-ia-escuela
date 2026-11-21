@@ -1,5 +1,7 @@
 # Sesión 2: Dar contexto
 
+**[▶ Abrir la presentación de la sesión 2](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-2.html)** · Flechas para avanzar, tecla **S** para las notas.
+
 > La sesión pasada le dijiste a la IA quién eres. Hoy le vas a dar **lo que sabes**: el libro, tus apuntes y tus formatos.
 
 **Duración:** 180 minutos · *Borrador: se está armando paso por paso.*
