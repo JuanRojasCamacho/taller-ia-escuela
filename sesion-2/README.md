@@ -8,11 +8,12 @@
 
 | # | Paso | Min | Qué pasa |
 | --- | --- | --- | --- |
-| 1 | [Gancho](01-gancho/) | 24 | Del libro a una presentación para la clase (PowerPoint y PDF), un examen del trimestre en Word y su Excel de calificaciones, en dos chats |
-| 2 | Los archivos | 22 | Word, PDF, PowerPoint, Excel y Markdown: qué le das a la IA y qué te devuelve, con los archivos que acabas de ver. Pasas tu material a .md |
-| 3 | El reto | 50 | Dices tu meta, la IA te entrevista y sale tu examen o tu documento en Word. Si terminas antes: el PowerPoint o la animación de tu tema |
+| 1 | [Gancho](01-gancho/) | 16 | Del libro a una presentación para la clase (PowerPoint y PDF), un examen del trimestre en Word y su Excel de calificaciones, en dos chats |
+| 2 | [Kahoot](02-kahoot/) | 16 | 20 preguntas: repaso de la sesión 1, el gancho, los formatos de archivo e IA en general |
+| 3 | Los archivos | 18 | Comentamos las respuestas de formatos con los archivos del gancho y practicamos: las secretarias pasan su PDF a Word |
+| 4 | El reto | 48 | Dices tu meta, la IA te entrevista y sale tu examen o tu documento en Word. Si terminas antes: el PowerPoint o la animación de tu tema |
 | | Descanso | 15 | |
-| 4 | ¿Qué IA para qué? | 10 | Claude, ChatGPT, Gemini y NotebookLM: para qué sirve mejor cada una |
-| 5 | Tu póster con Gemini | 20 | Ejemplo: la posada de la escuela. Después, cada quien el suyo, con el logo de la escuela |
-| 6 | Revisar antes de usar | 22 | Proyectamos el trabajo de algunos voluntarios y el grupo revisa la clave y el póster |
-| 7 | Cierre | 15 | Las tres reglas, Proyectos ("para no subirlo cada vez") y cómo seguir |
+| 5 | ¿Qué IA usar? | 10 | Claude, ChatGPT, Gemini y NotebookLM: para qué sirve mejor cada una |
+| 6 | Tu póster con Gemini | 20 | Ejemplo: la posada de la escuela. Después, cada quien el suyo, con el logo de la escuela |
+| 7 | Revisar antes de usar | 20 | Proyectamos el trabajo de algunos voluntarios y el grupo revisa la clave y el póster |
+| 8 | Cierre | 15 | Las tres reglas, Proyectos ("para no subirlo cada vez") y cómo seguir |

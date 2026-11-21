@@ -155,6 +155,9 @@
   .msg .etq small{display:block;font-family:'Nunito',sans-serif;font-size:.6em;font-weight:800;color:var(--suave);text-transform:uppercase;letter-spacing:.1em;}
   .msg .adjuntos{margin:0 0 .5em;font-size:1.25em;}
   .mapa.s2{grid-template-columns:repeat(4,1fr);}
+  .kahoot{display:flex;justify-content:center;gap:32px;margin:1em 0 .4em;}
+  .k-paso{background:#fff;border-radius:24px;padding:28px 34px;box-shadow:0 12px 26px rgba(30,42,58,.09);font-size:.7em;font-weight:700;display:flex;align-items:center;gap:16px;}
+  .k-paso .num{position:static;flex:none;width:56px;height:56px;font-size:1.4em;}
 </style>
 </head>
 <body>
@@ -202,7 +205,7 @@
         <p><span class="parte tarea">Tarea</span>Hazme 15 ejercicios adicionales: 5 por cada método del libro (reducción, igualación y sustitución), del mismo nivel que los ejemplos. Que sean distintos a los del libro: no cambies solo los números de sus ejemplos.</p>
         <p><span class="parte formato">Formato</span>Una lista numerada, agrupada por método.</p>
       </div>
-      <aside class="notes">Minuto 1–11. Adjuntar el libro .md y pegar el prompt de prompts.md (no escribirlo en vivo). Usar la cuenta Pro. Señalar el clip: hoy la novedad es el archivo.</aside>
+      <aside class="notes">Minuto 1–7. Adjuntar el libro .md y pegar el prompt de prompts.md (no escribirlo en vivo). Usar la cuenta Pro. Señalar el clip: hoy la novedad es el archivo.</aside>
     </section>
 
     <section>
@@ -230,7 +233,7 @@
   <section class="centro">
     <div class="eyebrow">⏳</div>
     <p class="gigante">Pasaron unas semanas<br>y <span class="subrayado">se acaba el trimestre…</span></p>
-    <aside class="notes">Minuto 11–12. Abrir un CHAT NUEVO a la vista de todos.</aside>
+    <aside class="notes">Minuto 7–8. Abrir un CHAT NUEVO a la vista de todos.</aside>
   </section>
 
   <!-- chat 2 -->
@@ -250,7 +253,7 @@
         <p><span class="parte contexto">Contexto</span>Doy Matemáticas a 2° de telesecundaria y vamos a cerrar el primer trimestre. Te adjunto nuestro libro de Saberes y pensamiento científico y mis listas de ejercicios de los temas que vimos.</p>
         <p><span class="parte tarea">Tarea</span>Quiero un examen del trimestre con ejercicios parecidos a los de mis listas. 20 reactivos, 4 por tema. Tiempo: 50 minutos. En sistemas de ecuaciones pide el procedimiento; en los demás solo el resultado. Mezcla ejercicios directos y problemas. Que los números no sean iguales a los de mis listas. En dos ejercicios de sistemas usa otras letras en lugar de x y y. Valor: 5 puntos cada reactivo.</p>
       </div>
-      <aside class="notes">Minuto 12–20. Otra vez el libro: el chat nuevo no sabe nada del chat 1. Las listas están en sesion-2/01-gancho/archivos/.</aside>
+      <aside class="notes">Minuto 8–13. Otra vez el libro: el chat nuevo no sabe nada del chat 1. Las listas están en sesion-2/01-gancho/archivos/.</aside>
     </section>
 
     <section>
@@ -279,14 +282,14 @@
     <div class="marco">
       Aquí van los archivos ya hechos: PowerPoint, PDF, examen y Excel (plan B):&nbsp;<code>sesion-2/01-gancho/resultados/</code>
     </div>
-    <aside class="notes">Minuto 20–24. Lo normal es abrir el Word en vivo. Plan B: "este lo hice ayer con los mismos prompts". Una IA no responde igual dos veces.</aside>
+    <aside class="notes">Minuto 13–16. Lo normal es abrir el Word en vivo. Plan B: "este lo hice ayer con los mismos prompts". Una IA no responde igual dos veces.</aside>
   </section>
 
   <section class="centro">
     <div class="eyebrow">Fíjate</div>
-    <p class="gigante">Un chat nuevo<br><span class="subrayado">no recuerda nada.</span></p>
+    <p class="gigante">Un chat nuevo<br><span class="subrayado">no tiene tus documentos.</span></p>
     <p class="remate">Por eso en el chat 2 le volvimos a dar el libro.</p>
-    <aside class="notes">No contradice "mismo tema, mismo chat" de ayer: el chat 2 es otro momento. Si preguntan "¿tengo que subirlo cada vez?", guardarlo para el cierre (Proyectos).</aside>
+    <aside class="notes">No contradice "mismo tema, mismo chat" de ayer: el chat 2 es otro momento. Si preguntan "¿tengo que subirlo cada vez?", guardarlo para el cierre (Proyectos). Ojo: Claude puede tener memoria entre chats, pero los archivos de otro chat no pasan al nuevo.</aside>
   </section>
 
   <section>
@@ -294,13 +297,28 @@
     <h2>Hoy, antes de irte,<br>harás esto <span class="subrayado">con tu tema.</span></h2>
     <div class="mapa s2">
       <div class="paso hoy"><b>1</b>Gancho</div>
-      <div class="paso"><b>2</b>Los archivos</div>
-      <div class="paso"><b>3</b>El reto</div>
-      <div class="paso"><b>4</b>¿Qué IA usar?</div>
-      <div class="paso"><b>5</b>Tu póster</div>
-      <div class="paso"><b>6</b>Revisar</div>
-      <div class="paso"><b>7</b>Cierre</div>
+      <div class="paso"><b>2</b>Kahoot</div>
+      <div class="paso"><b>3</b>Los archivos</div>
+      <div class="paso"><b>4</b>El reto</div>
+      <div class="paso"><b>5</b>¿Qué IA usar?</div>
+      <div class="paso"><b>6</b>Tu póster</div>
+      <div class="paso"><b>7</b>Revisar</div>
+      <div class="paso"><b>8</b>Cierre</div>
     </div>
+  </section>
+
+
+  <!-- ===================== PASO 2: KAHOOT ===================== -->
+  <section class="centro">
+    <div class="eyebrow">Paso 2 · ¡A jugar!</div>
+    <p class="gigante">Saca tu celular</p>
+    <div class="kahoot">
+      <div class="k-paso"><span class="num">1</span><span>Entra a <b>kahoot.it</b></span></div>
+      <div class="k-paso"><span class="num">2</span><span>Escribe el <b>PIN</b></span></div>
+      <div class="k-paso"><span class="num">3</span><span>Pon tu <b>nombre</b></span></div>
+    </div>
+    <p class="remate">20 preguntas. Las respuestas incorrectas <span class="subrayado">suenan lógicas.</span></p>
+    <aside class="notes">Abrir el Kahoot en otra pestaña y proyectarlo. Revisar antes que la cuenta sea de maestro (hasta 40 jugadores). No explicar respuestas: "eso lo vemos en un momento". Preguntas en sesion-2/02-kahoot/.</aside>
   </section>
 
 </div></div>

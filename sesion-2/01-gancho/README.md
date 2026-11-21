@@ -1,6 +1,6 @@
 # Paso 1: Gancho
 
-**Duración:** 24 minutos · [← Sesión 2](../) · Paso 2 →
+**Duración:** 16 minutos · [← Sesión 2](../) · [Paso 2 →](../02-kahoot/)
 
 ## Objetivo
 
@@ -10,17 +10,17 @@ Ver **lo que vas a hacer hoy**: con el libro, tus ejercicios y tu formato, sacar
 
 Ayer le dijiste a la IA **quién eres**. Hoy le das **lo que sabes**: tu libro, tu material y tus formatos.
 
-Y una pista nueva: **un chat nuevo no recuerda nada**. Si regresas otro día, le vuelves a dar tus documentos.
+Y una pista nueva: **un chat nuevo no tiene tus documentos**. Si regresas otro día, se los vuelves a dar.
 
 ## Qué hacemos
 
 | Min | Qué pasa |
 | --- | --- |
 | 0–1 | **Frase puente:** "Ayer le dijiste quién eres. Hoy le vas a dar lo que sabes." |
-| 1–11 | **Chat 1, hoy:** subimos el libro. El tema de sistemas de ecuaciones (2°, págs. 33–40) trae tres ejemplos resueltos y ningún ejercicio. Pedimos 15 ejercicios más, un ajuste (otras letras en algunas variables), la lista en Word, una presentación de PowerPoint con 3 ejercicios resueltos paso a paso para dar la clase y la misma presentación en PDF para el iPad |
-| 11–12 | **"Pasaron unas semanas y se acaba el trimestre…"** Abrimos un chat nuevo |
-| 12–20 | **Chat 2:** subimos el libro y las listas de los cinco temas del trimestre. Pedimos el examen, un ajuste (sin títulos y revuelto) y, con el formato de la escuela, el Word con ecuaciones de Word, y un Excel para capturar las calificaciones |
-| 20–24 | **Los abrimos.** La promesa: hoy, antes de irte, harás esto con tu tema |
+| 1–7 | **Chat 1, hoy:** subimos el libro. El tema de sistemas de ecuaciones (2°, págs. 33–40) trae tres ejemplos resueltos y ningún ejercicio. Pedimos 15 ejercicios más, un ajuste (otras letras en algunas variables), la lista en Word, una presentación de PowerPoint con 3 ejercicios resueltos paso a paso para dar la clase y la misma presentación en PDF para el iPad |
+| 7–8 | **"Pasaron unas semanas y se acaba el trimestre…"** Abrimos un chat nuevo |
+| 8–13 | **Chat 2:** subimos el libro y las listas de los cinco temas del trimestre. Pedimos el examen, un ajuste (sin títulos y revuelto) y, con el formato de la escuela, el Word con ecuaciones de Word, y un Excel para capturar las calificaciones |
+| 13–16 | **Los abrimos.** La promesa: hoy, antes de irte, harás esto con tu tema |
 
 ## El prompt
 
@@ -49,6 +49,7 @@ En este paso no hay nada que hacer en tu equipo: solo observa.
 - **"Una tarea, un chat":** no contradice "mismo tema, mismo chat". El chat 2 es **otro momento** (fin de trimestre); un chat nuevo no sabe nada del anterior y hay que volver a darle los documentos.
 - **Ecuaciones de Word:** pedir el tipo "Ecuación" de Word responde a un problema real (las ecuaciones que se rompen al pasarlas a Word). Revisa antes del taller que salgan editables.
 - **"Te adjunto" en el mismo mensaje:** si el formato no se sube junto con el mensaje que lo menciona, Claude no lo ve.
+- **Rápido e impresionante:** pega los prompts sin explicarlos y no esperes a que termine cada respuesta para hablar.
 - **Formatos sin explicar:** en el gancho solo pega los prompts. Word, PowerPoint, PDF, Excel y Markdown (el libro) se explican en el paso siguiente, con los archivos que acaban de ver.
 - **Siembra la revisión, no la hagas aquí:** pregunta al grupo "¿alguien revisó la clave?". La clave se revisa más adelante, en el paso de revisión.
 - **"Que te haga preguntas antes"** no va en el gancho: tiene su propia sección en la sesión.

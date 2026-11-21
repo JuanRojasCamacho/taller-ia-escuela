@@ -69,4 +69,4 @@ Te adjunto el formato que uso. Dame el examen en ese formato y listo para imprim
 Tengo 25 alumnos. Ahora hazme un Excel para capturar las calificaciones de este examen: una fila por número de lista, una columna por reactivo, y que sume la calificación automáticamente.
 ```
 
-> Fíjate que en el chat 2 le volvimos a dar el libro: **un chat nuevo no recuerda** lo del chat 1.
+> Fíjate que en el chat 2 le volvimos a dar el libro: **un chat nuevo no tiene** los documentos del chat 1.
