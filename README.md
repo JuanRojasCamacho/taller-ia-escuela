@@ -31,7 +31,7 @@ Lo que se proyecta en el taller: una presentación por sesión, con todos sus pa
 | Sesión | Abrir |
 | --- | --- |
 | Sesión 1: Crear | [▶ Abrir la presentación](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-1.html) |
-| Sesión 2: Dar contexto | [▶ Abrir la presentación](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-2.html) *(en construcción)* |
+| Sesión 2: Dar contexto | [▶ Abrir la presentación](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-2.html) |
 
 Se avanza con las flechas del teclado. La tecla **S** abre la vista de presentador con las notas.
 

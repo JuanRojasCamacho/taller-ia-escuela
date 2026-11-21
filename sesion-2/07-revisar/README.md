@@ -1,6 +1,6 @@
 # Paso 7: Revisar antes de usar
 
-**Duración:** 20 minutos · [← Paso 6](../06-poster/) · Paso 8 →
+**Duración:** 20 minutos · [← Paso 6](../06-poster/) · [Paso 8 →](../08-cierre/)
 
 ## Objetivo
 

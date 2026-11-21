@@ -4,7 +4,7 @@
 
 > La sesión pasada le dijiste a la IA quién eres. Hoy le vas a dar **lo que sabes**: el libro, tus apuntes y tus formatos.
 
-**Duración:** 180 minutos · *Borrador: se está armando paso por paso.*
+**Duración:** 180 minutos
 
 | # | Paso | Min | Qué pasa |
 | --- | --- | --- | --- |
@@ -16,4 +16,4 @@
 | 5 | [¿Qué IA usar?](05-que-ia/) | 10 | Claude, ChatGPT y Gemini: para qué sirve mejor cada una, y tres salidas si se te acaba el límite (otra IA, otra cuenta de Claude o esperar) |
 | 6 | [Tu póster con Gemini](06-poster/) | 20 | Cuatro experimentos todos juntos: dos solo con Gemini (un anuncio y una imagen con tu información) y dos uniendo IA (Claude te entrevista y te da el prompt para una historieta; Claude convierte la imagen de Gemini en Word o PowerPoint) |
 | 7 | [Revisar antes de usar](07-revisar/) | 20 | Revisión en grupo: los voluntarios que alcancen pasan al cañón con lo del reto y con sus imágenes, y el grupo busca errores |
-| 8 | Cierre | 15 | Las tres reglas, Proyectos ("para no subirlo cada vez") y cómo seguir |
+| 8 | [Cierre](08-cierre/) | 15 | La última lección: no tienes que saberlo todo, pregúntale a la IA (que te guíe paso a paso). Termina con "¿Qué es lo que más tiempo te quita en la semana? Mañana, pídeselo a la IA." |
