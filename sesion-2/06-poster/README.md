@@ -119,7 +119,7 @@ Cambia solo [lo que quieres cambiar]. No cambies nada más.
 - **Datos de la escuela:** del formato de examen de Santa Teresa (Escuela Telesecundaria "Santa Teresa", Huajuapan de León, Oaxaca). La clave del centro de trabajo y la zona no se pusieron porque el formato las trae en blanco.
 - **Datos verificados el 21 nov 2026** ([ayuda de Gemini](https://support.google.com/gemini/answer/14286560), [subir archivos](https://support.google.com/gemini/answer/14903178)): se entra con sesión iniciada; Crear imagen usa Nano Banana 2; se pueden subir imágenes para editarlas; hasta 10 archivos por mensaje; la versión gratuita descarga en 1K. Google no publica cuántas imágenes al día da la versión gratuita.
 - **Marca de agua:** las imágenes llevan la marca de Gemini en una esquina. Se deja: dice que la hizo una IA. Si preguntan, se quita en Configuración > Marca de agua, pero la marca invisible (SynthID) sigue.
-- **Por probar antes del taller:** que Gemini respete el logo; que acepte el `.md` en Crear imagen; que respete "no escribas ningún texto"; que Claude gratuito ponga la imagen como fondo del PowerPoint; que los tres estilos se vean como se describen; y si las tres imágenes caben en el límite gratuito. Guarda tus resultados como plan B.
+- **Por probar antes del taller:** que Gemini respete el logo; que acepte el `.md` en Crear imagen; que respete "no escribas ningún texto"; que Claude gratuito ponga la imagen como fondo del PowerPoint; que los estilos se vean como se describen; y si las imágenes caben en el límite gratuito. Guarda tus resultados como plan B.
 - **Voluntarios para el paso 7:** ubica a un docente con su infografía y una secretaria con su diploma, si se puede.
 - **Directivos:** eligen la ruta que les sirva.
 
