@@ -39,9 +39,10 @@ Y una regla: **si no le dices el formato, te lo da en el chat.**
 | | PDF | Word | `.md` |
 | --- | --- | --- | --- |
 | **Se hizo para** | Verse igual e imprimirse | Editar e imprimir | Leerse como texto |
-| **Qué guarda** | Cómo se ve cada página | El texto + letra, márgenes y diseño | Solo el texto y sus títulos |
+| **Qué recibe la IA** | El texto + una imagen de cada página | El texto, mezclado con datos de letra, márgenes y diseño | Solo el texto, en orden |
+| **Para tu límite** | Gasta más | Intermedio | Gasta menos |
 
-De un tema en PDF, la IA recibe el texto **y además una imagen de cada página**. En `.md` recibe solo el texto: gasta varias veces menos de tu límite gratuito, y te queda más para trabajar. Además, el libro del taller trae marcado el número de página (`<!-- p. 33 -->`), así que la IA puede decirte de qué página sacó algo.
+Con el mismo tema, el `.md` gasta varias veces menos de tu límite gratuito que el PDF, y te queda más para trabajar. Además, el libro del taller trae marcado el número de página (`<!-- p. 33 -->`), así que la IA puede decirte de qué página sacó algo.
 
 **No tienes que escribirlo:** los libros ya te los dimos en `.md`, y cualquier otro documento se lo puedes pedir a Claude ("pásame este documento a Markdown").
 
@@ -84,7 +85,7 @@ En este paso no hay nada que hacer en tu equipo: solo escucha y pregunta.
 - **PDF a Word con IA:** la IA no convierte el archivo, **lo vuelve a escribir**. Logos, firmas y sellos no pasan, y el texto hay que revisarlo.
 - **Markdown es el centro del paso:** casi nadie lo conoce. No se trata de que lo escriban, sino de que entiendan por qué el libro va así y que no se asusten al ver `#` y `**`.
 - **"Varias veces menos" y no una cifra:** la comparación de tokens es una estimación, no una medición (un tema de 5 páginas: unos 1,500 tokens en `.md` contra 10,000 a 12,000 en PDF). En la presentación se dice "varias veces menos".
-- **De Word no se compara cuánto gasta:** no hay una fuente que lo mida; la tabla solo dice qué guarda cada formato.
+- **Lo de Word en la tabla es aproximado:** no hay una fuente que mida cuánto gasta un Word frente a un `.md`.
 - **Si preguntan por los PDF largos:** según la ayuda de Claude (consultada el 20 nov 2026), en PDF de hasta 100 páginas analiza texto e imágenes; en PDF de 101 a 1000 páginas, solo el texto. Por eso en la diapositiva se habla de "un tema".
 - **Conecta con la sesión 1:** "todo cuesta" (los tokens). El `.md` es la forma de que el libro completo quepa en la cuenta gratuita.
 - **Si preguntan por qué no viene con dibujos:** los libros salieron del formato accesible de la SEP, que es solo texto. Por eso tampoco tienen imágenes.
