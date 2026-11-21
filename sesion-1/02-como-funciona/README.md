@@ -10,6 +10,8 @@ Entender **cómo escribe la IA**: predice la palabra siguiente, lee en pedazos (
 
 La IA no busca la respuesta en un libro: **escribe la palabra más probable, una tras otra**, según todo lo que leyó. Casi siempre lo probable coincide con lo verdadero, y por eso parece que "sabe". Pero **probable no es verdadero**: cuando no sabe algo, igual escribe lo que suena bien.
 
+Eso tiene nombre: es un **modelo de lenguaje** (en inglés, *LLM*). La IA es un campo grande (el GPS que calcula tu ruta, el celular que reconoce tu cara); la que usamos en este taller es un modelo de lenguaje: leyó muchísimo texto y aprendió qué palabra suele seguir a otra. No busca en un libro, no conoce tu escuela y no sabe cuándo no sabe. Claude, ChatGPT y Gemini son modelos de lenguaje; por eso, en lo básico, hacen lo mismo.
+
 Además, la IA no lee letras ni palabras completas: lee **tokens**, pedazos de palabras. Todo lo que escribes y todo lo que te responde se cuenta en tokens.
 
 De ahí salen tres reglas:
@@ -26,7 +28,7 @@ De ahí salen tres reglas:
 | --- | --- |
 | 0–1 | Formamos equipos por mesa y cada uno recibe su hoja |
 | 1–5 | **Escribe como una IA:** a partir de *"El agua hierve a…"*, cada quien agrega una palabra. La hoja da tres vueltas |
-| 5–7 | Cada equipo lee su frase. Comparamos, y viene **el giro**: ¿a cuántos grados hierve el agua aquí, en Huajuapan? |
+| 5–7 | Cada equipo lee su frase. Comparamos, le ponemos nombre (**modelo de lenguaje**) y viene **el giro**: ¿a cuántos grados hierve el agua aquí, en Huajuapan? |
 | 7–10 | **Tokens:** vemos en vivo cómo se corta el texto en pedazos |
 | 10–15 | **Tres reglas** que salen de todo esto |
 
@@ -64,6 +66,7 @@ En este paso no hay nada que hacer en tu equipo. Si te quedaste atrás en los pa
 - **Mientras escriben,** deja proyectada la diapositiva "Todos empiezan igual" y recorre las mesas. Si a los 4 minutos no terminan, di **alto**: con lo que lleven basta para comparar. Si un equipo se atora, que escriba la primera palabra que se le ocurra: de eso se trata.
 - **Al comparar,** retoma el gancho: "por eso su animación puede verse distinta a la mía". Si algún equipo NO escribió "cien", úsalo en el giro.
 - **El juego es con el grupo, no con Claude:** lo que importa es que vivan cómo escribe la IA, palabra por palabra.
+- **"Esto es un modelo de lenguaje":** un minuto, justo después de "Así escribe la IA". Es ponerle nombre a lo que acaban de vivir, no una clase de teoría. Menciona "LLM" una vez, para que lo reconozcan si lo leen en otro lado, y sigue.
 - **El giro de Huajuapan:** a unos 1,600 m sobre el nivel del mar, el agua hierve a unos 95 °C, no a 100. "Cien" era lo más probable, pero no lo verdadero **aquí**. Deja la idea sembrada: en la sesión 2 vemos que lo local es justo donde la IA más inventa.
 - **Tokenizador en vivo:** aclara que es de OpenAI (ChatGPT) porque Claude no tiene uno público. Escribe, en este orden: "telesecundaria", "Huajuapan de León" y una misma frase en español y en inglés. El español suele gastar más pedazos que el inglés.
 - **Plan B del tokenizador:** si no hay internet o la página cambió, usa la captura de la presentación.
