@@ -1,6 +1,6 @@
 # Paso 3: Los archivos
 
-**Duración:** 18 minutos · [← Paso 2](../02-kahoot/) · Paso 4 →
+**Duración:** 18 minutos · [← Paso 2](../02-kahoot/) · [Paso 4 →](../04-reto/)
 
 ## Objetivo
 
@@ -79,7 +79,7 @@ En este paso no hay nada que hacer en tu equipo: solo escucha y pregunta.
 <details>
 <summary><strong>Notas para quien imparte</strong></summary>
 
-- **Este paso es teórico.** La práctica con los archivos (las secretarias pasan su PDF a Word; los docentes abren los archivos del gancho) va en el paso 4.
+- **Este paso es teórico.** La práctica con los archivos (las secretarias pasan su PDF a Word; los docentes abren los archivos del gancho) va en el [paso 4](../04-reto/).
 - **Las respuestas del Kahoot van aquí.** Durante el Kahoot anota cómo les fue en la 14 (Word), 15 (PDF), 16 (PowerPoint) y 17 (pasar un PDF a Word). Dedica más tiempo a las que acertó menos de la mitad del grupo; si las acertaron todas, pasa rápido y dale esos minutos a Markdown.
 - **La 17 es el puente a la práctica:** un oficio en PDF que usas cada mes se pasa a Word **una vez** y luego lo cambias tú. Dilo así: "es lo que van a hacer las secretarias en el reto".
 - **PDF a Word con IA:** la IA no convierte el archivo, **lo vuelve a escribir**. Logos, firmas y sellos no pasan, y el texto hay que revisarlo.

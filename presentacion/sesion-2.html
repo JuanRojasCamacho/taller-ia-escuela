@@ -174,6 +174,26 @@
   .tabla-f td:first-child{border-radius:16px 0 0 16px;font-family:'Fraunces',serif;font-weight:800;border-left:12px solid var(--c);width:26%;}
   .tabla-f td:last-child{border-radius:0 16px 16px 0;}
   .tabla-f tr.md td{background:#FFF8CC;}
+  /* paso 4: el reto */
+  .rutas{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:.4em;}
+  .ruta{background:#fff;border-radius:26px;padding:28px 32px;box-shadow:0 12px 26px rgba(30,42,58,.09);}
+  .ruta h3{margin-bottom:.45em;}
+  .ruta .quien{font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.45em;color:var(--suave);margin-bottom:.2em;}
+  .chatfila{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;margin:0 0 16px;font-weight:700;line-height:1.3;}
+  .chatfila .c{background:var(--tinta);color:var(--acento);border-radius:12px;padding:8px 0;text-align:center;font-weight:800;font-size:.9em;}
+  .chatfila small{display:block;color:var(--suave);font-weight:700;}
+  .entrevista{background:var(--acento);border-radius:24px;padding:30px 40px;font-family:'Fraunces',serif;font-weight:800;font-size:1.05em;line-height:1.25;margin:.2em 0 .5em;}
+  .pista{font-size:.55em;font-weight:700;color:var(--suave);margin-top:.6em;}
+  .pruebas{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:.5em;}
+  .prueba{background:#fff;border-radius:22px;padding:26px 24px;box-shadow:0 10px 22px rgba(30,42,58,.08);border-top:12px solid var(--c);}
+  .prueba .ext{display:inline-block;font-weight:800;color:#fff;background:var(--c);border-radius:999px;padding:3px 14px;font-size:.45em;margin-bottom:.5em;}
+  .prueba .t{font-weight:800;font-size:.6em;line-height:1.3;}
+  .prueba .r{font-size:.5em;font-weight:700;color:var(--suave);margin-top:.5em;}
+  .prompt.medio{font-size:.66em;padding:36px 44px;}
+  .reveal p.pista{margin-top:.9em;}
+  .msgs.anchos .msg{grid-template-columns:260px 1fr;font-size:.62em;}
+  .chatfila{font-size:.6em;}
+  .prompt .pedir{background:#FFF3A6;border-radius:8px;padding:0 .2em;font-weight:800;}
   .k-por b,.col li span b,.remate b{font-weight:800;}
   .def{background:#fff;border-radius:28px;padding:40px 48px;box-shadow:0 14px 30px rgba(30,42,58,.10);font-family:'Fraunces',serif;font-weight:800;font-size:1.25em;line-height:1.25;border-left:14px solid var(--formato);margin:.2em 0 .7em;}
   .hechos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -461,6 +481,124 @@
     </table>
     <p class="remate" style="margin-top:.6em">Si no le dices el formato, <span class="subrayado">te lo da en el chat.</span></p>
     <aside class="notes">Minuto 15–18. Remate y puente al reto: "ahora les toca a ustedes".</aside>
+  </section>
+
+  <!-- ===================== PASO 4: EL RETO ===================== -->
+  <section class="centro">
+    <div class="eyebrow">Paso 4 · El reto</div>
+    <p class="gigante">Ahora,<br><span class="subrayado">con tu tema.</span></p>
+    <p class="remate">Tres chats: uno por cada momento.</p>
+    <aside class="notes">Minuto 0–3. "En el gancho vieron cómo se hace; ahora les toca con su tema y su material." Directivos: si dan clase, ruta de docentes; si llevan trámites, la de secretarias.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">El reto · tres chats</div>
+    <h2 style="font-size:1.4em">Una tarea, un chat</h2>
+    <div class="rutas">
+      <div class="ruta">
+        <div class="quien">Docentes</div>
+        <h3>Hoy, lo que vimos y lo que viene</h3>
+        <div class="chatfila"><span class="c">Chat 1</span><div>Hoy: material para enseñar tu tema<small>📎 tu tema en .md</small></div></div>
+        <div class="chatfila"><span class="c">Chat 2</span><div>Lo que ya vimos: el examen<small>📎 tu Word del chat 1 + un documento de tus clases</small></div></div>
+        <div class="chatfila"><span class="c">Chat 3</span><div>Lo que viene: el plan del trimestre<small>📎 la dosificación de tu grado</small></div></div>
+      </div>
+      <div class="ruta">
+        <div class="quien">Secretarias</div>
+        <h3>Tus documentos de siempre</h3>
+        <div class="chatfila"><span class="c">Chat 1</span><div>Un documento nuevo<small>📎 tu formato en Word</small></div></div>
+        <div class="chatfila"><span class="c">Chat 2</span><div>De PDF a Word para editarlo<small>📎 tu PDF</small></div></div>
+        <div class="chatfila"><span class="c">Chat 3</span><div>De una lista de Word a Excel<small>📎 tu lista</small></div></div>
+      </div>
+    </div>
+    <p class="remate" style="margin-top:.5em">¿No terminas o se acabó tu límite? <span class="subrayado">Sigue en casa con el manual.</span></p>
+    <aside class="notes">Diapositiva fija mientras trabajan. Abajo de las siguientes hay una pila por ruta (docentes, secretarias) con los prompts. Docentes gastan unos 6 mensajes y secretarias unos 5: por eso el aviso de seguir en casa. Los prompts para copiar están en sesion-2/04-reto/prompts.md.</aside>
+  </section>
+
+  <section class="centro">
+    <div class="eyebrow">Lo nuevo de hoy</div>
+    <p class="gigante" style="font-size:2em">Dile tu meta<br>y que <span class="subrayado">te entreviste.</span></p>
+    <div class="entrevista" style="text-align:left;margin-top:.6em">"Antes de empezar, hazme en un solo mensaje todas las preguntas que necesites. No hagas nada hasta que te responda."</div>
+    <p class="pista">Así no inventa lo que no le dijiste. Va en el chat 1, donde la IA todavía no sabe nada de ti.</p>
+    <aside class="notes">Enseña la captura de una entrevista que hayas hecho antes (no en vivo). Si alguien recibe el documento sin preguntas: que edite su mensaje con el lápiz.</aside>
+  </section>
+
+  <!-- docentes -->
+  <section>
+    <section>
+      <span class="chat-tag">Docentes · antes de empezar</span>
+      <h2 style="font-size:1.4em">Los archivos del gancho</h2>
+      <div class="pruebas">
+        <div class="prueba" style="--c:var(--rol)"><span class="ext">.pdf</span><div class="t">Intenta cambiar un número</div><div class="r">No se puede.</div></div>
+        <div class="prueba" style="--c:var(--contexto)"><span class="ext">.docx</span><div class="t">Cambia un número de una ecuación</div><div class="r">Sí se puede.</div></div>
+        <div class="prueba" style="--c:var(--tarea)"><span class="ext">.xlsx</span><div class="t">Escribe la calificación del alumno 1</div><div class="r">Mira cómo suma.</div></div>
+        <div class="prueba" style="--c:var(--formato)"><span class="ext">.md</span><div class="t">Ábrelo con el Bloc de notas</div><div class="r">Solo texto, con # para los títulos.</div></div>
+      </div>
+      <aside class="notes">Minuto 3–8. Los archivos del gancho deben estar en la carpeta de la sala. No gasta mensajes de Claude.</aside>
+    </section>
+
+    <section>
+      <span class="chat-tag">Docentes · Chat 1 · hoy</span>
+      <div class="adjuntos"><span class="archivo nuevo"><i>📎</i>Tu tema en .md</span></div>
+      <div class="prompt medio">
+        <p><span class="parte rol">Rol</span>Eres profesor de [materia] de secundaria en México.</p>
+        <p><span class="parte contexto">Contexto</span>Doy [materia] a [grado] de telesecundaria. Te adjunto el tema "[tema]" de nuestro libro.</p>
+        <p><span class="parte tarea">Tarea</span>Quiero material para enseñar este tema en clase.</p>
+        <p><span class="pedir">Antes de empezar, hazme en un solo mensaje todas las preguntas que necesites. No hagas nada hasta que te responda.</span></p>
+      </div>
+      <p class="pista"><b>Mensaje 2:</b> responde sus preguntas y agrega "Dámelo en Word listo para imprimir". Descárgalo: lo usas en el chat 2.</p>
+      <aside class="notes">Minuto 8–22. Sin formato en el mensaje 1: el formato va en el mensaje 2, después de la entrevista.</aside>
+    </section>
+
+    <section>
+      <span class="chat-tag">Docentes · Chat 2 · lo que ya vimos</span>
+      <div class="adjuntos"><span class="archivo nuevo"><i>📎</i>Tu Word del chat 1</span><span class="archivo nuevo"><i>📎</i>Un documento de tus clases</span></div>
+      <div class="prompt medio">
+        <p><span class="parte rol">Rol</span>Eres profesor de [materia] de secundaria en México.</p>
+        <p><span class="parte contexto">Contexto</span>Doy [materia] a [grado] de telesecundaria. Te adjunto material de los temas que hemos visto.</p>
+        <p><span class="parte tarea">Tarea</span>Hazme un examen con ejercicios parecidos a los de mi material, de [número] reactivos.</p>
+        <p><span class="parte formato">Formato</span>En Word listo para imprimir, con la clave de respuestas en una hoja aparte.</p>
+      </div>
+      <p class="pista">Chat nuevo: <b>no tiene tus documentos</b>. Vuelve a adjuntarlos.</p>
+      <aside class="notes">Minuto 22–34. Si no trajeron documento de clases anteriores, que usen el .md de otro tema que ya vieron. La clave en hoja aparte se revisa en el paso 7.</aside>
+    </section>
+
+    <section>
+      <span class="chat-tag">Docentes · Chat 3 · lo que viene</span>
+      <div class="adjuntos"><span class="archivo nuevo"><i>📎</i>Dosificación de la SEP de tu grado</span></div>
+      <div class="prompt medio">
+        <p><span class="parte rol">Rol</span>Eres profesor de [materia] de secundaria en México.</p>
+        <p><span class="parte contexto">Contexto</span>Doy [materia] a [grado] de telesecundaria. Te adjunto la dosificación de la SEP. El siguiente trimestre vamos a ver los contenidos del trimestre [número].</p>
+        <p><span class="parte tarea">Tarea</span>Ayúdame a planear mis clases del trimestre: cómo dividir los temas por semana y cuántas clases darle a cada uno. Tengo [número] horas a la semana.</p>
+        <p><span class="parte formato">Formato</span>Una tabla con semana, tema y qué se hace en cada clase.</p>
+      </div>
+      <aside class="notes">Minuto 34–46. Faltan: PDF de 3° Lenguajes; división por trimestre de 2° y 3° Ética, Naturaleza y Sociedades; en 2° Lo Humano y lo Comunitario, los contenidos 3 y 4 en el trimestre 2 son suposición. Esos docentes escriben sus temas.</aside>
+    </section>
+  </section>
+
+  <!-- secretarias -->
+  <section>
+    <section>
+      <span class="chat-tag">Secretarias · Chat 1 · documento nuevo</span>
+      <div class="adjuntos"><span class="archivo nuevo"><i>📎</i>Tu formato en Word</span></div>
+      <div class="prompt medio">
+        <p><span class="parte rol">Rol</span>Eres secretaria de una escuela secundaria en México y redactas documentos oficiales.</p>
+        <p><span class="parte contexto">Contexto</span>Trabajo en la telesecundaria [nombre de la escuela]. Te adjunto el formato que usamos para [oficios / circulares / avisos].</p>
+        <p><span class="parte tarea">Tarea</span>Quiero hacer [un oficio / una circular / un aviso] para [a quién] sobre [qué].</p>
+        <p><span class="pedir">Antes de empezar, hazme en un solo mensaje todas las preguntas que necesites. No hagas nada hasta que te responda.</span></p>
+      </div>
+      <p class="pista"><b>Mensaje 2:</b> responde sus preguntas y agrega "Dámelo en Word, en mi formato y listo para imprimir".</p>
+      <aside class="notes">Minuto 3–20. El formato se adjunta en el mismo mensaje que dice "te adjunto".</aside>
+    </section>
+
+    <section>
+      <span class="chat-tag">Secretarias · Chats 2 y 3</span>
+      <div class="msgs anchos">
+        <div class="msg"><div class="etq"><small>Chat 2</small>De PDF a Word<small>📎 tu PDF</small></div><div>Te adjunto un documento que uso seguido, en PDF. Pásalo a un documento de Word con el mismo texto y el mismo orden, listo para editarlo. No cambies ni agregues nada. Si hay algo que no puedes leer, márcalo con [REVISAR].</div></div>
+        <div class="msg"><div class="etq"><small>Chat 3</small>De Word a Excel<small>📎 tu lista</small></div><div>Te adjunto una lista que tengo en Word. Pásala a un Excel con una columna por cada dato y una fila por cada registro, con los encabezados en la primera fila. No cambies ni agregues nada. Si un dato no está claro, márcalo con [REVISAR].</div></div>
+      </div>
+      <p class="pista">Cada uno en un <b>chat nuevo</b>. Después del chat 2, cambia tú un dato en Word.</p>
+      <aside class="notes">Minuto 20–46. "No cambies ni agregues nada": son conversiones. [REVISAR] evita que invente. Listas con nombres de alumnos: recuerda "números de lista, no nombres"; camino sin IA: copiar la tabla de Word y pegarla en Excel (probarlo antes en la sala).</aside>
+    </section>
   </section>
 
 </div></div>

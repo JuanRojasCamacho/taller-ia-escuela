@@ -11,7 +11,7 @@
 | 1 | [Gancho](01-gancho/) | 16 | Del libro a una presentación para la clase (PowerPoint y PDF), un examen del trimestre en Word y su Excel de calificaciones, en dos chats |
 | 2 | [Kahoot](02-kahoot/) | 16 | 20 preguntas: repaso de la sesión 1 y del gancho, y sondeo de Word, PDF y PowerPoint |
 | 3 | [Los archivos](03-archivos/) | 18 | Qué es cada formato y cuándo pedirlo: Word, PDF, PowerPoint, Excel y, sobre todo, Markdown (el libro en `.md`) |
-| 4 | El reto | 48 | Dices tu meta, la IA te entrevista y sale tu examen o tu documento en Word. Si terminas antes: el PowerPoint o la animación de tu tema |
+| 4 | [El reto](04-reto/) | 48 | Tres chats con tu tema y tu material. Docentes: material para hoy, examen de lo que ya vimos y plan del siguiente trimestre. Secretarias: documento con su formato, PDF a Word y lista a Excel. La IA te entrevista antes de empezar |
 | | Descanso | 15 | |
 | 5 | ¿Qué IA usar? | 10 | Claude, ChatGPT, Gemini y NotebookLM: para qué sirve mejor cada una |
 | 6 | Tu póster con Gemini | 20 | Ejemplo: la posada de la escuela. Después, cada quien el suyo, con el logo de la escuela |
