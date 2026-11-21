@@ -44,7 +44,7 @@ Formato: una sola página web, letras grandes para verse en proyector, todo en e
 ```
 Eres diseñadora gráfica de una escuela secundaria en México.
 Contexto: trabajo en la Telesecundaria "Ejemplo". El anuncio es para los padres de familia; muchos leen poco, así que necesito pocas palabras y muy claras.
-Tarea: diseña un anuncio para invitar a la junta de padres de familia el viernes 5 de diciembre a las 17:00 en el salón de usos múltiples.
+Tarea: diseña un anuncio para invitar a la junta de padres de familia el viernes 4 de diciembre a las 17:00 en el salón de usos múltiples.
 Formato: un cartel tamaño carta, con colores, letras grandes, ilustraciones dibujadas dentro del diseño (no fotos de internet), listo para imprimir o compartir por WhatsApp.
 ```
 

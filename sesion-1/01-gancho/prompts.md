@@ -36,7 +36,7 @@ Formato: una sola página web (un solo archivo HTML), letras grandes, todo en es
 Después de la animación, sin abrir un chat nuevo:
 
 ```
-Ahora redacta un aviso para los padres de familia y tutores. Los alumnos van a presentar una exposición sobre este tema usando esta animación. Usa estos datos: Escuela Telesecundaria "Ejemplo", el viernes 5 de diciembre a las 10:00 en el salón de usos múltiples, firma la dirección. Tono formal pero amable, máximo media página, listo para imprimir.
+Ahora redacta un aviso para los padres de familia y tutores. Los alumnos van a presentar una exposición sobre este tema usando esta animación. Usa estos datos: Escuela Telesecundaria "Ejemplo", el viernes 11 de diciembre a las 10:00 en el salón de usos múltiples, firma la dirección. Tono formal pero amable, máximo media página, listo para imprimir.
 ```
 
 > Fíjate que no le repetimos el tema: **la conversación recuerda** lo que ya hablamos.

@@ -27,6 +27,6 @@ Formato: entrégamelo como documento de Word (.docx), tamaño carta, listo para 
 ```
 Eres director de una telesecundaria en México.
 Contexto: dirijo la Telesecundaria "Ejemplo". Quiero avisar a los padres de familia y tutores; muchos leen poco, así que necesito frases claras y cortas.
-Tarea: redacta un comunicado para avisar que la entrega de boletas será el viernes 12 de diciembre a las 9:00 en el salón de usos múltiples, y que es importante que asistan.
+Tarea: redacta un comunicado para avisar que la entrega de boletas será el viernes 11 de diciembre a las 9:00 en el salón de usos múltiples, y que es importante que asistan.
 Formato: entrégamelo como documento de Word (.docx), máximo media página, tono formal pero amable, listo para imprimir.
 ```
