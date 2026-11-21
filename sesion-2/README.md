@@ -15,5 +15,5 @@
 | | Descanso | 15 | |
 | 5 | [¿Qué IA usar?](05-que-ia/) | 10 | Claude, ChatGPT y Gemini: para qué sirve mejor cada una, y tres salidas si se te acaba el límite (otra IA, otra cuenta de Claude o esperar) |
 | 6 | [Tu póster con Gemini](06-poster/) | 20 | Cuatro experimentos todos juntos: dos solo con Gemini (un anuncio y una imagen con tu información) y dos uniendo IA (Claude te entrevista y te da el prompt para una historieta; Claude convierte la imagen de Gemini en Word o PowerPoint) |
-| 7 | Revisar antes de usar | 20 | Proyectamos el trabajo de algunos voluntarios y el grupo revisa la clave y el póster |
+| 7 | [Revisar antes de usar](07-revisar/) | 20 | Revisión en grupo: los voluntarios que alcancen pasan al cañón con lo del reto y con sus imágenes, y el grupo busca errores |
 | 8 | Cierre | 15 | Las tres reglas, Proyectos ("para no subirlo cada vez") y cómo seguir |

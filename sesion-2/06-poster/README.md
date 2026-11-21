@@ -1,6 +1,6 @@
 # Paso 6: Tu póster con Gemini
 
-**Duración:** 20 minutos · [← Paso 5](../05-que-ia/) · Paso 7 →
+**Duración:** 20 minutos · [← Paso 5](../05-que-ia/) · [Paso 7 →](../07-revisar/)
 
 ## Objetivo
 
