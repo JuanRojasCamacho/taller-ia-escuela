@@ -290,6 +290,11 @@
   .dos6 .mitad p b{font-weight:800;}
   .dos6 p.estilo{background:#fff;border-radius:10px;padding:8px 14px;}
   .dos6 .op{margin-top:.7em;}
+  .dos6.denso .mitad{font-size:.47em;padding:18px 24px;}
+  .dos6.denso .pb{padding:10px 16px 8px;}
+  .dos6.denso .pb .pn{margin:0 0 .3em;}
+  .dos6 .pb .pn{display:inline-block;margin:0 .4em .3em 0;font-weight:800;}
+  .dos6 .pb .pn b{display:inline-block;background:var(--acento);border-radius:8px;padding:0 9px;margin-right:6px;}
 </style>
 </head>
 <body>
@@ -772,12 +777,13 @@
     <p class="remate">En 1 y 2 es un chat nuevo: <span class="subrayado">vuelve a adjuntar tus archivos.</span></p>
     <aside class="notes">Minuto 7–10. Sin demostración: solo explicar. Otra IA responde distinto: revisar igual. "Cópialo a Word" porque no verificamos que ChatGPT y Gemini gratuitos entreguen Word o Excel como Claude. Segunda cuenta: necesita otro correo; las condiciones de Claude no la prohíben de forma explícita, pero sí prohíben eludir sus sistemas (revisado 21 nov 2026). Cierre del paso: "Para imágenes, Gemini. Vamos a hacer su póster."</aside>
   </section>
+
   <!-- ===================== PASO 6: TU PÓSTER CON GEMINI ===================== -->
   <section class="centro" data-p6="1">
     <div class="eyebrow">Paso 6 · Tu póster con Gemini</div>
     <p class="gigante">Claude no hace imágenes.<br><span class="subrayado">Gemini sí.</span></p>
     <p class="remate">Hoy sales con una imagen para tu escuela, con su logo.</p>
-    <aside class="notes">Minuto 0–2. Enseñar el póster de la posada hecho antes con los mismos prompts (plan B si falla el internet). Que todos abran gemini.google.com con el mismo Gmail de Claude. Los tres se hacen juntos: tú en un proyector con las diapositivas y en el otro haciéndolo en vivo.</aside>
+    <aside class="notes">Minuto 0–2. Enseñar el póster de la posada hecho antes con los mismos prompts (plan B si falla el internet). Que todos abran gemini.google.com con el mismo Gmail de Claude. Se hacen juntos: tú en un proyector con las diapositivas y en el otro haciéndolo en vivo.</aside>
   </section>
 
   <section data-p6="2">
@@ -791,60 +797,61 @@
       <div class="etapa"><div class="num">5</div><div class="t">Descarga</div><p>Sirve para WhatsApp o una hoja carta.</p></div>
     </div>
     <p class="pista">El texto que debe llevar, <b>exacto y entre comillas</b>. Para que no se vea "hecha por IA": <b>un estilo concreto y lo que no quieres</b>.</p>
-    <aside class="notes">Minuto 2–4. La versión gratuita descarga en 1K: alcanza para WhatsApp o una hoja carta, no para una lona. Son tres imágenes en 13 minutos: un ajuste solo si hace falta; si la imagen sale muy mal, mejor editar el prompt y volver a pedirla. Las imágenes llevan la marca de Gemini en una esquina: se deja, dice que la hizo una IA (si preguntan, se quita en Configuración, pero la marca invisible SynthID sigue).</aside>
+    <aside class="notes">Minuto 2–4. La versión gratuita descarga en 1K: alcanza para WhatsApp o una hoja carta, no para una lona. Son dos imágenes en 13 minutos: un ajuste solo si hace falta; si la imagen sale muy mal, mejor editar el prompt y volver a pedirla. Las imágenes llevan la marca de Gemini en una esquina: se deja, dice que la hizo una IA (si preguntan, se quita en Configuración, pero la marca invisible SynthID sigue).</aside>
   </section>
 
-  <section data-p6="3">
-    <span class="chat-tag">Todos juntos · 1 de 3</span>
-    <h2 style="font-size:1.6em">Un póster</h2>
-    <div class="adjuntos"><span class="archivo nuevo"><i>📎</i>Logo de la escuela</span></div>
-    <div class="prompt p6">
-      <p>Haz un póster vertical, tamaño carta, para <span class="lleno">la posada</span> de la telesecundaria <span class="lleno">[nombre]</span>. Te adjunto el logo de la escuela: ponlo arriba y no lo cambies.</p>
-      <p>El texto debe decir exactamente: "<span class="lleno">Posada navideña 2026</span>", "<span class="lleno">Viernes 18 de diciembre, 4:00 p. m.</span>", "<span class="lleno">Patio de la escuela</span>".</p>
-      <p class="estilo"><b>Estilo:</b> cartel de serigrafía mexicana a tres tintas (rojo, verde y crema), con <span class="lleno">papel picado y faroles</span> en formas planas y sencillas. Textura de papel y tinta un poco desalineada, como impreso a mano. Letras grandes y gruesas. Sin degradados, sin brillos, sin efecto 3D y sin personas.</p>
+  <section class="chatslide" data-p6="3">
+    <span class="chat-tag">Todos juntos · 1 de 2</span>
+    <h2 style="font-size:1.6em">Un anuncio</h2>
+    <div class="mitades dos6">
+      <div class="mitad">
+        <span class="quien">Docentes · un cartel para tu salón</span>
+        <div class="pb">
+          <p>Haz un cartel vertical, tamaño carta, para pegar en mi salón de <span class="lleno">1° A</span>. El texto debe decir exactamente: "<span class="lleno">Acuerdos del grupo</span>", "<span class="lleno">1. Llegamos a tiempo</span>", "<span class="lleno">2. Levantamos la mano para hablar</span>", "<span class="lleno">3. Cuidamos el material</span>", "<span class="lleno">4. Nos respetamos</span>".</p>
+          <p class="estilo"><b>Estilo:</b> cartel dibujado a mano con plumones sobre cartulina, letras de molde grandes y solo tres colores (azul, rojo y negro). Sin degradados, sin brillos, sin efecto 3D y sin personas.</p>
+        </div>
+      </div>
+      <div class="mitad">
+        <span class="quien">Secretarias · un aviso de la escuela</span>
+        <div class="pb">
+          <span class="archivo"><i>📎</i>Logo de la escuela</span>
+          <p>Haz un póster vertical, tamaño carta, para <span class="lleno">la posada</span> de la Escuela Telesecundaria "Santa Teresa". Te adjunto el logo: ponlo arriba y no lo cambies. El texto debe decir exactamente: "<span class="lleno">Posada navideña 2026</span>", "<span class="lleno">Viernes 18 de diciembre, 4:00 p. m.</span>", "<span class="lleno">Patio de la escuela</span>".</p>
+          <p class="estilo"><b>Estilo:</b> cartel de serigrafía mexicana a tres tintas (rojo, verde y crema), con papel picado y faroles en formas planas, textura de papel, como impreso a mano. Sin degradados, sin brillos, sin efecto 3D y sin personas.</p>
+        </div>
+      </div>
     </div>
-    <aside class="notes">Minuto 4–9. Tú lo haces en el otro proyector al mismo tiempo. Lo amarillo es lo suyo: la fecha es de ejemplo (el 18 dic 2026 sí es viernes). El estilo es lo que evita que "se vea IA": pocas tintas, formas planas, textura, y decir lo que NO queremos (degradados, brillos, 3D). Si Gemini deforma el logo: "deja un espacio en blanco arriba" y pegar el logo real en Word.</aside>
+    <aside class="notes">Minuto 4–10. Tú lo haces en el otro proyector al mismo tiempo (uno de cada lado, o el de las secretarias, que lleva logo). Lo amarillo es lo suyo: cambian el grupo, los acuerdos o el evento. La posada: el 18 dic 2026 es viernes y es el último día de clases antes de vacaciones según el calendario SEP; la hora y el lugar son de ejemplo. El estilo evita que "se vea IA": pocos colores, formas planas, textura y lo que NO queremos. Si Gemini deforma el logo: "deja un espacio en blanco arriba" y pegar el logo real en Word. Directivos: eligen la ruta que les sirva.</aside>
   </section>
 
-  <section data-p6="4">
-    <span class="chat-tag">Todos juntos · 2 de 3</span>
-    <h2 style="font-size:1.6em">Con tu documento</h2>
-    <div class="adjuntos"><span class="archivo nuevo"><i>📎</i>Tu tema en .md</span></div>
-    <div class="prompt p6">
-      <p>Te adjunto el tema "<span class="lleno">Sistemas nervioso y endocrino</span>" de nuestro libro. Hazme una infografía vertical, tamaño carta, para pegar en el salón de <span class="lleno">1°</span>, que explique <span class="lleno">qué hace cada sistema y en qué se parecen</span>.</p>
-      <p><b>Usa solo la información del documento.</b> Textos cortos y letra grande.</p>
-      <p class="estilo"><b>Estilo:</b> lámina escolar dibujada a mano, con dibujos de línea en tinta y acuarela suave, sobre fondo de papel crema. Títulos con letra de molde, como escrita con plumón. Sin degradados, sin brillos, sin efecto 3D y sin fotos.</p>
+  <section class="chatslide" data-p6="4">
+    <span class="chat-tag">Todos juntos · 2 de 2</span>
+    <h2 style="font-size:1.6em">Con tu información</h2>
+    <div class="mitades dos6 denso">
+      <div class="mitad">
+        <span class="quien">Docentes · una infografía de tu tema</span>
+        <div class="pb">
+          <span class="archivo"><i>📎</i>Tu tema en .md</span>
+          <p>Te adjunto el tema "<span class="lleno">Sistemas nervioso y endocrino</span>" de nuestro libro. Hazme una infografía vertical, tamaño carta, para pegar en el salón de <span class="lleno">1°</span>, que explique <span class="lleno">qué hace cada sistema y en qué se parecen</span>.</p>
+          <p><b>Usa solo la información del documento.</b> Textos cortos y letra grande.</p>
+          <p class="estilo"><b>Estilo:</b> lámina escolar dibujada a mano, con dibujos de línea en tinta y acuarela suave, sobre fondo de papel crema. Títulos como escritos con plumón. Sin degradados, sin brillos, sin efecto 3D y sin fotos.</p>
+        </div>
+      </div>
+      <div class="mitad">
+        <span class="quien">Secretarias · un diploma que puedas editar</span>
+        <div class="pb">
+          <span class="pn"><b>1</b>En Gemini, el fondo</span> <span class="archivo"><i>📎</i>Logo</span>
+          <p>Haz el fondo de un reconocimiento horizontal, tamaño carta. Te adjunto el logo: ponlo arriba al centro y no lo cambies. <b>No escribas ningún texto</b>; deja el centro en blanco. Estilo: diploma clásico de imprenta, fondo blanco, marco de línea fina doble en azul marino. Sin dibujos, sin dorados brillantes y sin degradados.</p>
+        </div>
+        <div class="pb">
+          <span class="pn"><b>2</b>En Claude, el PowerPoint</span> <span class="archivo"><i>📎</i>El fondo</span>
+          <p>Te adjunto el fondo de un reconocimiento. Hazme un PowerPoint de una diapositiva, tamaño carta horizontal, con esta imagen de fondo y <b>cuadros de texto editables</b> encima: "Escuela Telesecundaria ‘Santa Teresa’", "Reconocimiento", "a: [nombre del alumno]", "por haber concluido el <span class="lleno">1°</span> grado en el ciclo escolar 2026-2027", "Huajuapan de León, Oaxaca, a 9 de julio de 2027" y dos firmas: "Director(a)" y "Docente". Letra con remates, en negro y azul marino.</p>
+        </div>
+      </div>
     </div>
-    <p class="pista">Secretarias: adjunten un aviso o circular suya y pidan un cartel con su información.</p>
-    <aside class="notes">Minuto 9–13. Es la opción que más datos puede inventar: buena para el paso 7. Si Gemini no acepta el .md en "Crear imagen", que adjunten el mismo tema en PDF o Word.</aside>
+    <aside class="notes">Minuto 10–17. Docentes: el tema del reto en .md; es la que más datos puede inventar, buena para el paso 7. Si Gemini no acepta el .md en "Crear imagen", que adjunten el mismo tema en PDF o Word. Secretarias: el diploma nace de la queja de una secretaria que batalla con los diplomas; Gemini hace el diseño sin texto y Claude lo vuelve editable. [nombre del alumno] se deja así: se escribe en PowerPoint, no se le da a la IA. Datos de la escuela del formato de examen de Santa Teresa; el 9 jul 2027 es el fin del ciclo 2026-2027 según el calendario SEP (DOF): confirmar con la dirección si en Oaxaca aplica otra fecha. Sin mensajes de Claude: a mano en PowerPoint (Diseño > Formato del fondo > Relleno con imagen y cuadros de texto). Para muchos diplomas: Combinar correspondencia de Word con una lista de Excel (sin IA).</aside>
   </section>
 
   <section data-p6="5">
-    <span class="chat-tag">Todos juntos · 3 de 3</span>
-    <h2 style="font-size:1.6em">Algo formal, que puedas editar</h2>
-    <div class="mitades dos6">
-      <div class="mitad">
-        <span class="quien">1 · En Gemini: el fondo</span>
-        <div class="pb">
-          <span class="archivo"><i>📎</i>Logo de la escuela</span>
-          <p>Haz el fondo de un reconocimiento horizontal, tamaño carta. Te adjunto el logo: ponlo arriba al centro y no lo cambies. <b>No escribas ningún texto</b>; deja el centro en blanco.</p>
-          <p class="estilo"><b>Estilo:</b> diploma clásico de imprenta, fondo blanco, un marco de línea fina doble en <span class="lleno">azul marino</span> y mucho espacio en blanco. Sin dibujos, sin medallas ni listones, sin dorados brillantes y sin degradados.</p>
-        </div>
-        <p class="op">Descarga la imagen.</p>
-      </div>
-      <div class="mitad">
-        <span class="quien">2 · En Claude: el PowerPoint</span>
-        <div class="pb">
-          <span class="archivo"><i>📎</i>El fondo de Gemini</span>
-          <p>Te adjunto el fondo de un reconocimiento. Hazme un PowerPoint de una diapositiva, tamaño carta horizontal, con esta imagen de fondo y <b>cuadros de texto editables</b> encima: "Reconocimiento", "a: <span class="lleno">[nombre]</span>", "por <span class="lleno">[motivo]</span>", "<span class="lleno">[lugar y fecha]</span>" y dos líneas para firmas: "<span class="lleno">Director</span>" y "<span class="lleno">Docente</span>". Letra con remates, en negro y azul marino.</p>
-        </div>
-        <p class="op">Después solo cambias el texto en PowerPoint. El diseño no se mueve.</p>
-      </div>
-    </div>
-    <aside class="notes">Minuto 13–17. Si no da tiempo, se omite. Idea: Gemini hace el diseño sin texto y Claude lo vuelve editable; así no hay que generar otra imagen para cada diploma (era la queja de una secretaria). Los corchetes se dejan así: el nombre lo escribe cada quien en PowerPoint, no se le da a la IA. Si ya no tienen mensajes de Claude: a mano en PowerPoint, Diseño > Formato del fondo > Relleno con imagen, y cuadros de texto encima. Para muchos diplomas con nombres distintos: Combinar correspondencia de Word con una lista de Excel (sin IA). Por probar: que Gemini respete "no escribas ningún texto" y que Claude gratuito ponga la imagen como fondo del PowerPoint.</aside>
-  </section>
-
-  <section data-p6="6">
     <div class="eyebrow">Paso 6 · Antes de imprimir</div>
     <h2 style="font-size:1.6em">Revísalo</h2>
     <div class="revisa4">
@@ -854,7 +861,7 @@
       <div class="etapa"><div class="num">4</div><div class="t">Las personas</div><p>Nada de fotos ni nombres de alumnos.</p></div>
     </div>
     <p class="remate">En el paso 7 lo revisamos <span class="subrayado">entre todos.</span></p>
-    <aside class="notes">Minuto 17–20: revisar y descargar. Ubicar voluntarios para el paso 7: uno con póster, uno con infografía y uno con reconocimiento, si se puede.</aside>
+    <aside class="notes">Minuto 17–20: revisar y descargar. Ubicar voluntarios para el paso 7: un docente con su infografía y una secretaria con su diploma, si se puede.</aside>
   </section>
 </div></div>
 <script src="lib/reveal.js"></script>

@@ -4,7 +4,7 @@
 
 ## Objetivo
 
-Hacer **tres imágenes para tu escuela** con Gemini: un póster, una infografía a partir de tu documento y un reconocimiento que puedas editar después.
+Hacer **dos imágenes para tu escuela** con Gemini. Docentes: un cartel para su salón y una infografía de su tema. Secretarias: un aviso de la escuela y un diploma que puedan editar después.
 
 ## La idea
 
@@ -16,61 +16,65 @@ Claude no hace imágenes; **Gemini sí**. La receta es la misma, con tres cosas 
 
 ## Qué hacemos
 
-Lo hacemos **todos juntos**, una imagen a la vez.
+Lo hacemos **todos juntos**, en dos momentos. Cada perfil hace lo suyo.
 
 | Min | Qué pasa |
 | --- | --- |
 | 0–2 | "Claude no hace imágenes. Gemini sí." |
 | 2–4 | **En Gemini, paso a paso:** entra a gemini.google.com con tu Gmail → Crear imagen → adjunta y pide → si no te gustó, un ajuste → descarga |
-| 4–9 | **1 de 3 · Un póster** de la posada, con el logo |
-| 9–13 | **2 de 3 · Con tu documento:** una infografía de tu tema |
-| 13–17 | **3 de 3 · Algo formal, que puedas editar:** el fondo en Gemini y el PowerPoint en Claude |
+| 4–10 | **1 de 2 · Un anuncio.** Docentes: un cartel para su salón. Secretarias: un aviso de la escuela, con el logo |
+| 10–17 | **2 de 2 · Con tu información.** Docentes: una infografía de su tema. Secretarias: un diploma que puedan editar (el fondo en Gemini y el PowerPoint en Claude) |
 | 17–20 | **Revísalo** y descarga |
+
+Los directivos eligen la ruta que les sirva.
 
 ## El prompt
 
 Llena lo que está entre corchetes y cambia lo de ejemplo por lo tuyo.
 
-### 1 de 3 · Un póster
+### 1 de 2 · Un anuncio
 
-Adjunta el **logo de la escuela**.
+**Docentes: un cartel para tu salón.**
 
 ```
-Haz un póster vertical, tamaño carta, para la posada de la telesecundaria [nombre]. Te adjunto el logo de la escuela: ponlo arriba y no lo cambies.
-El texto debe decir exactamente: "Posada navideña 2026", "Viernes 18 de diciembre, 4:00 p. m.", "Patio de la escuela".
-Estilo: cartel de serigrafía mexicana a tres tintas (rojo, verde y crema), con papel picado y faroles en formas planas y sencillas. Textura de papel y tinta un poco desalineada, como impreso a mano. Letras grandes y gruesas. Sin degradados, sin brillos, sin efecto 3D y sin personas.
+Haz un cartel vertical, tamaño carta, para pegar en mi salón de 1° A. El texto debe decir exactamente: "Acuerdos del grupo", "1. Llegamos a tiempo", "2. Levantamos la mano para hablar", "3. Cuidamos el material", "4. Nos respetamos".
+Estilo: cartel dibujado a mano con plumones sobre cartulina, letras de molde grandes y solo tres colores (azul, rojo y negro). Sin degradados, sin brillos, sin efecto 3D y sin personas.
 ```
 
-### 2 de 3 · Con tu documento
+**Secretarias: un aviso de la escuela.** Adjunta el **logo de la escuela**.
 
-Adjunta **tu tema en `.md`** (el del reto).
+```
+Haz un póster vertical, tamaño carta, para la posada de la Escuela Telesecundaria "Santa Teresa". Te adjunto el logo: ponlo arriba y no lo cambies. El texto debe decir exactamente: "Posada navideña 2026", "Viernes 18 de diciembre, 4:00 p. m.", "Patio de la escuela".
+Estilo: cartel de serigrafía mexicana a tres tintas (rojo, verde y crema), con papel picado y faroles en formas planas, textura de papel, como impreso a mano. Sin degradados, sin brillos, sin efecto 3D y sin personas.
+```
+
+### 2 de 2 · Con tu información
+
+**Docentes: una infografía de tu tema.** Adjunta **tu tema en `.md`** (el del reto).
 
 ```
 Te adjunto el tema "Sistemas nervioso y endocrino" de nuestro libro. Hazme una infografía vertical, tamaño carta, para pegar en el salón de 1°, que explique qué hace cada sistema y en qué se parecen.
 Usa solo la información del documento. Textos cortos y letra grande.
-Estilo: lámina escolar dibujada a mano, con dibujos de línea en tinta y acuarela suave, sobre fondo de papel crema. Títulos con letra de molde, como escrita con plumón. Sin degradados, sin brillos, sin efecto 3D y sin fotos.
+Estilo: lámina escolar dibujada a mano, con dibujos de línea en tinta y acuarela suave, sobre fondo de papel crema. Títulos como escritos con plumón. Sin degradados, sin brillos, sin efecto 3D y sin fotos.
 ```
 
-**Secretarias:** adjunten un aviso o circular suya y pidan un cartel con su información.
+**Secretarias: un diploma que puedas editar.**
 
-### 3 de 3 · Algo formal, que puedas editar
-
-**En Gemini, el fondo.** Adjunta el **logo de la escuela**.
+*1. En Gemini, el fondo.* Adjunta el **logo de la escuela**.
 
 ```
-Haz el fondo de un reconocimiento horizontal, tamaño carta. Te adjunto el logo: ponlo arriba al centro y no lo cambies. No escribas ningún texto; deja el centro en blanco.
-Estilo: diploma clásico de imprenta, fondo blanco, un marco de línea fina doble en azul marino y mucho espacio en blanco. Sin dibujos, sin medallas ni listones, sin dorados brillantes y sin degradados.
+Haz el fondo de un reconocimiento horizontal, tamaño carta. Te adjunto el logo: ponlo arriba al centro y no lo cambies. No escribas ningún texto; deja el centro en blanco. Estilo: diploma clásico de imprenta, fondo blanco, marco de línea fina doble en azul marino. Sin dibujos, sin dorados brillantes y sin degradados.
 ```
 
 Descarga la imagen.
 
-**En Claude, el PowerPoint.** Adjunta **el fondo que te dio Gemini**.
+*2. En Claude, el PowerPoint.* Adjunta **el fondo que te dio Gemini**.
 
 ```
-Te adjunto el fondo de un reconocimiento. Hazme un PowerPoint de una diapositiva, tamaño carta horizontal, con esta imagen de fondo y cuadros de texto editables encima: "Reconocimiento", "a: [nombre]", "por [motivo]", "[lugar y fecha]" y dos líneas para firmas: "Director" y "Docente". Letra con remates, en negro y azul marino.
+Te adjunto el fondo de un reconocimiento. Hazme un PowerPoint de una diapositiva, tamaño carta horizontal, con esta imagen de fondo y cuadros de texto editables encima: "Escuela Telesecundaria 'Santa Teresa'", "Reconocimiento", "a: [nombre del alumno]", "por haber concluido el 1° grado en el ciclo escolar 2026-2027", "Huajuapan de León, Oaxaca, a 9 de julio de 2027" y dos firmas: "Director(a)" y "Docente". Letra con remates, en negro y azul marino.
 ```
 
-Deja `[nombre]` así: el nombre lo escribes tú en PowerPoint. Después solo cambias el texto y lo imprimes; el diseño no se mueve.
+Deja `[nombre del alumno]` así: el nombre lo escribes tú en PowerPoint. Después solo cambias el texto y lo imprimes; el diseño no se mueve.
 
 ### Si no te gustó
 
@@ -80,9 +84,9 @@ Cambia solo [lo que quieres cambiar]. No cambies nada más.
 
 ## Cómo debe verse
 
-- **Póster:** pocos colores, formas planas, letras grandes y el texto exactamente como lo escribiste.
+- **Cartel y aviso:** pocos colores, formas planas, letras grandes y el texto exactamente como lo escribiste.
 - **Infografía:** como una lámina dibujada a mano, con la información de tu tema y nada más.
-- **Reconocimiento:** un PowerPoint en el que puedes hacer clic en cada texto y cambiarlo.
+- **Diploma:** un PowerPoint en el que puedes hacer clic en cada texto y cambiarlo.
 - La versión gratuita de Gemini descarga en **1K**: alcanza para WhatsApp o una hoja carta, no para una lona.
 
 ## Antes de imprimir: revísalo
@@ -97,7 +101,7 @@ Cambia solo [lo que quieres cambiar]. No cambies nada más.
 - **No encuentro "Crear imagen":** está en las herramientas, junto a la caja del chat.
 - **Me cambió el logo:** pide "deja un espacio en blanco arriba", descarga la imagen y pega el logo real en Word o PowerPoint.
 - **No acepta mi `.md`:** adjunta el mismo tema en PDF o Word.
-- **Le escribió texto al fondo del reconocimiento:** pide "Quita todo el texto. No cambies nada más."
+- **Le escribió texto al fondo del diploma:** pide "Quita todo el texto. No cambies nada más."
 - **Ya no tengo mensajes de Claude:** abre PowerPoint, ve a Diseño > Formato del fondo > Relleno con imagen, elige el fondo de Gemini y escribe los textos en cuadros de texto.
 - **Se acabó el límite de Gemini:** termina en casa con este manual. El límite se recarga.
 
@@ -107,14 +111,16 @@ Cambia solo [lo que quieres cambiar]. No cambies nada más.
 <summary><strong>Notas para quien imparte</strong></summary>
 
 - **Dos proyectores:** en uno las diapositivas y en el otro tú haciéndolo en vivo, al mismo tiempo que ellos.
-- **Si no da tiempo, se omite el 3 de 3.** Si tampoco alcanza para la infografía, quítala: es la que más tarda en revisarse.
+- **Dos momentos, un perfil de cada lado** (docentes a la izquierda, secretarias a la derecha), como en el reto. Si no da tiempo, se omite el 2 de 2.
 - **El estilo evita el "se ve IA":** pocas tintas, formas planas, textura y una lista de lo que NO queremos (degradados, brillos, 3D).
-- **El reconocimiento editable** nace de una queja real: una secretaria batalla para diseñar diplomas. Gemini hace el diseño sin texto y Claude lo vuelve editable; así no hay que generar otra imagen para cada diploma.
+- **El diploma editable** nace de una queja real: una secretaria batalla para diseñar diplomas. Gemini hace el diseño sin texto y Claude lo vuelve editable; así no hay que generar otra imagen para cada diploma.
 - **Muchos diplomas con nombres distintos:** "Combinar correspondencia" de Word con una lista de Excel. No usa IA y los nombres no salen de la escuela.
-- **La fecha de la posada es de ejemplo:** el 18 dic 2026 sí cae en viernes. Que pongan la real.
+- **Fechas:** el 18 dic 2026 cae en viernes y es el último día de clases antes de vacaciones; el 9 jul 2027 es el fin del ciclo 2026-2027 (calendario SEP publicado en el DOF). La hora y el lugar de la posada son de ejemplo. Confirma con la dirección si en Oaxaca aplica otro calendario.
+- **Datos de la escuela:** del formato de examen de Santa Teresa (Escuela Telesecundaria "Santa Teresa", Huajuapan de León, Oaxaca). La clave del centro de trabajo y la zona no se pusieron porque el formato las trae en blanco.
 - **Datos verificados el 21 nov 2026** ([ayuda de Gemini](https://support.google.com/gemini/answer/14286560), [subir archivos](https://support.google.com/gemini/answer/14903178)): se entra con sesión iniciada; Crear imagen usa Nano Banana 2; se pueden subir imágenes para editarlas; hasta 10 archivos por mensaje; la versión gratuita descarga en 1K. Google no publica cuántas imágenes al día da la versión gratuita.
 - **Marca de agua:** las imágenes llevan la marca de Gemini en una esquina. Se deja: dice que la hizo una IA. Si preguntan, se quita en Configuración > Marca de agua, pero la marca invisible (SynthID) sigue.
 - **Por probar antes del taller:** que Gemini respete el logo; que acepte el `.md` en Crear imagen; que respete "no escribas ningún texto"; que Claude gratuito ponga la imagen como fondo del PowerPoint; que los tres estilos se vean como se describen; y si las tres imágenes caben en el límite gratuito. Guarda tus resultados como plan B.
-- **Voluntarios para el paso 7:** ubica a uno con póster, uno con infografía y uno con reconocimiento, si se puede.
+- **Voluntarios para el paso 7:** ubica a un docente con su infografía y una secretaria con su diploma, si se puede.
+- **Directivos:** eligen la ruta que les sirva.
 
 </details>
