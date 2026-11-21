@@ -50,7 +50,7 @@ En este paso no hay nada que hacer en tu equipo: solo observa.
 - **Ecuaciones de Word:** pedir el tipo "Ecuación" de Word responde a un problema real (las ecuaciones que se rompen al pasarlas a Word). Revisa antes del taller que salgan editables.
 - **"Te adjunto" en el mismo mensaje:** si el formato no se sube junto con el mensaje que lo menciona, Claude no lo ve.
 - **Rápido e impresionante:** pega los prompts sin explicarlos y no esperes a que termine cada respuesta para hablar.
-- **Formatos sin explicar:** en el gancho solo pega los prompts. Word, PowerPoint, PDF, Excel y Markdown (el libro) se explican en el paso siguiente, con los archivos que acaban de ver.
+- **Formatos sin explicar:** en el gancho solo pega los prompts. Word, PowerPoint, PDF, Excel y Markdown (el libro) se explican en el paso 3, después del Kahoot, con los archivos que acaban de ver.
 - **Siembra la revisión, no la hagas aquí:** pregunta al grupo "¿alguien revisó la clave?". La clave se revisa más adelante, en el paso de revisión.
 - **"Que te haga preguntas antes"** no va en el gancho: tiene su propia sección en la sesión.
 - **Puente a los Proyectos:** después de subir el libro dos veces, alguien preguntará "¿tengo que subirlo cada vez?". Guárdala para el cierre (Proyectos).
