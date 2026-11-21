@@ -7,10 +7,10 @@
 | # | Paso | Min | Qué pasa |
 | --- | --- | --- | --- |
 | 1 | [Gancho](01-gancho/) | 24 | Del libro a una presentación para la clase (PowerPoint y PDF), un examen del trimestre en Word y su Excel de calificaciones, en dos chats |
-| 2 | Lo que la IA no tiene | 12 | No tiene tu libro, tu escuela ni tus formatos |
-| 3 | Dale tus documentos | 30 | Subir el capítulo del libro y comparar contra la sesión 1; pedir que cite la página |
+| 2 | Los archivos | 22 | Word, PDF, PowerPoint, Excel y Markdown: qué le das a la IA y qué te devuelve, con los archivos que acabas de ver. Pasas tu material a .md |
+| 3 | El reto | 50 | Dices tu meta, la IA te entrevista y sale tu examen o tu documento en Word. Si terminas antes: el PowerPoint o la animación de tu tema |
 | | Descanso | 15 | |
-| 4a | Tu ficha de contexto | 20 | Convertir tu propio material (Word, PDF, foto de libreta) en texto ordenado |
-| 4b | Reto | 58 | Docentes: examen con el capítulo y tu ficha. Secretarias: subir su PDF y que la IA lo adapte |
-| 5 | Revisar la clave y pasar a Word | 20 | Respuesta por respuesta |
-| 6 | Cierre | 10 | |
+| 4 | ¿Qué IA para qué? | 10 | Claude, ChatGPT, Gemini y NotebookLM: para qué sirve mejor cada una |
+| 5 | Tu póster con Gemini | 20 | Ejemplo: la posada de la escuela. Después, cada quien el suyo, con el logo de la escuela |
+| 6 | Revisar antes de usar | 22 | Proyectamos el trabajo de algunos voluntarios y el grupo revisa la clave y el póster |
+| 7 | Cierre | 15 | Las tres reglas, Proyectos ("para no subirlo cada vez") y cómo seguir |
