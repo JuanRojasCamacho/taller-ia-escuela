@@ -5,7 +5,8 @@
 Guarda aquí, hechos antes del taller con los mismos prompts:
 
 - la lista de ejercicios del chat 1 (Word),
-- la presentación del chat 1 (PowerPoint), y
-- el examen del chat 2 (Word), revisado.
+- la presentación del chat 1 (PowerPoint y PDF),
+- el examen del chat 2 (Word), revisado, y
+- la tabla de calificaciones del chat 2 (Excel).
 
 Si en vivo Claude tarda o falla, abre estos archivos.

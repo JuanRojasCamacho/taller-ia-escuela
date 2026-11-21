@@ -6,7 +6,7 @@
 
 | # | Paso | Min | Qué pasa |
 | --- | --- | --- | --- |
-| 1 | [Gancho](01-gancho/) | 18 | Del libro a una presentación para la clase y un examen del trimestre en Word, en dos chats |
+| 1 | [Gancho](01-gancho/) | 24 | Del libro a una presentación para la clase (PowerPoint y PDF), un examen del trimestre en Word y su Excel de calificaciones, en dos chats |
 | 2 | Lo que la IA no tiene | 12 | No tiene tu libro, tu escuela ni tus formatos |
 | 3 | Dale tus documentos | 30 | Subir el capítulo del libro y comparar contra la sesión 1; pedir que cite la página |
 | | Descanso | 15 | |

@@ -2,7 +2,7 @@
 
 [← Volver al paso 1](README.md)
 
-Siguen la receta de ayer: **rol, contexto, tarea y formato**. Son dos chats: cuatro mensajes en el primero y tres en el segundo.
+Siguen la receta de ayer: **rol, contexto, tarea y formato**. Son dos chats: cinco mensajes en el primero y cuatro en el segundo.
 
 ## Chat 1, hoy: ejercicios con el libro
 
@@ -35,6 +35,12 @@ Descarga el Word: lo vas a necesitar en el chat 2.
 Tomando en cuenta estos ejercicios, hazme una presentación de PowerPoint para que los vayamos haciendo en clase. Dame 3 ejercicios resueltos paso a paso, distintos a los que me mostraste, que sirvan de base para que los alumnos puedan hacer bien los ejercicios.
 ```
 
+**Mensaje 5.** La misma presentación en PDF:
+
+```
+Dámela también en PDF, porque la voy a usar en mi iPad.
+```
+
 ## Chat 2, al cerrar el trimestre: el examen
 
 **Mensaje 1.** Abre un **chat nuevo**. Adjunta el libro y las cinco listas de ejercicios ([archivos/](archivos/)) y pega:
@@ -55,6 +61,12 @@ Que los ejercicios no lleven el título del tema y que estén revueltos. Dámelo
 
 ```
 Te adjunto el formato que uso. Dame el examen en ese formato y listo para imprimir. Escribe las ecuaciones con el tipo "Ecuación" de Word.
+```
+
+**Mensaje 4.** Para calificar:
+
+```
+Tengo 25 alumnos. Ahora hazme un Excel para capturar las calificaciones de este examen: una fila por número de lista, una columna por reactivo, y que sume la calificación automáticamente.
 ```
 
 > Fíjate que en el chat 2 le volvimos a dar el libro: **un chat nuevo no recuerda** lo del chat 1.
