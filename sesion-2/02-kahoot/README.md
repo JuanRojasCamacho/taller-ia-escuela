@@ -22,13 +22,13 @@ Después del gancho toca moverse. Son 20 preguntas: 18 de opción múltiple y 2 
 
 | Min | Qué pasa |
 | --- | --- |
-| 0–2 | Entra a **kahoot.it** desde tu celular, escribe el PIN de la pantalla y tu nombre |
+| 0–2 | Entra a **kahoot.it** en tu computadora, escribe el PIN de la pantalla y tu nombre |
 | 2–15 | Las 20 preguntas, con el marcador entre preguntas |
 | 15–16 | Ganadores |
 
 ## El prompt
 
-En este paso no hay prompt: solo tu celular y [kahoot.it](https://kahoot.it).
+En este paso no hay prompt: solo tu computadora y [kahoot.it](https://kahoot.it).
 
 Las preguntas y respuestas están en [preguntas.md](preguntas.md).
 
@@ -38,7 +38,7 @@ El PIN en la pantalla, tu nombre en la lista de jugadores y una pregunta a la ve
 
 ## Si te atoraste
 
-- **No tengo celular o no tengo datos:** usa una computadora de la sala y entra a kahoot.it, o juega en pareja con quien tengas al lado.
+- **No tengo computadora:** usa una de la sala o tu celular, o juega en pareja con quien tengas al lado.
 - **No me deja entrar:** revisa que escribiste bien el PIN; si el juego ya empezó, espera a la siguiente pregunta.
 
 ---

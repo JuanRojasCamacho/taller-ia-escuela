@@ -6,7 +6,7 @@ Siguen la receta de ayer: **rol, contexto, tarea y formato**. Son dos chats: cin
 
 ## Chat 1, hoy: ejercicios con el libro
 
-**Mensaje 1.** Adjunta el libro (`2-2 Saberes y pensamiento cientifico.md`, 2° grado) y pega:
+**Mensaje 1.** Adjunta el libro (`0 - LIBRO COMPLETO - Saberes y pensamiento científico 2° grado.md`, en la carpeta de 2° grado) y pega:
 
 ```
 Eres profesor de matemáticas de secundaria en México.

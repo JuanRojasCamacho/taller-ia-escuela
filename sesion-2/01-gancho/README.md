@@ -44,7 +44,7 @@ En este paso no hay nada que hacer en tu equipo: solo observa.
 
 - **Por qué este tema:** "Sistemas de dos ecuaciones lineales con dos incógnitas" es del trimestre 1 de 2° en la dosificación de la SEP (contenido integrado 5, PDA MAT 6.2). En el libro *Saberes y pensamiento científico* de 2° (colección Sk'asolil) ocupa las págs. 33–40: tres ejemplos resueltos y **ningún ejercicio para practicar**. Es la queja de los profesores: "el material viene muy corto".
 - **Los cinco temas del examen** son los de matemáticas del trimestre 1 de 2° que se pueden evaluar por escrito: sistemas de ecuaciones (CI 5), propiedades de los exponentes y múltiplos y submúltiplos (CI 2), proporcionalidad inversa (CI 4) y medidas de tendencia central (CI 1).
-- **Los archivos:** el libro va en `.md` desde la carpeta de libros (no está en el repositorio). Las listas y el formato están en [archivos/](archivos/). En la demostración, la lista de sistemas sale del chat 1; la de [archivos/](archivos/) es el respaldo.
+- **Los archivos:** el libro va en `.md` desde la carpeta de libros (no está en el repositorio): `2° grado/2 Saberes y pensamiento científico/0 - LIBRO COMPLETO - Saberes y pensamiento científico 2° grado.md`. Las listas y el formato están en [archivos/](archivos/). En la demostración, la lista de sistemas sale del chat 1; la de [archivos/](archivos/) es el respaldo.
 - **El cambio de letras** es un ajuste real: los alumnos se confunden cuando las variables no son x y y.
 - **"Una tarea, un chat":** no contradice "mismo tema, mismo chat". El chat 2 es **otro momento** (fin de trimestre); un chat nuevo no sabe nada del anterior y hay que volver a darle los documentos.
 - **Ecuaciones de Word:** pedir el tipo "Ecuación" de Word responde a un problema real (las ecuaciones que se rompen al pasarlas a Word). Revisa antes del taller que salgan editables.
@@ -56,6 +56,5 @@ En este paso no hay nada que hacer en tu equipo: solo observa.
 - **Puente a los Proyectos:** después de subir el libro dos veces, alguien preguntará "¿tengo que subirlo cada vez?". Guárdala para el cierre (Proyectos).
 - **Usa tu cuenta Pro** para la demostración. Con el libro completo, la cuenta gratuita puede quedarse sin mensajes.
 - **Pega los prompts, no los escribas en vivo.** Ten los archivos a la mano en una carpeta.
-- **Plan B:** guarda en [resultados/](resultados/) la lista, el PowerPoint y el PDF del chat 1, y el examen y el Excel del chat 2 hechos antes del taller. Si Claude tarda o falla: "este lo hice ayer con los mismos prompts".
 
 </details>
