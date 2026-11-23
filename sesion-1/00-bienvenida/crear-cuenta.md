@@ -2,7 +2,7 @@
 
 [← Volver al paso 0](README.md)
 
-Hazlo **antes del taller**. Toma unos 20 minutos. La guía completa, con todos los pasos y qué hacer si algo falla, está en **[guia-cuentas.pdf](guia-cuentas.pdf)**.
+Hazlo **antes del taller**. Toma unos 20 minutos. La guía con capturas de cada paso está en **[guia-cuentas.pdf](guia-cuentas.pdf)**.
 
 | IA | Cuándo la usamos | Qué tienes que hacer |
 | --- | --- | --- |
