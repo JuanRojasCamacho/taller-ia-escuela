@@ -86,7 +86,7 @@ Los prompts de los tres chats de cada ruta, paso por paso, con su plantilla y un
 - **Chat 2 de docentes:** traen un documento de clases anteriores (sin aviso previo: ayúdalos en el momento). Si no traen nada, que usen el `.md` de otro tema que ya vieron.
 - **Chat 3, la dosificación (opcional):** ellos eligen materia y temas. La dosificación está en tu nota de la bóveda, con los PDF oficiales de la SEP. No hay PDF de 3° Lenguajes; en 2° y 3° de Ética, Naturaleza y Sociedades no viene la división por trimestre, y en 2° de Lo Humano y lo Comunitario que los contenidos 3 y 4 sean del trimestre 2 es una suposición. Quien dé esas materias le escribe sus temas a la IA.
 - **La clave del examen** se pide en hoja aparte porque se revisa en el paso 7.
-- **Listas de las secretarias:** recuerda el acuerdo "números de lista, no nombres". Para sus listas reales con nombres, hay un camino sin IA: copiar la tabla de Word y pegarla en Excel (pruébalo antes en una computadora de la sala).
+- **Listas de las secretarias:** recuerda: "números de lista, no nombres". Para sus listas reales con nombres, hay un camino sin IA: copiar la tabla de Word y pegarla en Excel (pruébalo antes en una computadora de la sala).
 - **"No cambies ni agregues nada"** en los chats 2 y 3 de secretarias: son conversiones, y sin esa frase la IA "mejora" el documento.
 - **PDF a Word:** la IA vuelve a escribir el documento; logos, firmas y sellos no pasan.
 - **Voluntarios para el paso 7:** mientras trabajan, ubica a 2 o 3 (de preferencia uno por perfil) con un examen y su clave, o un documento terminado.

@@ -8,6 +8,6 @@ Resultados ya hechos con los prompts de [prompts.md](../prompts.md). Sirven como
 | --- | --- | --- |
 | Ciclo del agua | *Pendiente: `ciclo-del-agua.html`* | *Pendiente* |
 | Independencia de México | *Pendiente: `independencia.html`* | *Pendiente* |
-| Prismas | *Pendiente: `prismas.html`* | *Pendiente* |
+| Prismas | [prismas.html](prismas.html) | [aviso-prismas.pdf](aviso-prismas.pdf) |
 
 > Antes de usarlas en clase, ábrelas y revisa que el contenido sea correcto.

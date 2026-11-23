@@ -9,7 +9,7 @@ Los tres siguen la misma receta: **rol, contexto, tarea y formato**. Se vota uno
 ```
 Eres diseñador de materiales educativos para secundaria en México.
 Contexto: doy Ciencias en una telesecundaria. Mis alumnos leen poco texto, así que necesito palabras sencillas y frases cortas.
-Tarea: crea una animación interactiva del ciclo del agua con 4 pasos: evaporación, condensación, precipitación, escurrimiento e infiltración. Cada paso se activa con un botón y anima la escena. Incluye un botón para reproducir todo el ciclo.
+Tarea: crea una animación interactiva del ciclo del agua con 4 pasos: 1) evaporación, 2) condensación, 3) precipitación y 4) escurrimiento e infiltración. Cada paso se activa con un botón y anima la escena. Incluye un botón para reproducir todo el ciclo.
 Formato: una sola página web (un solo archivo HTML), letras grandes para verse en proyector, todo en español, máximo 2 frases por paso.
 ```
 
@@ -36,7 +36,7 @@ Formato: una sola página web (un solo archivo HTML), letras grandes, todo en es
 Después de la animación, sin abrir un chat nuevo:
 
 ```
-Ahora redacta un aviso para los padres de familia y tutores. Los alumnos van a presentar una exposición sobre este tema usando esta animación. Usa estos datos: Escuela Telesecundaria "Ejemplo", el viernes 11 de diciembre a las 10:00 en el salón de usos múltiples, firma la dirección. Tono formal pero amable, máximo media página, listo para imprimir.
+Ahora redacta un aviso para los padres de familia y tutores. Los alumnos van a presentar una exposición sobre este tema usando esta animación. Usa estos datos: Escuela Telesecundaria "Ejemplo", el viernes 11 de diciembre a las 10:00 en el salón de usos múltiples, firma la dirección. Tono formal pero amable, máximo media página. Entrégamelo en PDF, tamaño carta, listo para imprimir.
 ```
 
 > Fíjate que no le repetimos el tema: **la conversación recuerda** lo que ya hablamos.

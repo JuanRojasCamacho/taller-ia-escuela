@@ -235,15 +235,6 @@
     <aside class="notes">Sin explicarlo: ya le están dando contexto. Retomarlo en el paso 3.</aside>
   </section>
 
-  <section>
-    <div class="eyebrow">Tres acuerdos</div>
-    <div class="acuerdos">
-      <div class="acuerdo"><div class="icono">🔢</div><div class="titulo">Números de lista, no nombres</div><p>Para calificar o registrar, la IA trabaja igual con "Alumno 7".</p></div>
-      <div class="acuerdo"><div class="icono">✋</div><div class="titulo">Si te atoras, levanta la mano</div><p>Nadie se queda atrás.</p></div>
-      <div class="acuerdo"><div class="icono">💬</div><div class="titulo">Se vale preguntar</div><p>Aquí nadie sabe todo.</p></div>
-    </div>
-  </section>
-
   <!-- ===================== PASO 1: GANCHO ===================== -->
   <section>
     <section class="centro">
@@ -269,7 +260,7 @@
       <div class="prompt">
         <p><span class="parte rol">Rol</span>Eres diseñador de materiales educativos para secundaria en México.</p>
         <p><span class="parte contexto">Contexto</span>Doy Ciencias en una telesecundaria. Mis alumnos leen poco texto, así que necesito palabras sencillas y frases cortas.</p>
-        <p><span class="parte tarea">Tarea</span>Crea una animación interactiva del ciclo del agua con 4 pasos: evaporación, condensación, precipitación, escurrimiento e infiltración. Cada paso se activa con un botón y anima la escena. Incluye un botón para reproducir todo el ciclo.</p>
+        <p><span class="parte tarea">Tarea</span>Crea una animación interactiva del ciclo del agua con 4 pasos: 1) evaporación, 2) condensación, 3) precipitación y 4) escurrimiento e infiltración. Cada paso se activa con un botón y anima la escena. Incluye un botón para reproducir todo el ciclo.</p>
         <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), letras grandes para verse en proyector, todo en español, máximo 2 frases por paso.</p>
       </div>
       <aside class="notes">Pegar el prompt en Claude (está en prompts.md). Mientras genera, leer los cuatro colores en voz alta SIN explicarlos: el paso 3 los explica.</aside>
@@ -302,17 +293,17 @@
 
   <section>
     <div class="eyebrow">El resultado</div>
-    <div class="marco">
-      Aquí va la animación ya hecha (plan B):&nbsp;<code>sesion-1/01-gancho/resultados/</code>
+    <div class="marco" style="border:0">
+      <iframe src="../sesion-1/01-gancho/resultados/prismas.html" title="Prismas: resultado del gancho (plan B)"></iframe>
     </div>
-    <aside class="notes">Lo normal es mostrar el resultado en vivo en Claude. Esta diapositiva es el plan B: cuando existan los archivos de resultados, aquí se abre la animación dentro de la presentación. Pasa un voluntario sin experiencia a usarla.</aside>
+    <aside class="notes">Lo normal es mostrar el resultado en vivo en Claude. Esta diapositiva es el plan B: aquí se abre la animación de prismas hecha antes del taller con el mismo prompt (si votan otro tema, di que es "la de otro tema"). El aviso en PDF está en resultados/aviso-prismas.pdf. Pasa un voluntario sin experiencia a usarla.</aside>
   </section>
 
   <section>
     <div class="eyebrow">En la misma conversación</div>
     <h2>Ahora, un aviso<br>para los tutores</h2>
     <div class="prompt">
-      <p>Ahora redacta un aviso para los padres de familia y tutores. Los alumnos van a presentar una exposición sobre este tema usando esta animación. Usa estos datos: Escuela Telesecundaria "Ejemplo", el viernes 11 de diciembre a las 10:00 en el salón de usos múltiples, firma la dirección. Tono formal pero amable, máximo media página, listo para imprimir.</p>
+      <p>Ahora redacta un aviso para los padres de familia y tutores. Los alumnos van a presentar una exposición sobre este tema usando esta animación. Usa estos datos: Escuela Telesecundaria "Ejemplo", el viernes 11 de diciembre a las 10:00 en el salón de usos múltiples, firma la dirección. Tono formal pero amable, máximo media página. Entrégamelo en PDF, tamaño carta, listo para imprimir.</p>
     </div>
     <p style="margin-top:.8em;font-size:.75em">No le repetimos el tema: <span class="subrayado">la conversación recuerda.</span></p>
     <aside class="notes">Esto es para que secretarias y directivos vean que el taller también es para ellos. Datos inventados.</aside>
@@ -401,15 +392,15 @@
       <h2>No lee palabras:<br><span class="subrayado">lee pedazos</span></h2>
       <p style="font-size:.75em">A cada pedazo se le llama <b>token</b>. Todo lo que escribes y todo lo que te responde se cuenta en tokens.</p>
       <p style="margin-top:1em"><a class="boton-link" href="https://platform.openai.com/tokenizer" target="_blank">Abrir el tokenizador (en vivo)</a></p>
-      <aside class="notes">Aclara: es la herramienta de OpenAI (ChatGPT); Claude no tiene una pública y corta distinto, pero la idea es la misma. Escribe en orden: "telesecundaria", "Huajuapan de León", y una misma frase en español y en inglés. Si falla, flecha abajo: captura.</aside>
+      <aside class="notes">Aclara: es la herramienta de OpenAI (ChatGPT); Claude no tiene una pública y corta distinto, pero la idea es la misma. Pega el texto de sesion-1/02-como-funciona/texto-tokenizador.md (pestaña GPT-5.x). Señala: agua, vapor y presión son un solo pedazo; Huajuapan, calientas y burbujas, varios; los números también se cortan. Si falla, flecha abajo: captura.</aside>
     </section>
 
     <section>
       <div class="eyebrow">Plan B · captura del tokenizador</div>
-      <div class="marco">
-        Aquí va la captura del tokenizador:&nbsp;<code>sesion-1/02-como-funciona/tokenizador.png</code>
+      <div class="marco" style="border:0;background:#1f1f1f">
+        <img src="../sesion-1/02-como-funciona/tokenizador.png" alt="Captura del tokenizador de OpenAI con el texto sobre cómo hierve el agua cortado en pedazos de colores" style="height:100%;width:auto;object-fit:contain;margin:0">
       </div>
-      <aside class="notes">Solo si no hay internet o la página cambió.</aside>
+      <aside class="notes">Solo si no hay internet o la página cambió. Señala Huajuapan (varios pedazos) contra agua o vapor (uno solo).</aside>
     </section>
   </section>
 

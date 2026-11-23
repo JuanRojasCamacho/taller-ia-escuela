@@ -77,7 +77,7 @@ Anota **dos cambios** en tu libreta. En el paso 5 se los vas a pedir a la IA.
 - **El tema lo eligen en el momento.** Dales 2 o 3 minutos para pensarlo antes de escribir. A los docentes recuérdales que su animación del paso 6 será de este tema.
 - **Directivos:** casi todos también dan clase, así que pueden hacer la planeación. Si prefieren algo de dirección, el comunicado en Word.
 - **Recorre el salón** mientras escriben. Fíjate sobre todo en el **contexto**: es la parte que más se quedan cortos. Si alguien se atora, pide a quien tenga al lado que lo apoye.
-- **Datos reales:** el oficio y el comunicado pueden llevar datos reales de la escuela y de autoridades. Datos de alumnos, con número de lista (acuerdo del paso 0).
+- **Datos reales:** el oficio y el comunicado pueden llevar datos reales de la escuela y de autoridades. Datos de alumnos, con número de lista, no con nombres.
 - **La diapositiva con la receta y los ejemplos se queda proyectada** mientras escriben.
 - **Los dos cambios** son la tarea del paso 5: que los anoten en papel, no en el chat.
 - **El voluntario:** de preferencia alguien a quien le haya salido bien a la primera. Lee su prompt en voz alta y señala qué parte de la receta hizo la diferencia.

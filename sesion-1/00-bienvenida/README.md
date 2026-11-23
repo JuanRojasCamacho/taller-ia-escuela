@@ -19,8 +19,7 @@ Crea tu cuenta siguiendo la [guía para crear tu cuenta](crear-cuenta.md).
 | Min | Qué pasa |
 | --- | --- |
 | 0–2 | Bienvenida |
-| 2–7 | Entramos a Claude y conocemos tres cosas: **dónde escribir**, el botón de **chat nuevo** y dónde quedan **tus conversaciones anteriores**. Escribimos nuestro primer mensaje |
-| 7–10 | Tres acuerdos del taller |
+| 2–10 | Entramos a Claude y conocemos tres cosas: **dónde escribir**, el botón de **chat nuevo** y dónde quedan **tus conversaciones anteriores**. Escribimos nuestro primer mensaje |
 
 ## El prompt
 
@@ -35,12 +34,6 @@ Ejemplos: *"soy maestra de Ciencias de 1.° y trabajo en una telesecundaria"*, *
 ## Cómo debe verse
 
 Claude te responde con ideas de cosas en las que te puede ayudar en tu trabajo.
-
-## Tres acuerdos
-
-1. **Para calificar o registrar, usa números de lista, no nombres.** La IA trabaja igual con "Alumno 7" que con un nombre, y así los datos de tus alumnos no salen de la escuela.
-2. **Si te atoras, levanta la mano.**
-3. **Aquí nadie sabe todo:** se vale preguntar.
 
 ## Si te atoraste
 

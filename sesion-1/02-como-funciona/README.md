@@ -44,7 +44,7 @@ La hoja para imprimir está en [hoja-juego.pdf](hoja-juego.pdf) (tamaño carta h
 
 En este paso no hay prompt: solo observa y participa en voz alta.
 
-**Para practicar en casa:** abre el [tokenizador de OpenAI](https://platform.openai.com/tokenizer) y escribe tu nombre, el de tu escuela y una frase en español y en inglés. Fíjate en cuántos pedazos salen. Es la herramienta de otra IA (la de ChatGPT); Claude corta distinto, pero la idea es la misma.
+**Para practicar en casa:** abre el [tokenizador de OpenAI](https://platform.openai.com/tokenizer) y pega el [texto del taller](texto-tokenizador.md), o escribe tu nombre, el de tu escuela y una frase en español y en inglés. Fíjate en cuántos pedazos salen. Es la herramienta de otra IA (la de ChatGPT); Claude corta distinto, pero la idea es la misma.
 
 ## Cómo debe verse
 
@@ -68,8 +68,8 @@ En este paso no hay nada que hacer en tu equipo. Si te quedaste atrás en los pa
 - **El juego es con el grupo, no con Claude:** lo que importa es que vivan cómo escribe la IA, palabra por palabra.
 - **"Esto es un modelo de lenguaje":** un minuto, justo después de "Así escribe la IA". Es ponerle nombre a lo que acaban de vivir, no una clase de teoría. Menciona "LLM" una vez, para que lo reconozcan si lo leen en otro lado, y sigue.
 - **El giro de Huajuapan:** a unos 1,600 m sobre el nivel del mar, el agua hierve a unos 95 °C, no a 100. "Cien" era lo más probable, pero no lo verdadero **aquí**. Deja la idea sembrada: en la sesión 2 vemos que lo local es justo donde la IA más inventa.
-- **Tokenizador en vivo:** aclara que es de OpenAI (ChatGPT) porque Claude no tiene uno público. Escribe, en este orden: "telesecundaria", "Huajuapan de León" y una misma frase en español y en inglés. El español suele gastar más pedazos que el inglés.
-- **Plan B del tokenizador:** si no hay internet o la página cambió, usa la captura de la presentación.
+- **Tokenizador en vivo:** aclara que es de OpenAI (ChatGPT) porque Claude no tiene uno público. Pega el texto de [texto-tokenizador.md](texto-tokenizador.md) en la pestaña GPT-5.x & O1/3. Señala que *agua*, *vapor* y *presión* son un solo pedazo, y que *Huajuapan*, *calientas* y *burbujas* se parten en varios. El texto también refuerza el giro: explica por qué en Huajuapan el agua hierve a unos 94–95 °C.
+- **Plan B del tokenizador:** si no hay internet o la página cambió, usa la captura de la presentación ([tokenizador.png](tokenizador.png)).
 - **Los tokens preparan la sesión 2:** ahí la IA falla al contar letras, porque ve pedazos y no letras.
 - **La regla 3 no contradice al gancho:** el aviso se pidió en el mismo chat porque era el mismo tema. Retómalo así: "¿se acuerdan de que no le repetimos el tema? Por eso".
 - **No te extiendas en la regla 2.** El paso 3 explica cómo cuidar la versión gratuita.
