@@ -53,7 +53,7 @@ Cada paso tiene el mismo formato:
 
 ```
 taller-ia-escuela/
-├── sesion-1/      ← Crear (pasos 0 a 7)
+├── sesion-1/      ← Crear (pasos 0 a 8)
 ├── sesion-2/      ← Dar contexto
 ├── presentacion/  ← lo que se proyecta (una presentación por sesión)
 └── recursos/      ← hojas de trabajo, reglas de oro y casos donde la IA falla

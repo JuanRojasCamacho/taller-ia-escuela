@@ -48,8 +48,12 @@
   /* resultado */
   .marco{background:#fff;border-radius:24px;box-shadow:0 14px 30px rgba(30,42,58,.10);height:560px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--suave);font-size:.6em;border:3px dashed #D9D2C3;}
   .marco iframe{width:100%;height:100%;border:0;}
+  /* código y pasos de descarga */
+  .codigo{background:#1e2a3a;color:#f4efe3;border-radius:20px;padding:28px 32px;font-family:Menlo,Consolas,monospace;font-size:.5em;line-height:1.55;text-align:left;white-space:pre;margin:0;}
+  .codigo .t{color:#FFD60A;}
+  .boton-demo{display:inline-block;background:#1565c0;color:#fff;font-weight:800;border-radius:14px;padding:14px 26px;font-size:.7em;margin:.2em;}
   /* mapa del día */
-  .mapa{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:.6em;}
+  .mapa{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:.6em;}
   .paso{background:#fff;border-radius:20px;padding:26px 28px;box-shadow:0 8px 18px rgba(30,42,58,.08);font-size:.68em;font-weight:700;}
   .paso b{display:inline-block;font-family:'Fraunces',serif;font-size:1.6em;font-weight:800;color:var(--tinta);background:var(--acento);border-radius:14px;padding:4px 16px;line-height:1.1;margin-right:14px;}
   .paso.hoy{background:var(--acento);}
@@ -320,7 +324,8 @@
       <div class="paso"><b>4</b>Producto 1</div>
       <div class="paso"><b>5</b>Pedir cambios</div>
       <div class="paso"><b>6</b>Producto 2</div>
-      <div class="paso"><b>7</b>Cierre</div>
+      <div class="paso"><b>7</b>Otra IA</div>
+      <div class="paso"><b>8</b>Cierre</div>
     </div>
   </section>
 
@@ -602,20 +607,115 @@
 
   <section>
     <div class="eyebrow">Antes de terminar</div>
-    <h2>Pruébalo y guárdalo</h2>
+    <h2>Pruébalo</h2>
     <div class="acuerdos">
       <div class="acuerdo"><div class="icono">👆</div><div class="titulo">Pruébalo</div><p>Da clic en todo. ¿Funciona? ¿Se lee bien?</p></div>
       <div class="acuerdo"><div class="icono">🔧</div><div class="titulo">Pide un ajuste</div><p>"Haz las letras más grandes. Lo demás déjalo igual."</p></div>
-      <div class="acuerdo"><div class="icono">🔗</div><div class="titulo">Guárdalo</div><p>Ábrelo en pantalla completa y publícalo para tener su enlace.</p></div>
+      <div class="acuerdo"><div class="icono">🔎</div><div class="titulo">Revísalo</div><p>¿Las fechas, los nombres y los datos son correctos?</p></div>
     </div>
     <p class="remate">Un quiz es para practicar, no para calificar: las respuestas viven dentro de la página.</p>
-    <aside class="notes">Minuto 20: probar y un ajuste (práctica del paso 5). Minuto 30: guardar. El enlace publicado se abre sin cuenta; pruébalo antes en la cuenta gratuita, junto con imprimir el anuncio y tomarle captura.</aside>
+    <aside class="notes">Minuto 20–28: probar, revisar y un ajuste (práctica del paso 5).</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">¿Qué es esto?</div>
+    <h2>Tu animación es un <span class="subrayado">archivo HTML</span></h2>
+    <div class="dos">
+      <div class="col centro" style="display:flex;flex-direction:column;justify-content:center"><h3>Lo que ves</h3>
+        <div><span class="boton-demo">Evaporación</span><span class="boton-demo">Condensación</span></div>
+        <p style="font-size:.55em;font-weight:700;color:var(--suave);margin-top:.8em">Botones, colores y animación</p></div>
+      <div class="col"><h3>Lo que hay dentro</h3>
+<pre class="codigo"><span class="t">&lt;h1&gt;</span>El ciclo del agua<span class="t">&lt;/h1&gt;</span>
+<span class="t">&lt;button&gt;</span>Evaporación<span class="t">&lt;/button&gt;</span>
+<span class="t">&lt;button&gt;</span>Condensación<span class="t">&lt;/button&gt;</span></pre>
+        <p style="font-size:.55em;font-weight:700;color:var(--suave);margin-top:.8em">Texto con instrucciones (código)</p></div>
+    </div>
+    <p class="clave" style="margin-top:.7em">Una página web en <span class="subrayado">un solo archivo</span>. Tu navegador lo lee y lo convierte en tu animación.</p>
+    <aside class="notes">Minuto 28. Cinco minutos y sin explicar el código: solo que por dentro es texto y que el navegador lo "dibuja". Secretarias: su anuncio también es HTML. Esto prepara el paso 3 de mañana (Los archivos).</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">¿Para qué te sirve?</div>
+    <h2>Es tuyo</h2>
+    <div class="acuerdos">
+      <div class="acuerdo"><div class="icono">🖱️</div><div class="titulo">Se abre con doble clic</div><p>En Chrome o Edge. No instalas nada.</p></div>
+      <div class="acuerdo"><div class="icono">📴</div><div class="titulo">Funciona sin internet</div><p>En tu salón, con el proyector.</p></div>
+      <div class="acuerdo"><div class="icono">💾</div><div class="titulo">Lo pasas en USB o por correo</div><p>A la computadora del salón o a otro maestro.</p></div>
+    </div>
+    <p class="remate">Publicarlo te da un enlace, pero ese <span class="subrayado">sí necesita internet</span>. Secretarias: para imprimir su anuncio, ábranlo y presionen Ctrl + P.</p>
+    <aside class="notes">Lo que más les importa es "sin internet". Publicar es opcional. Ctrl + P también permite "Guardar como PDF" (en Mac, Cmd + P).</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Ahora tú</div>
+    <h2>Descárgalo y ábrelo</h2>
+    <div class="acuerdos">
+      <div class="acuerdo"><div class="icono">1</div><div class="titulo">Descárgalo</div><p>En Claude, con el botón de descargar del panel de tu animación.</p></div>
+      <div class="acuerdo"><div class="icono">2</div><div class="titulo">Búscalo</div><p>En tu carpeta de Descargas. Termina en <b>.html</b>.</p></div>
+      <div class="acuerdo"><div class="icono">3</div><div class="titulo">Doble clic</div><p>Se abre en tu navegador. Ya es tuyo.</p></div>
+    </div>
+    <p class="remate">¿Se abrió como texto raro? Clic derecho → <b>Abrir con</b> → Chrome o Edge.</p>
+    <aside class="notes">Minuto 33–40. Recorre el salón. Por probar en la cuenta gratuita: dónde está exactamente el botón de descargar, que abra con doble clic y que funcione con el wifi apagado. Si la animación usa piezas de internet (3D), sin internet puede salir incompleta: "Hazlo sin librerías externas, que funcione sin internet".</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Paso 7 · La misma receta en otra IA</div>
+    <h2>Ahora, en ChatGPT</h2>
+    <div class="ias">
+      <div class="ia"><div class="n">Claude</div><div class="e">Ya la usaste</div></div>
+      <div class="ia yo"><div class="n">ChatGPT</div><div class="e">Ahora</div></div>
+      <div class="ia"><div class="n">Gemini</div><div class="e">Mañana</div></div>
+    </div>
+    <p class="clave">Entra a <b>chatgpt.com</b> → <b>Continuar con Google</b> con tu Gmail.</p>
+    <aside class="notes">Paso flexible: si van atrasados, sáltalo y ve al cierre (está en el manual). Gemini queda para mañana (imágenes). Minuto 0–3: que todos entren.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Paso 7 · La receta completa</div>
+    <div class="par">
+      <div><div class="quien">Docentes · un tema que no vayas a dar pronto</div><div class="prompt chico">
+          <p><span class="parte rol">Rol</span>Eres diseñador de materiales educativos para secundaria en México.</p>
+          <p><span class="parte contexto">Contexto</span>Doy <b>[materia]</b> a <b>[grado]</b> de telesecundaria. Mis alumnos <b>[lo que les cuesta]</b>.</p>
+          <p><span class="parte tarea">Tarea</span>Crea una animación interactiva sobre <b>[un tema distinto al de hoy]</b>, en la que los alumnos puedan dar clic y ver cómo funciona.</p>
+          <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), letras grandes para proyector, todo en español, ilustraciones dibujadas (no fotos de internet).</p>
+      </div></div>
+      <div><div class="quien">Secretarias · un anuncio de otro evento</div><div class="prompt chico">
+          <p><span class="parte rol">Rol</span>Eres diseñadora gráfica de una escuela secundaria en México.</p>
+          <p><span class="parte contexto">Contexto</span>Trabajo en la Telesecundaria <b>[nombre]</b>. El anuncio es para padres de familia; muchos leen poco: pocas palabras y muy claras.</p>
+          <p><span class="parte tarea">Tarea</span>Diseña un anuncio para <b>[el evento]</b>, el <b>[día y fecha]</b> a las <b>[hora]</b> en <b>[lugar]</b>.</p>
+          <p><span class="parte formato">Formato</span>Cartel tamaño carta, con colores, letras grandes, ilustraciones dibujadas (no fotos de internet), listo para imprimir.</p>
+      </div></div>
+    </div>
+    <p class="remate">ChatGPT no sabe nada de ti: <span class="subrayado">la receta va completa</span>.</p>
+    <aside class="notes">Minuto 3–12. Se queda proyectada mientras escriben. La trampa: si alguien pega el prompt del paso 6 (solo tarea y formato), saldrá genérico: "¿qué le faltó? Lo que Claude ya sabía". El tema distinto los obliga a escribir la receta completa y se llevan un material más. Si sale puro código: "Muéstrame la vista previa".</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Paso 7 · Compáralo</div>
+    <h2>¿Cuál te gustó más?</h2>
+    <div class="acuerdos">
+      <div class="acuerdo"><div class="icono">👆</div><div class="titulo">¿Funciona?</div><p>Da clic en todo.</p></div>
+      <div class="acuerdo"><div class="icono">🎯</div><div class="titulo">¿Es lo que pediste?</div><p>Letras grandes, en español, sin fotos rotas.</p></div>
+      <div class="acuerdo"><div class="icono">⚖️</div><div class="titulo">¿Claude o ChatGPT?</div><p>¿Cuál usarías? ¿Por qué?</p></div>
+    </div>
+    <aside class="notes">Minuto 12–17. Pregunta en voz alta a 2 o 3 personas cuál les gustó más y por qué. No hay respuesta correcta: cada IA responde distinto, como los equipos del juego del paso 2.</aside>
+  </section>
+
+  <section>
+    <div class="eyebrow">Paso 7 · Para llevarte</div>
+    <h2>Tres ideas</h2>
+    <div class="acuerdos">
+      <div class="acuerdo"><div class="icono">🧾</div><div class="titulo">Tu receta sirve en todas</div><p>Lo que más cambia el resultado es cómo le pides.</p></div>
+      <div class="acuerdo"><div class="icono">🆕</div><div class="titulo">Otra IA no sabe nada</div><p>Como un chat nuevo: dale la receta completa.</p></div>
+      <div class="acuerdo"><div class="icono">🔋</div><div class="titulo">Si se acaba Claude</div><p>Aquí sigues, con el mismo prompt.</p></div>
+    </div>
+    <aside class="notes">Minuto 17–20. La segunda idea se repite mañana en el gancho ("un chat nuevo no tiene tus documentos").</aside>
   </section>
 
 
   <!-- ===================== PASO 7: PROBAR Y CIERRE ===================== -->
   <section>
-    <div class="eyebrow">Paso 7 · Probar y cierre</div>
+    <div class="eyebrow">Paso 8 · Probar y cierre</div>
     <h2>Revisemos juntos</h2>
     <div class="dos">
       <div class="col"><h3>¿Qué revisar?</h3><ul>
@@ -626,7 +726,7 @@
       </ul></div>
       <div class="col" style="display:flex;flex-direction:column;justify-content:center;background:var(--acento)"><p class="clave" style="margin:0">2 o 3 voluntarios proyectan su trabajo.<br>Todo el grupo busca <span style="text-decoration:underline">un error</span>.</p></div>
     </div>
-    <aside class="notes">Uno de cada perfil si se puede (una animación y un anuncio). Si nadie encuentra nada, pregunta por las fechas, como sembramos en el gancho con la Independencia. Si aparece un error, celébralo: por eso se revisa.</aside>
+    <aside class="notes">Uno de cada perfil si se puede (una animación y un anuncio); si hubo paso 7, que proyecten la versión de Claude y la de ChatGPT. Si nadie encuentra nada, pregunta por las fechas, como sembramos en el gancho con la Independencia. Si aparece un error, celébralo: por eso se revisa.</aside>
   </section>
 
   <section class="centro">
@@ -650,14 +750,15 @@
       <div class="paso hoy"><b>4</b>Producto 1</div>
       <div class="paso hoy"><b>5</b>Pedir cambios</div>
       <div class="paso hoy"><b>6</b>Producto 2</div>
-      <div class="paso hoy"><b>7</b>Cierre</div>
+      <div class="paso hoy"><b>7</b>Otra IA</div>
+      <div class="paso hoy"><b>8</b>Cierre</div>
     </div>
     <p class="remate">Te llevas un documento en Word y una animación o un anuncio, <span class="subrayado">con tu tema</span>.</p>
   </section>
 
   <section>
-    <div class="eyebrow">Para la próxima sesión</div>
-    <h2 style="font-size:1.7em">Hoy le dijiste quién eres.<br>La próxima vez, <span class="subrayado">lo que sabes.</span></h2>
+    <div class="eyebrow">Para mañana</div>
+    <h2 style="font-size:1.7em">Hoy le dijiste quién eres.<br>Mañana, <span class="subrayado">lo que sabes.</span></h2>
     <div style="display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:center">
       <div class="col"><h3>Trae</h3><ul>
         <li>Docentes: tu material del tema<span>Un Word, un PDF o una foto de tu libreta.</span></li>

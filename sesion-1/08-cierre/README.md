@@ -1,6 +1,6 @@
-# Paso 7: Probar y cierre
+# Paso 8: Probar y cierre
 
-**Duración:** 15 minutos · [← Paso 6](../06-producto-2/) · [Sesión 2 →](../../sesion-2/)
+**Duración:** 15 minutos · [← Paso 7](../07-otra-ia/) · [Sesión 2 →](../../sesion-2/)
 
 ## Objetivo
 
@@ -42,13 +42,15 @@ Te vas con:
 
 | Perfil | Producto 1 | Producto 2 |
 | --- | --- | --- |
-| Docentes | Planeación de tu clase en Word | Animación o quiz de tu clase |
-| Secretarias | Oficio en Word | Anuncio o cartel para padres |
+| Docentes | Planeación de tu clase en Word | Animación o quiz de tu clase (archivo HTML) |
+| Secretarias | Oficio en Word | Anuncio o cartel para padres (archivo HTML, listo para imprimir) |
 | Directivos | Planeación o comunicado en Word | Animación o anuncio |
+
+Y si hubo tiempo para el paso 7, una animación o un anuncio más, hecho en ChatGPT.
 
 ## Para la sesión 2
 
-Hoy le dijiste a la IA **quién eres**. La próxima vez le vas a dar **lo que sabes**: vamos a subirle documentos.
+Hoy le dijiste a la IA **quién eres**. Mañana le vas a dar **lo que sabes**: vamos a subirle documentos.
 
 Trae:
 
@@ -66,7 +68,7 @@ Si no terminaste tu animación o tu anuncio, tus chats quedan guardados: termín
 <details>
 <summary><strong>Notas para quien imparte</strong></summary>
 
-- **Voluntarios:** de preferencia uno de cada perfil (una animación y un anuncio). Proyecta su trabajo y pregunta al grupo: "¿encuentran algún error?". Si nadie encuentra nada, pregunta por las fechas: es la pregunta que dejamos sembrada en el gancho con la Independencia.
+- **Voluntarios:** de preferencia uno de cada perfil (una animación y un anuncio). Si hubo paso 7, que proyecten su versión de Claude y la de ChatGPT. Proyecta su trabajo y pregunta al grupo: "¿encuentran algún error?". Si nadie encuentra nada, pregunta por las fechas: es la pregunta que dejamos sembrada en el gancho con la Independencia.
 - **Si aparece un error,** celébralo: es justo el punto del paso. "Por eso se revisa antes de usar".
 - **Lo que hiciste hoy:** proyecta el mapa del día con todos los pasos hechos.
 - **El manual:** proyecta el QR para que lo abran desde el celular. Ahí está todo para repetirlo en casa.

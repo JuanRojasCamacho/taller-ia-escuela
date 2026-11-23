@@ -1,6 +1,6 @@
 # Paso 6: Producto 2, la animación o el anuncio
 
-**Duración:** 35 minutos · [← Paso 5](../05-pedir-cambios/) · [Paso 7 →](../07-cierre/)
+**Duración:** 40 minutos · [← Paso 5](../05-pedir-cambios/) · [Paso 7 →](../07-otra-ia/)
 
 ## Objetivo
 
@@ -25,8 +25,9 @@ Es la promesa del gancho: *"hoy, antes de irte, tendrás uno de estos con tu tem
 | --- | --- |
 | 0–5 | Qué vamos a hacer y los ejemplos de prompt |
 | 5–20 | Escribe tu prompt y deja que la IA lo cree |
-| 20–30 | **Pruébalo** y pide **un ajuste**, como en el paso 5 |
-| 30–35 | **Guárdalo:** ábrelo en pantalla completa y publícalo para tener su enlace |
+| 20–28 | **Pruébalo** y pide **un ajuste**, como en el paso 5 |
+| 28–33 | **¿Qué es esto?** Tu animación es un archivo HTML |
+| 33–40 | **Descárgalo y ábrelo** desde tu computadora |
 
 ## El prompt
 
@@ -50,6 +51,26 @@ Formato: un cartel tamaño carta, con colores, letras grandes, ilustraciones dib
 
 Cambia el evento, la fecha y el lugar por los de tu anuncio.
 
+## Tu animación es un archivo HTML
+
+Lo que hizo Claude es **una página web dentro de un solo archivo**, que termina en **`.html`**. Por dentro es texto con instrucciones (código); tu navegador (Chrome o Edge) lo lee y lo convierte en la animación.
+
+| Lo que puedes hacer | Por qué te sirve |
+| --- | --- |
+| **Descargarlo** | Es tuyo: ya no depende de Claude ni de tu cuenta |
+| **Abrirlo con doble clic** | Se abre en tu navegador, sin instalar nada |
+| **Usarlo sin internet** | Funciona en tu salón, con el proyector |
+| **Pasarlo en USB o por correo** | Así llega a la computadora del salón |
+| **Publicarlo** (opcional) | Te da un enlace para compartirlo, pero ese **sí necesita internet** |
+
+**Secretarias:** su anuncio también es un archivo HTML. Para imprimirlo, ábrelo en el navegador y presiona **Ctrl + P** (en Mac, **Cmd + P**); ahí mismo puedes elegir **"Guardar como PDF"**.
+
+### Descárgalo y ábrelo
+
+1. En Claude, usa el botón de **descargar** del panel donde aparece tu animación.
+2. Busca el archivo en tu carpeta de **Descargas**: termina en `.html`.
+3. Dale **doble clic**: se abre en tu navegador. Ahí ya es tuyo.
+
 ## Cómo debe verse
 
 - **Animación:** una página con botones o partes que se pueden tocar, letras grandes y todo en español. Como la del gancho.
@@ -65,6 +86,8 @@ Cambia el evento, la fecha y el lugar por los de tu anuncio.
 - **No encuentro mi chat de la planeación:** está en tus conversaciones anteriores, en el panel de la izquierda.
 - **No se ve la animación o salió en blanco:** pídele "No se ve, corrígelo". Si sigue sin verse, pide una versión más sencilla.
 - **No sé qué momento de mi clase elegir:** el que más les cuesta a tus alumnos.
+- **Al abrir el archivo veo puro texto raro:** se abrió con otro programa. Dale clic derecho → **Abrir con** → Chrome o Edge.
+- **La animación descargada sale incompleta sin internet:** a veces la IA usa piezas de internet (por ejemplo, para el 3D). Pídele: *"Hazlo sin librerías externas, que funcione sin internet"*.
 
 ---
 
@@ -76,7 +99,9 @@ Cambia el evento, la fecha y el lugar por los de tu anuncio.
 - **Secretarias en chat nuevo:** tema nuevo, chat nuevo. Que adapten el ejemplo con un anuncio real que tengan que hacer.
 - **Directivos:** el que hizo planeación sigue a los docentes; el que hizo comunicado, a las secretarias.
 - **Lo que más falla:** imágenes rotas (por eso el "no fotos de internet") y animaciones que no cargan. Ten a la mano los resultados del gancho como ejemplo de cómo debe verse.
-- **Guardarlo:** lo crea como artefacto de Claude; se puede ver en pantalla completa y publicar para tener un enlace que se abre sin cuenta. Pruébalo antes en la cuenta gratuita, junto con imprimir el anuncio y tomarle captura.
+- **¿Qué es esto? (minuto 28):** cinco minutos, sin código. La idea: "es una página web en un solo archivo; se abre con doble clic y funciona sin internet". Lo de sin internet es lo que más les importa en el salón. Prepara la sesión 2: en el paso 3 (Los archivos) arranca con "ayer conocieron el HTML; hoy, los demás".
+- **Descargar es lo principal; publicar, opcional.** El enlace publicado se abre sin cuenta pero necesita internet. Pruébalo antes en la cuenta gratuita: dónde está el botón de descargar, que el archivo abra con doble clic y que funcione con el wifi apagado.
+- **Imprimir el anuncio:** Ctrl + P desde el navegador. Pruébalo antes en una computadora de la sala.
 - **Un ajuste en el minuto 20:** es la práctica del paso 5 con algo visual ("haz las letras más grandes", "cambia el color del título").
 
 </details>
