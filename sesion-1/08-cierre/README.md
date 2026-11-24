@@ -23,7 +23,7 @@ Las tres reglas del taller:
 | 0–6 | **Revisamos juntos:** 2 o 3 voluntarios proyectan su animación o anuncio y todo el grupo busca errores |
 | 6–9 | **Revisa antes de usar** y las tres reglas |
 | 9–12 | **Lo que hiciste hoy** |
-| 12–15 | **Para la sesión 2**, el manual y una palabra para describir hoy |
+| 12–15 | **Para la sesión 2** y una palabra para describir hoy |
 
 ### ¿Qué revisar?
 
@@ -71,7 +71,7 @@ Si no terminaste tu animación o tu anuncio, tus chats quedan guardados: termín
 - **Voluntarios:** de preferencia uno de cada perfil (una animación y un anuncio). Si hubo paso 7, que proyecten su versión de Claude y la de ChatGPT. Proyecta su trabajo y pregunta al grupo: "¿encuentran algún error?". Si nadie encuentra nada, pregunta por las fechas: es la pregunta que dejamos sembrada en el gancho con la Independencia.
 - **Si aparece un error,** celébralo: es justo el punto del paso. "Por eso se revisa antes de usar".
 - **Lo que hiciste hoy:** proyecta el mapa del día con todos los pasos hechos.
-- **El manual:** proyecta el QR para que lo abran desde el celular. Ahí está todo para repetirlo en casa.
+- **El manual:** ya lo tienen en la carpeta del taller que descargaron antes; ahí está todo para repetirlo en casa. Ya no se proyecta el QR.
 - **Una palabra:** cada quien dice una palabra para describir el taller. Sirve de opinión rápida y cierra con energía.
 
 </details>

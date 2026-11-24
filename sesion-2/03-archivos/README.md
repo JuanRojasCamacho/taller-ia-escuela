@@ -54,7 +54,7 @@ Con el mismo tema, el `.md` gasta varias veces menos de tu límite gratuito que 
 | --- | --- |
 | 0–1 | **Puente:** "Ya los vieron funcionar. Ahora: ¿qué es cada uno y cuándo lo pido?" |
 | 1–6 | **Los cuatro conocidos:** Word, PDF, PowerPoint y Excel, con las respuestas de las preguntas 14 a 17 del Kahoot |
-| 6–15 | **Markdown:** qué es, por qué dárselo a la IA en `.md` en lugar de PDF o Word, y cómo conseguir uno |
+| 6–15 | **Markdown:** qué es, por qué dárselo a la IA en `.md` en lugar de PDF o Word, cómo conseguir uno y, con una animación, por qué adjuntar solo el tema y no el libro completo |
 | 15–18 | **¿Qué le pido?** Los cinco en una tabla y la regla del formato |
 
 ## El prompt
@@ -87,6 +87,7 @@ En este paso no hay nada que hacer en tu equipo: solo escucha y pregunta.
 - **"Varias veces menos" y no una cifra:** la comparación de tokens es una estimación, no una medición (un tema de 5 páginas: unos 1,500 tokens en `.md` contra 10,000 a 12,000 en PDF). En la presentación se dice "varias veces menos".
 - **Lo de Word en la tabla es aproximado:** no hay una fuente que mida cuánto gasta un Word frente a un `.md`.
 - **Si preguntan por los PDF largos:** según la ayuda de Claude (consultada el 20 nov 2026), en PDF de hasta 100 páginas analiza texto e imágenes; en PDF de 101 a 1000 páginas, solo el texto. Por eso en la diapositiva se habla de "un tema".
+- **La animación "¿El libro completo o solo el tema?"** ([libro-o-tema.html](libro-o-tema.html)) va después de "¿Cómo consigo uno?" y dura unos 3 minutos. Es la animación de la sesión 1 con un archivo adjunto: primero con el libro completo (en el tercer mensaje se acaba el límite y el chat nuevo no lo arregla) y luego con solo el tema. Las cifras son de ejemplo y exageradas a propósito; si alguien dice que en el gancho el libro completo sí alcanzó, tiene razón, pero cada mensaje gasta como si lo subieras otra vez. Si te falta tiempo, recorta los minutos de los cuatro archivos conocidos.
 - **Conecta con la sesión 1:** "todo cuesta" (los tokens). El `.md` es la forma de que el libro completo quepa en la cuenta gratuita.
 - **Si preguntan por qué no viene con dibujos:** los libros salieron del formato accesible de la SEP, que es solo texto. Por eso tampoco tienen imágenes.
 

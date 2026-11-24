@@ -552,6 +552,12 @@
     <aside class="notes">Minuto 13–15. Los libros salieron del formato accesible de la SEP (solo texto); por eso no traen dibujos.</aside>
   </section>
 
+  <section data-animacion="../sesion-2/03-archivos/libro-o-tema.html">
+    <div class="eyebrow">Markdown · cuál</div>
+    <h2>¿El libro completo o solo el tema?</h2>
+    <aside class="notes">Animación a pantalla completa (unos 3 min). Avanza con sus botones; el control y las flechas cambian de diapositiva. Pregunta al grupo: "¿qué adjunto, el libro completo o solo el tema?". Córrela primero con "Libro completo": en el tercer mensaje se acaba el límite y ni el chat nuevo lo salva, porque el límite es de tu cuenta, no del chat. Luego regresa al paso 1 (Atrás) y córrela con "Solo el tema en .md". El paso 3 (tokens) ya lo vieron ayer: pásalo rápido. Mensaje: "cada mensaje se lleva otra vez el archivo y toda la conversación; por eso en el reto adjuntas solo tu tema". OJO: las cifras son de ejemplo y exageradas a propósito. Si alguien dice que en el gancho el libro completo sí alcanzó, tiene razón: alcanza para algunos mensajes, pero cada uno gasta como si subieras el libro otra vez.</aside>
+  </section>
+
   <section>
     <div class="eyebrow">Paso 3 · en resumen</div>
     <h2 style="font-size:1.6em">¿Qué le pido?</h2>
@@ -980,6 +986,32 @@
 <script src="lib/reveal.js"></script>
 <script src="lib/notes.js"></script>
 <script>
+  /* Animaciones a pantalla completa: una diapositiva con data-animacion muestra ese HTML encima de todo */
+  (function(){
+    var capa=document.createElement('div');
+    capa.id='capa-animacion';
+    capa.style.cssText='position:fixed;inset:0;z-index:50;background:#FBF7EF;display:none';
+    var marco=document.createElement('iframe');
+    marco.title='Animación';
+    marco.style.cssText='width:100%;height:100%;border:0;display:block';
+    capa.appendChild(marco);
+    document.body.appendChild(capa);
+    var ultimo=-1;
+    function revisar(){
+      var slide=Reveal.getCurrentSlide(), src=slide&&slide.getAttribute('data-animacion');
+      var h=Reveal.getIndices().h;
+      if(src){
+        /* Al llegar hacia adelante empieza en el paso 1; al regresar, sigue donde se quedó */
+        if(h>ultimo||marco.getAttribute('src')!==src){ marco.setAttribute('src',src); }
+        capa.style.display='block';
+      } else {
+        capa.style.display='none';
+      }
+      ultimo=h;
+    }
+    Reveal.on('ready',revisar);
+    Reveal.on('slidechanged',revisar);
+  })();
   Reveal.initialize({hash:true, width:1600, height:900, margin:0.06, transition:'slide', plugins:[RevealNotes]});
 </script>
 </body>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Qué pasa cuando adjuntas un archivo a la IA?</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#FBF7EF}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#1E2A3A}
+button{font-family:inherit;color:#1E2A3A}
+/* Escenario de 1600×900 que se escala para llenar la ventana sin cortarse */
+#stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;transform-origin:50% 50%;
+  transform:translate(-50%,-50%) scale(var(--s,0.8))}
+
+/* Frase de cada paso */
+#banner{position:absolute;left:270px;right:270px;top:26px;height:112px;display:flex;align-items:center;justify-content:center;text-align:center;z-index:60}
+#bannerText{font-family:Georgia,"Times New Roman",serif;font-size:46px;font-weight:bold;line-height:1.15;
+  background:linear-gradient(transparent 70%,#FFD60A 70%,#FFD60A 92%,transparent 92%);padding:0 6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+#fsBtn{position:absolute;right:50px;top:50px;z-index:70;font-size:18px;font-weight:600;padding:9px 16px;border:2px solid #1E2A3A;border-radius:10px;background:#fff;cursor:pointer}
+
+.zlabel{position:absolute;top:148px;height:40px;text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:30px;font-weight:bold}
+
+/* ---------- Tu computadora ---------- */
+#monitor{position:absolute;left:60px;top:195px;width:500px;height:495px;border:12px solid #1E2A3A;border-radius:20px;background:#fff;overflow:hidden}
+#chatHead{position:absolute;left:0;right:0;top:0;height:58px;border-bottom:2px solid #E6E1D6;display:flex;align-items:center;padding:0 12px;gap:8px;background:#F4EFE4}
+.dot{width:14px;height:14px;border-radius:50%;background:#C9C2B2}
+.chatTitle{font-size:22px;color:#5B6676;font-weight:600;margin-left:8px}
+#newChatBtn{margin-left:auto;font-size:22px;font-weight:800;padding:6px 16px;border-radius:14px;border:3px solid #1E2A3A;background:#FFD60A;cursor:pointer;display:none}
+#msgs{position:absolute;left:14px;right:14px;top:66px;bottom:88px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;overflow:hidden}
+#msgs.compact{gap:6px}
+.bub{max-width:86%;font-size:21px;line-height:1.3;padding:8px 14px;border-radius:16px}
+#msgs.compact .bub{font-size:17px;padding:5px 11px;line-height:1.25}
+.bub.u{align-self:flex-end;color:#fff;font-weight:600;border-bottom-right-radius:4px}
+.bub.a{align-self:flex-start;background:#fff;border:2px solid #D8DEE6;border-left-width:8px;border-bottom-left-radius:4px}
+.bub.sys{align-self:center;max-width:94%;text-align:center;background:#FDE7E0;border:3px solid #E4572E;color:#8A2A10;font-weight:800}
+/* Tarjeta del archivo adjunto */
+.fileCard{display:inline-flex;align-items:center;gap:8px;background:#F4EFE4;border:2px solid #C9C2B2;border-radius:10px;padding:4px 10px;font-size:17px;font-weight:700;color:#1E2A3A;white-space:nowrap}
+.fileCard .fs{font-size:14px;font-weight:700;color:#fff;background:#1E2A3A;border-radius:6px;padding:1px 7px}
+.bub .fileCard{display:flex;margin-bottom:6px;background:#fff;border-color:#fff}
+#msgs.compact .fileCard{font-size:15px;padding:2px 8px;margin-bottom:4px}
+#inputBar{position:absolute;left:12px;right:12px;bottom:12px;min-height:64px;border:2px solid #CBD2DC;border-radius:22px;display:flex;flex-wrap:wrap;align-items:center;padding:6px 8px 6px 18px;gap:6px 10px;background:#fff}
+#attach{flex-basis:100%;display:none}
+#inputText{flex:1;font-size:21px;line-height:1.25}
+#inputText.empty{color:#9AA3AF}
+#sendBtn{flex:none;width:46px;height:46px;border-radius:50%;border:none;background:#1E2A3A;display:flex;align-items:center;justify-content:center;pointer-events:none}
+#sendBtn .lbl{display:none}
+#sendBtn.big{width:auto;height:50px;padding:0 22px;border-radius:25px;background:#FFD60A;border:3px solid #1E2A3A;pointer-events:auto;cursor:pointer;animation:pulse 1.2s ease-in-out infinite}
+#sendBtn.big svg{display:none}
+#sendBtn.big .lbl{display:inline;font-size:24px;font-weight:800}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+/* Botones de elección del archivo (paso 1) */
+#chooser{position:absolute;left:14px;right:14px;top:74px;display:none;flex-direction:column;align-items:center;gap:12px}
+.chq{font-size:24px;font-weight:800}
+.choice{width:410px;padding:10px 18px;border:3px solid #1E2A3A;border-radius:16px;background:#fff;cursor:pointer;text-align:left;display:flex;flex-direction:column}
+.choice .t1{font-size:26px;font-weight:800}
+.choice .t2{font-size:18px;color:#5B6676;font-weight:600}
+.choice.sel{background:#FFD60A}
+.choice.sel .t2{color:#1E2A3A}
+.hint{font-size:18px;color:#5B6676;font-weight:600}
+#tray{position:absolute;left:14px;right:14px;top:74px;display:none;flex-direction:column;align-items:center;gap:12px}
+#trayCount{font-size:22px;font-weight:600;text-align:center;line-height:1.3}
+#trayCount b{font-size:26px}
+#trayCount small{font-size:17px;color:#5B6676;font-weight:600}
+#trayFile{display:flex;justify-content:center;width:100%}
+#trayChips{display:flex;flex-wrap:wrap;justify-content:center;gap:7px}
+#trayChips .chip{font-size:24px}
+
+.chip{display:inline-block;color:#fff;font-weight:800;border-radius:10px;padding:5px 12px;font-size:26px;line-height:1.2;text-shadow:0 1px 1px rgba(0,0,0,.3);white-space:nowrap}
+.chip.sm{font-size:14px;padding:2px 6px;border-radius:6px}
+.chip.xl{font-size:38px;padding:6px 18px;border-radius:12px}
+
+/* ---------- Internet ---------- */
+#netSvg{position:absolute;left:560px;top:232px;width:450px;height:60px;overflow:visible}
+#pathLine{stroke:#5B6676;stroke-width:7;stroke-linecap:round;stroke-dasharray:2 20}
+#netSvg.flow #pathLine{stroke:#1E2A3A;animation:dash .5s linear infinite}
+#netSvg.back #pathLine{stroke:#1E2A3A;animation:dashb .5s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-22}}
+@keyframes dashb{to{stroke-dashoffset:22}}
+#sentBox{position:absolute;left:600px;top:300px;width:360px;height:390px;border:3px dashed #C9C2B2;border-radius:18px;display:none;flex-direction:column;padding:8px 14px 6px}
+.sbTitle{text-align:center;font-size:21px;font-weight:700;color:#5B6676;height:30px}
+#stack{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:5px}
+.blk{border-radius:9px;color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;text-shadow:0 1px 1px rgba(0,0,0,.3);white-space:nowrap;overflow:hidden}
+.blk.file{font-size:18px}
+.empty{color:#9AA3AF;font-size:22px;text-align:center;margin:auto}
+#sentCount{text-align:center;font-size:21px;font-weight:700;height:34px;line-height:34px}
+#sentCount small{font-size:16px;color:#5B6676}
+#sentCount.bad{color:#C7401C}
+
+/* ---------- Servidor ---------- */
+#building{position:absolute;left:1010px;top:195px;width:530px;height:495px}
+.led{animation:blink 1.6s steps(2,start) infinite}
+@keyframes blink{50%{opacity:.15}}
+#model{position:absolute;left:1030px;top:315px;width:490px;height:370px;background:#fff;border:4px solid #1E2A3A;border-radius:18px;padding:10px 16px;display:flex;flex-direction:column;gap:6px}
+.mHead{display:flex;align-items:center;justify-content:space-between;height:34px}
+.mTitle{font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:bold}
+#loopTag{font-size:18px;font-weight:800;background:#FFD60A;border-radius:10px;padding:2px 10px;visibility:hidden}
+#mBody{display:flex;flex-direction:column;gap:8px}
+#readRow{height:50px;display:flex;flex-wrap:wrap;align-content:flex-start;gap:3px;overflow:hidden;align-items:center}
+.rl{font-size:16px;font-weight:700;color:#5B6676;margin-right:4px}
+#candWrap{height:140px;visibility:hidden}
+.cHead{font-size:17px;color:#5B6676;font-weight:600;height:24px}
+.tag{display:inline-block;font-size:14px;font-weight:700;border:2px solid #5B6676;border-radius:8px;padding:0 6px;margin-left:6px;color:#5B6676}
+.cRow{display:grid;grid-template-columns:150px 1fr 58px;align-items:center;gap:10px;height:36px;border-radius:10px;padding:0 8px;border:2px solid transparent}
+.cRow .cw{font-size:22px;font-weight:700;white-space:nowrap;overflow:hidden}
+.cRow .ct{height:18px;border-radius:9px;background:#EEE9DD;overflow:hidden}
+.cRow .cf{height:100%;background:#2E86AB;border-radius:9px;width:0}
+.cRow .cp{font-size:19px;font-weight:700;text-align:right;color:#5B6676}
+.cRow.win{background:#FFF6C2;border-color:#FFD60A}
+.cRow.win .cf{background:#1E2A3A}
+#respRow{min-height:58px;font-size:22px;line-height:1.3;display:flex;flex-wrap:wrap;align-content:flex-start;column-gap:.3em}
+#respRow .rl{font-size:17px;align-self:center}
+#note{font-size:17px;font-style:italic;color:#5B6676;visibility:hidden}
+
+/* ---------- Tu límite ---------- */
+#barLabel{position:absolute;left:60px;top:706px;height:44px;line-height:44px;font-family:Georgia,"Times New Roman",serif;font-size:30px;font-weight:bold}
+#track{position:absolute;left:230px;top:706px;width:1310px;height:44px;border:3px solid #1E2A3A;border-radius:22px;background:#fff;overflow:hidden}
+#fill{position:absolute;left:0;top:0;bottom:0;width:100%;background:#3BA55C}
+#ghost{position:absolute;top:0;bottom:0;width:0;background:repeating-linear-gradient(45deg,#F6C9BB 0 10px,#FBE3DB 10px 20px);display:none}
+#dropLabel{position:absolute;top:5px;height:28px;line-height:28px;padding:0 12px;margin:0 10px;background:#fff;border-radius:14px;font-size:21px;font-weight:800;color:#C7401C;white-space:nowrap;display:none}
+
+/* ---------- Controles ---------- */
+.nav{position:absolute;top:772px;height:76px;width:300px;font-size:32px;font-weight:800;border:3px solid #1E2A3A;border-radius:18px;cursor:pointer;z-index:60}
+#prevBtn{left:60px;background:#fff}
+#nextBtn{right:60px;background:#FFD60A}
+.nav:disabled{opacity:.35;cursor:default}
+#counter{position:absolute;left:500px;width:600px;top:772px;height:76px;line-height:76px;text-align:center;font-size:30px;font-weight:700;color:#5B6676;z-index:60}
+
+/* ---------- Recuadro de tokens (paso 3) ---------- */
+#modal{position:absolute;left:0;top:0;width:1600px;height:900px;background:rgba(251,247,239,.9);z-index:50;display:none}
+#card{position:absolute;left:170px;top:170px;width:1260px;background:#fff;border:4px solid #1E2A3A;border-radius:24px;padding:34px 56px;box-shadow:0 14px 0 rgba(30,42,58,.12)}
+.mrow{display:grid;grid-template-columns:300px 70px 1fr 260px;align-items:center;height:92px}
+.mw{font-family:Georgia,"Times New Roman",serif;font-size:48px;font-weight:bold}
+.ma{font-size:44px;color:#5B6676}
+.mc{display:flex;gap:10px}
+.mn{font-size:38px;font-weight:800;text-align:right}
+.mbig{font-size:38px;line-height:1.3;font-weight:700;margin-top:28px}
+.msmall{font-size:24px;color:#5B6676;margin-top:16px}
+
+#fx{position:absolute;left:0;top:0;width:1600px;height:900px;pointer-events:none;z-index:40}
+#fx>*{position:absolute;transform-origin:0 0}
+.pkt{background:#FFD60A;border:3px solid #1E2A3A;border-radius:14px;font-size:20px;font-weight:800;padding:8px 14px;white-space:nowrap}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="banner"><div><span id="bannerText"></span></div></div>
+  <button id="fsBtn" type="button">Pantalla completa</button>
+
+  <div class="zlabel" style="left:60px;width:500px">Tu computadora</div>
+  <div class="zlabel" style="left:580px;width:400px">Internet</div>
+  <div class="zlabel" style="left:1010px;width:530px">Servidor</div>
+
+  <div id="monitor">
+    <div id="chatHead"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="chatTitle">Chat</span><button id="newChatBtn" type="button">+ Chat nuevo</button></div>
+    <div id="msgs"></div>
+    <div id="chooser">
+      <div class="chq">¿Qué archivo adjuntas?</div>
+      <button class="choice" id="chLibro" type="button"><span class="t1">Libro completo</span><span class="t2">Un bloque muy grande</span></button>
+      <button class="choice" id="chMd" type="button"><span class="t1">Solo el tema en .md</span><span class="t2">Un bloque pequeño</span></button>
+      <div class="hint" id="hint">Elige uno para empezar</div>
+    </div>
+    <div id="tray"><div id="trayCount"></div><div id="trayFile"></div><div id="trayChips"></div></div>
+    <div id="inputBar"><div id="attach"></div><div id="inputText"></div><button id="sendBtn" type="button"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M3 2 L20 11 L3 20 L6 11 Z" fill="#fff"/></svg><span class="lbl">Enviar</span></button></div>
+  </div>
+
+  <svg id="netSvg" viewBox="0 0 450 60">
+    <line id="pathLine" x1="28" y1="30" x2="422" y2="30"/>
+    <path d="M6 30 L26 18 L26 42 Z" fill="#5B6676"/>
+    <path d="M444 30 L424 18 L424 42 Z" fill="#5B6676"/>
+  </svg>
+  <div id="sentBox"><div class="sbTitle">Lo que se envía</div><div id="stack"></div><div id="sentCount"></div></div>
+
+  <svg id="building" viewBox="0 0 530 495">
+    <rect x="2" y="8" width="526" height="485" rx="12" fill="#EFE8DA" stroke="#1E2A3A" stroke-width="4"/>
+    <rect x="2" y="8" width="526" height="12" fill="#1E2A3A"/>
+    <g id="racks"></g>
+  </svg>
+  <div id="model">
+    <div class="mHead"><span class="mTitle">Modelo de lenguaje</span><span id="loopTag"></span></div>
+    <div id="mBody">
+      <div id="readRow"></div>
+      <div id="candWrap"><div class="cHead">Siguiente palabra <span class="tag">ejemplo</span></div><div id="cands"></div></div>
+      <div id="respRow"></div>
+      <div id="note">Como su hoja del juego, pero miles de veces</div>
+    </div>
+  </div>
+
+  <div id="barLabel">Tu límite</div>
+  <div id="track"><div id="fill"></div><div id="ghost"></div><div id="dropLabel"></div></div>
+
+  <div id="fx"></div>
+
+  <div id="modal"><div id="card">
+    <div class="mrow"><div class="mw">“agua”</div><div class="ma">→</div><div class="mc"><span class="chip xl" style="background:#E4572E">agua</span></div><div class="mn">= 1 token</div></div>
+    <div class="mrow"><div class="mw">“hierve”</div><div class="ma">→</div><div class="mc"><span class="chip xl" style="background:#2E86AB">hier</span><span class="chip xl" style="background:#3BA55C">ve</span></div><div class="mn">= 2 tokens</div></div>
+    <div class="mrow"><div class="mw">“calientas”</div><div class="ma">→</div><div class="mc"><span class="chip xl" style="background:#9B5DE5">cal</span><span class="chip xl" style="background:#E4572E">ient</span><span class="chip xl" style="background:#2E86AB">as</span></div><div class="mn">= 3 tokens</div></div>
+    <p class="mbig">Las palabras comunes son un pedazo; las raras, varios. Todo lo que escribes y todo lo que te responde se cuenta en tokens.</p>
+    <p class="msmall">Así corta ChatGPT; Claude corta distinto, pero la idea es la misma.</p>
+  </div></div>
+
+  <button id="prevBtn" class="nav" type="button">◀ Atrás</button>
+  <div id="counter"></div>
+  <button id="nextBtn" class="nav" type="button">Siguiente ▶</button>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id)};
+var stage=$('stage'), S=1;
+var TOTAL=9;
+
+/* ---------- Escala al tamaño de la ventana ---------- */
+function fit(){
+  S=Math.min(window.innerWidth/1600, window.innerHeight/900);
+  stage.style.setProperty('--s', S);
+}
+window.addEventListener('resize', fit);
+document.addEventListener('fullscreenchange', function(){fit();fsLabel();});
+document.addEventListener('webkitfullscreenchange', function(){fit();fsLabel();});
+fit();
+
+/* ---------- Datos (todas las cifras son de ejemplo) ---------- */
+var C=['#E4572E','#2E86AB','#3BA55C','#9B5DE5'], NAVY='#1E2A3A';
+var FILES={
+  libro:{name:'Libro de Ciencias.md', size:'muy grande', label:'Libro completo', t:600},
+  md:{name:'Presión y ebullición.md', size:'pequeño', label:'Tema .md', t:20}
+};
+var mode=null;              /* 'libro' o 'md' */
+function F(){ return FILES[mode]; }
+var LIMIT=1800;             /* límite de ejemplo, en tokens */
+
+var MSG1='¿A cuántos grados hierve el agua en Huajuapan?';
+var TOK1=['¿','A','cu','ántos','grados','hier','ve','el','agua','en','Hua','ju','apan','?'];
+var RESP1='Unos 95 °C, porque en Huajuapan hay menos aire encima.';
+var W1=RESP1.split(' ');
+var CANDS1=[
+  [['Unos',62],['El',24],['A',14]],
+  [['95',70],['100',20],['90',10]],
+  [['°C,',81],['grados',14],['°F',5]],
+  [['porque',66],['ya',22],['pues',12]],
+  [['en',74],['aquí',16],['la',10]],
+  [['Huajuapan',71],['la',17],['esa',12]],
+  [['hay',77],['está',15],['tiene',8]],
+  [['menos',83],['poco',11],['más',6]],
+  [['aire',69],['presión',21],['altura',10]],
+  [['encima.',64],['arriba.',26],['ahí.',10]]
+];
+var MSG2='Hazlo más corto';
+var RESP2='Unos 95 °C.';
+var W2=RESP2.split(' ');
+var CANDS2=[CANDS1[0],CANDS1[1],[['°C.',84],['grados.',12],['°F.',4]]];
+var MSG3='¿Y a nivel del mar?';
+var RESP3='Unos 100 °C.';
+var W3=RESP3.split(' ');
+var CANDS3=[[['Unos',60],['A',25],['Al',15]],[['100',78],['95',15],['90',7]],[['°C.',85],['grados.',11],['°F.',4]]];
+var RESPN='¿Qué quieres que haga más corto?';
+var WN=RESPN.split(' ');
+var CANDSN=[
+  [['¿Qué',55],['¿Más',30],['Claro',15]],
+  [['quieres',72],['cosa',18],['texto',10]],
+  [['que',80],['hacer',12],['decir',8]],
+  [['haga',76],['sea',16],['ponga',8]],
+  [['más',85],['menos',9],['tan',6]],
+  [['corto?',88],['breve?',8],['chico?',4]]
+];
+var LIMIT_MSG='Llegaste a tu límite. Se renueva más tarde.';
+var PHRASES=['',
+  'Adjuntas un archivo y escribes tu mensaje',
+  'La IA no lee palabras: lee pedazos',
+  'A cada pedazo se le llama token',
+  'Sale de tu computadora y viaja a un servidor',
+  'Predice una palabra, la agrega y vuelve a empezar',
+  'Regresa palabra por palabra',
+  'Cada mensaje viaja con el archivo y toda la conversación',
+  'Tercer mensaje: el archivo viaja otra vez',
+  'Chat nuevo: empieza ligero… pero no recuerda nada'];
+
+/* Mensajes del chat */
+var U1={k:'u1',who:'u',text:MSG1,color:C[1],file:true};
+var A1={k:'a1',who:'a',text:RESP1,color:C[2]};
+var U2={k:'u2',who:'u',text:MSG2,color:C[0]};
+var A2={k:'a2',who:'a',text:RESP2,color:C[3]};
+var U3={k:'u3',who:'u',text:MSG3,color:C[1]};
+var A3={k:'a3',who:'a',text:RESP3,color:'#C9C2B2'};
+var SYS={k:'sys',who:'sys',text:LIMIT_MSG};
+var N1={k:'n1',who:'u',text:MSG2,color:C[3]};
+var NA={k:'na',who:'a',text:RESPN,color:'#C9C2B2'};
+/* Bloques del paquete (tokens de ejemplo) */
+function BF(){ return {label:F().label,t:F().t,color:NAVY,key:'file',file:true}; }
+var B_U1={label:'Mensaje 1',t:14,color:C[1],key:'u1'};
+var B_A1={label:'Respuesta 1',t:16,color:C[2],key:'a1'};
+var B_U2={label:'Mensaje 2',t:5,color:C[0],key:'u2'};
+var B_A2={label:'Respuesta 2',t:5,color:C[3],key:'a2'};
+var B_U3={label:'Mensaje 3',t:6,color:C[1],key:'u3'};
+var B_N1={label:'Mensaje 1',t:5,color:C[3],key:'n1'};
+function pkg(n){
+  if(n===4) return [BF(),B_U1];
+  if(n===7) return [BF(),B_U1,B_A1,B_U2];
+  return [BF(),B_U1,B_A1,B_U2,B_A2,B_U3];
+}
+/* Gasto de cada intercambio = lo que se envía + lo que regresa */
+function bars(){
+  var f=F().t;
+  var c6=f+14+16, c7=f+14+16+5+5, c8=f+14+16+5+5+6+5, c9=5+8;
+  var p6=100-c6/LIMIT*100, p7=p6-c7/LIMIT*100;
+  var out=(p7-c8/LIMIT*100)<=0;
+  var p8=out?0:p7-c8/LIMIT*100, p9=out?0:p8-c9/LIMIT*100;
+  return {c6:c6,c7:c7,c8:c8,c9:c9,p6:p6,p7:p7,p8:p8,p9:p9,out:out};
+}
+function lbl(c){ return '−'+c+' tokens (ejemplo)'; }
+function barFor(n,sb){
+  if(n<6) return null;
+  var b=bars();
+  if(n===6) return {pct:b.p6,prev:100,label:lbl(b.c6)};
+  if(n===7) return {pct:b.p7,prev:b.p6,label:lbl(b.c7)};
+  if(n===8||sb===0) return b.out?{pct:0,prev:b.p7,label:'Se acabó tu límite (ejemplo)'}:{pct:b.p8,prev:b.p7,label:lbl(b.c8)};
+  if(sb===1) return {pct:b.p8};
+  return b.out?{pct:0,label:'Límite agotado (ejemplo)'}:{pct:b.p9,prev:b.p8,label:lbl(b.c9)};
+}
+var PX0=580, PX1=990, PY=262;
+
+/* ---------- Racks del edificio ---------- */
+(function(){
+  var g=$('racks'), h='', ledC=['#FFD60A','#3BA55C','#FFD60A'];
+  for(var r=0;r<6;r++){
+    var x=20+r*84;
+    h+='<rect x="'+x+'" y="34" width="70" height="80" rx="6" fill="#1E2A3A"/>';
+    for(var s=0;s<3;s++){
+      var y=44+s*23;
+      h+='<rect x="'+(x+8)+'" y="'+y+'" width="54" height="15" rx="3" fill="#33445C"/>';
+      h+='<circle class="led" style="animation-delay:'+((r*3+s)*0.37%1.6).toFixed(2)+'s" cx="'+(x+52)+'" cy="'+(y+7.5)+'" r="4" fill="'+ledC[(r+s)%3]+'"/>';
+      h+='<rect x="'+(x+14)+'" y="'+(y+6)+'" width="24" height="3" rx="1.5" fill="#5B6676"/>';
+    }
+  }
+  g.innerHTML=h;
+})();
+
+/* ---------- Utilidades de animación ---------- */
+var run=0, live=[];
+function Cancel(){}
+function chk(my){ if(my!==run) throw new Cancel(); }
+function A(el,kf,opt,my){
+  var a=el.animate(kf,opt); live.push(a);
+  return a.finished.then(function(){ chk(my); });
+}
+function sleep(ms,my){ return new Promise(function(res){setTimeout(res,ms)}).then(function(){chk(my)}); }
+function cancelAll(){
+  live.forEach(function(a){ try{a.cancel()}catch(e){} }); live=[];
+  $('fx').innerHTML='';
+}
+function cancelOn(el){ live.forEach(function(a){ if(a.effect&&a.effect.target===el) a.cancel(); }); }
+function box(el){
+  var r=el.getBoundingClientRect(), s=stage.getBoundingClientRect();
+  return {x:(r.left-s.left)/S, y:(r.top-s.top)/S, w:r.width/S, h:r.height/S};
+}
+function mk(html,x,y){
+  var d=document.createElement('div'); d.innerHTML=html;
+  var el=d.firstChild; el.style.left=x+'px'; el.style.top=y+'px';
+  $('fx').appendChild(el); return el;
+}
+function pop(el,my,d){ return A(el,[{transform:'scale(.6)',opacity:0},{transform:'scale(1)',opacity:1}],{duration:d||380,easing:'cubic-bezier(.3,1.5,.6,1)'},my); }
+function flow(dir){ var n=$('netSvg'); n.classList.remove('flow','back'); if(dir) n.classList.add(dir); }
+
+/* ---------- Pintar cada parte ---------- */
+function setBanner(n){ $('bannerText').textContent=PHRASES[n]; }
+function chipHTML(t,i,cls){ return '<span class="chip'+(cls?' '+cls:'')+'" style="background:'+C[i%4]+'">'+t+'</span>'; }
+var DOC_ICON='<svg width="16" height="20" viewBox="0 0 16 20"><path d="M1 1 H10 L15 6 V19 H1 Z" fill="#fff" stroke="#1E2A3A" stroke-width="2"/><path d="M10 1 V6 H15" fill="none" stroke="#1E2A3A" stroke-width="2"/></svg>';
+function fileCardHTML(){ return '<span class="fileCard" data-k="file">'+DOC_ICON+F().name+' <span class="fs">'+F().size+'</span></span>'; }
+function bubHTML(m,partial){
+  var st=m.who==='u'?'background:'+m.color:(m.who==='a'?'border-left-color:'+m.color:'');
+  var body=(m.file&&mode?fileCardHTML():'')+(partial==null?m.text:partial);
+  return '<div class="bub '+m.who+'" data-k="'+m.k+'" style="'+st+'">'+body+'</div>';
+}
+function compact(){ var m=$('msgs'); m.classList.toggle('compact',m.children.length>=5); }
+function setChat(list){ $('msgs').innerHTML=list.map(function(m){return bubHTML(m)}).join(''); compact(); }
+function setInput(t){
+  var el=$('inputText');
+  if(t){ el.textContent=t; el.classList.remove('empty'); }
+  else { el.textContent='Escribe un mensaje…'; el.classList.add('empty'); }
+}
+function setAttach(show){
+  var a=$('attach');
+  a.style.display=show&&mode?'block':'none';
+  a.innerHTML=mode?fileCardHTML():'';
+}
+function setChooser(show){
+  $('chooser').style.display=show?'flex':'none';
+  $('chLibro').classList.toggle('sel',mode==='libro');
+  $('chMd').classList.toggle('sel',mode==='md');
+  $('hint').style.visibility=mode?'hidden':'visible';
+}
+function trayFileHTML(){
+  var f=F();
+  return mode==='libro'
+    ? '<div class="blk file" style="background:'+NAVY+';width:100%;height:78px;font-size:22px">'+f.name+' · '+f.t+' tokens</div>'
+    : '<div class="blk file" style="background:'+NAVY+';height:38px;padding:0 14px;font-size:18px">'+f.name+' · '+f.t+'</div>';
+}
+function setTray(show){
+  $('tray').style.display=show?'flex':'none';
+  if(!mode) return;
+  $('trayChips').innerHTML=TOK1.map(function(t,i){return chipHTML(t,i)}).join('');
+  $('trayFile').innerHTML=trayFileHTML();
+  trayCount(TOK1.length);
+}
+function trayCount(n){
+  $('trayCount').innerHTML='Archivo: <b>'+F().t+'</b> tokens<br>Tu mensaje: <b>'+n+'</b> tokens <small>(ejemplo)</small>';
+}
+/* Altura de cada bloque: el archivo crece con sus tokens; los mensajes tienen un mínimo legible */
+function blkH(b){ return Math.max(26, Math.round(b.t*0.215)); }
+function blkHTML(b){ return '<div class="blk'+(b.file?' file':'')+'" style="background:'+b.color+';height:'+blkH(b)+'px">'+b.label+' · '+b.t+'</div>'; }
+function setSent(blocks,bad){
+  var bx=$('sentBox'), sc=$('sentCount');
+  if(blocks===null){ bx.style.display='none'; return; }
+  bx.style.display='flex';
+  $('stack').innerHTML=blocks.length?blocks.map(blkHTML).join(''):'<div class="empty">(vacío)</div>';
+  var tot=blocks.reduce(function(s,b){return s+b.t},0);
+  sc.classList.toggle('bad',!!bad);
+  sc.innerHTML=!blocks.length?'':bad?'No se envió':tot+' tokens <small>(ejemplo)</small>';
+}
+function pill(label,color){ return '<span class="chip sm" style="background:'+color+'">'+label+'</span>'; }
+function readHTML(kind){
+  if(!kind) return '';
+  var h='<span class="rl">Lee:</span>'+pill(F().label,NAVY);
+  if(kind==='tok') return h+TOK1.map(function(t,i){return chipHTML(t,i,'sm')}).join('');
+  var list=kind==='pkg7'?pkg(7):pkg(8);
+  return h+list.slice(1).map(function(b){return pill(b.label,b.color)}).join('');
+}
+function readNew(){ return '<span class="rl">Lee:</span>'+pill(B_N1.label,B_N1.color); }
+function candsHTML(list){
+  return list.map(function(c){
+    return '<div class="cRow"><span class="cw">'+c[0]+'</span><span class="ct"><span class="cf" style="display:block"></span></span><span class="cp">'+c[1]+'%</span></div>';
+  }).join('');
+}
+function setModel(o){
+  o=o||{};
+  $('readRow').innerHTML=readHTML(o.read);
+  if(o.cands){
+    $('candWrap').style.visibility='visible';
+    $('cands').innerHTML=candsHTML(o.cands);
+    var rows=$('cands').children;
+    for(var i=0;i<rows.length;i++){ rows[i].querySelector('.cf').style.width=o.cands[i][1]+'%'; }
+    rows[0].classList.add('win');
+  } else { $('candWrap').style.visibility='hidden'; $('cands').innerHTML=''; }
+  setResp(o.resp||[]);
+  $('loopTag').style.visibility=o.loop?'visible':'hidden';
+  $('loopTag').textContent=o.loop?'↻ vuelta '+o.loop:'';
+  $('note').style.visibility=o.note?'visible':'hidden';
+  $('mBody').style.opacity='';
+}
+function setResp(words){
+  $('respRow').innerHTML='<span class="rl" style="visibility:'+(words.length?'visible':'hidden')+'">Respuesta:</span>'+words.map(function(w){return '<span>'+w+'</span>'}).join('');
+}
+function setBar(b){
+  var fill=$('fill'), g=$('ghost'), l=$('dropLabel');
+  if(!b){ fill.style.width='100%'; fill.style.background='#3BA55C'; g.style.display='none'; l.style.display='none'; return; }
+  fill.style.width=b.pct+'%';
+  fill.style.background=b.pct<35?'#E4572E':'#3BA55C';
+  if(b.prev!=null){ g.style.display='block'; g.style.left=b.pct+'%'; g.style.width=(b.prev-b.pct)+'%'; }
+  else g.style.display='none';
+  if(b.label){
+    l.style.display='block'; l.textContent=b.label;
+    if(b.pct<30){ l.style.left=b.pct+'%'; l.style.right='auto'; }
+    else { l.style.right=(100-b.pct)+'%'; l.style.left='auto'; }
+  } else l.style.display='none';
+}
+function setControls(){
+  $('counter').textContent='Paso '+step+' de '+TOTAL;
+  $('prevBtn').disabled=step<=1;
+  $('nextBtn').disabled=step>=TOTAL||!mode;
+}
+
+/* ---------- Estado final de cada paso (sirve para "Atrás") ---------- */
+var step=1, sub=0;
+function renderState(n,sb){
+  sb=sb||0;
+  cancelAll(); flow(null);
+  setBanner(n);
+  var chat=[];
+  if(n>=4) chat.push(U1);
+  if(n>=6) chat.push(A1);
+  if(n>=7) chat.push(U2,A2);
+  if(n>=8) chat.push(U3, bars().out?SYS:A3);
+  if(n===9&&sb>=1) chat=[];
+  if(n===9&&sb>=2) chat.push(N1, bars().out?SYS:NA);
+  setChat(chat);
+  setInput(n===1?MSG1:(n===9&&sb===1)?MSG2:'');
+  setAttach(n===1);
+  setChooser(n===1);
+  setTray(n===2||n===3);
+  $('modal').style.display=n===3?'block':'none';
+  if(n<4) setSent(null);
+  else if(n<7) setSent(pkg(4));
+  else if(n===7) setSent(pkg(7));
+  else if(n===8||sb===0) setSent(pkg(8));
+  else if(sb===1) setSent([]);
+  else setSent([B_N1],bars().out);
+  if(n===4) setModel({read:'tok'});
+  else if(n===5) setModel({read:'tok',cands:CANDS1[CANDS1.length-1],resp:W1,loop:W1.length,note:true});
+  else setModel({});
+  setBar(barFor(n,sb));
+  $('newChatBtn').style.display=(n===9&&sb===0)?'inline-block':'none';
+  $('sendBtn').classList.toggle('big',n===9&&sb===1);
+  setControls();
+}
+
+/* ---------- Piezas de animación reutilizables ---------- */
+function travelToChat(el,from,to,my){
+  return A(el,[
+    {transform:'translate('+from.x+'px,'+from.y+'px) scale(.8)',opacity:0},
+    {transform:'translate('+(PX1-80)+'px,'+(PY-22)+'px) scale(1)',opacity:1,offset:.25},
+    {transform:'translate('+(PX0-20)+'px,'+(PY-22)+'px) scale(1)',opacity:1,offset:.75},
+    {transform:'translate('+to.x+'px,'+to.y+'px) scale(.8)',opacity:0}
+  ],{duration:2400,easing:'ease-in-out',fill:'forwards'},my);
+}
+async function predictLoop(words,cands,slowCount,my){
+  setResp([]);
+  for(var i=0;i<words.length;i++){
+    var k=i<slowCount?1:0.28;
+    $('loopTag').style.visibility='visible';
+    $('loopTag').textContent='↻ vuelta '+(i+1);
+    $('candWrap').style.visibility='visible';
+    $('cands').innerHTML=candsHTML(cands[i]);
+    var rows=[].slice.call($('cands').children);
+    await A($('cands'),[{opacity:0},{opacity:1}],{duration:200*k},my);
+    await Promise.all(rows.map(function(r,j){
+      var f=r.querySelector('.cf');
+      return A(f,[{width:'0%'},{width:cands[i][j][1]+'%'}],{duration:700*k,easing:'ease-out',fill:'forwards'},my);
+    }));
+    await sleep(350*k,my);
+    rows[0].classList.add('win');
+    await sleep(450*k,my);
+    var src=box(rows[0].querySelector('.cw'));
+    var span=document.createElement('span'); span.textContent=words[i]; span.style.visibility='hidden';
+    $('respRow').appendChild(span); $('respRow').firstChild.style.visibility='visible';
+    var t=box(span);
+    var fly=mk('<div style="font-size:22px;font-weight:800;background:#FFD60A;border-radius:8px;padding:0 6px;white-space:nowrap">'+words[i]+'</div>',0,0);
+    await A(fly,[{transform:'translate('+src.x+'px,'+src.y+'px)'},{transform:'translate('+(t.x-6)+'px,'+t.y+'px)'}],{duration:600*k,easing:'ease-in-out',fill:'forwards'},my);
+    fly.remove(); span.style.visibility='visible';
+    await sleep(300*k,my);
+    if(i<words.length-1) await A($('cands'),[{opacity:1},{opacity:0}],{duration:200*k,fill:'forwards'},my);
+  }
+}
+async function clearModel(my){
+  await A($('mBody'),[{opacity:1},{opacity:0}],{duration:500,fill:'forwards'},my);
+  cancelOn($('mBody')); setModel({});
+}
+async function returnAnswer(msg,my){
+  var rb=box($('respRow'));
+  var pkt=mk('<div class="pkt">Respuesta</div>',0,0);
+  flow('back');
+  var mb=box($('msgs'));
+  var p=travelToChat(pkt,{x:rb.x+120,y:rb.y},{x:mb.x+20,y:mb.y+mb.h-40},my);
+  await sleep(500,my);
+  await clearModel(my);
+  await p; pkt.remove(); flow(null);
+  var d=document.createElement('div'); d.innerHTML=bubHTML(msg,'');
+  var b=d.firstChild; $('msgs').appendChild(b); compact();
+  var words=msg.text.split(' ');
+  for(var i=0;i<words.length;i++){
+    b.textContent=words.slice(0,i+1).join(' ');
+    await sleep(170,my);
+  }
+}
+async function dropBar(b,my){
+  var fill=$('fill');
+  $('ghost').style.display='none'; $('dropLabel').style.display='none';
+  await A(fill,[{width:b.prev+'%'},{width:b.pct+'%'}],{duration:b.pct===0?1600:1000,easing:'ease-in-out',fill:'forwards'},my);
+  setBar(b);
+  await pop($('dropLabel'),my,450);
+}
+async function typeInput(text,my){
+  for(var i=1;i<=text.length;i++){ setInput(text.slice(0,i)); await sleep(70,my); }
+}
+async function addBubble(msg,my){
+  var d=document.createElement('div'); d.innerHTML=bubHTML(msg);
+  var b=d.firstChild; $('msgs').appendChild(b); compact();
+  await pop(b,my);
+}
+async function sendBubble(msg,my){ setInput(''); await addBubble(msg,my); }
+/* Arma el paquete copiando del chat el archivo y cada mensaje */
+async function buildStack(blocks,my,bad){
+  setSent(blocks,bad);
+  var bl=[].slice.call($('stack').children);
+  bl.forEach(function(e){e.style.visibility='hidden'});
+  $('sentCount').style.visibility='hidden';
+  for(var i=0;i<bl.length;i++){
+    var src=$('msgs').querySelector('[data-k="'+blocks[i].key+'"]');
+    var s=box(src), t=box(bl[i]);
+    var g=mk('<div class="blk" style="background:'+blocks[i].color+'"></div>',0,0);
+    await A(g,[
+      {left:s.x+'px',top:s.y+'px',width:s.w+'px',height:s.h+'px',opacity:.85},
+      {left:t.x+'px',top:t.y+'px',width:t.w+'px',height:t.h+'px',opacity:1}
+    ],{duration:i===0?1000:750,easing:'ease-in-out',fill:'forwards'},my);
+    g.remove(); bl[i].style.visibility='visible';
+    await sleep(100,my);
+  }
+  $('sentCount').style.visibility='visible';
+  await pop($('sentCount'),my);
+}
+/* Un paquete con franjas de colores viaja al servidor; el archivo es la franja oscura */
+async function sendPackage(blocks,readContent,my){
+  var h='<div style="display:flex;flex-direction:column;gap:3px;width:120px;padding:6px;background:#fff;border:3px solid #1E2A3A;border-radius:10px">'+
+    blocks.map(function(b){return '<div style="height:'+Math.max(6,Math.round(b.t*0.075))+'px;background:'+b.color+';border-radius:4px"></div>'}).join('')+'</div>';
+  var p=mk(h,0,0);
+  var mb=box($('monitor')), rr=box($('readRow'));
+  flow('flow');
+  await A(p,[
+    {transform:'translate('+(mb.x+mb.w-140)+'px,'+(PY-40)+'px) scale(1)',opacity:1},
+    {transform:'translate('+PX0+'px,'+(PY-30)+'px) scale(.9)',opacity:1,offset:.25},
+    {transform:'translate('+(PX1-60)+'px,'+(PY-30)+'px) scale(.9)',opacity:1,offset:.75},
+    {transform:'translate('+(rr.x+120)+'px,'+rr.y+'px) scale(.7)',opacity:0}
+  ],{duration:2400,easing:'ease-in-out',fill:'forwards'},my);
+  p.remove(); flow(null);
+  $('readRow').innerHTML=readContent;
+  await A($('readRow'),[{opacity:0},{opacity:1}],{duration:400},my);
+}
+
+/* ---------- Animación de cada paso ---------- */
+var ANIM={
+  2: async function(my){
+    var it=$('inputText'), at=$('attach');
+    setChooser(false);
+    await Promise.all([A(it,[{opacity:1},{opacity:0}],{duration:400,fill:'forwards'},my),A(at,[{opacity:1},{opacity:0}],{duration:400,fill:'forwards'},my)]);
+    setInput(''); setAttach(false); cancelOn(it); cancelOn(at);
+    setTray(true);
+    var fb=$('trayFile').firstChild;
+    var chips=[].slice.call($('trayChips').children);
+    chips.forEach(function(c){c.style.opacity=0});
+    await pop(fb,my,500);
+    for(var i=0;i<chips.length;i++){
+      chips[i].style.opacity='';
+      trayCount(i+1);
+      pop(chips[i],my,350).catch(function(){});
+      await sleep(170,my);
+    }
+    await sleep(400,my);
+  },
+  3: async function(my){
+    var m=$('modal'); m.style.display='block';
+    var rows=[].slice.call(m.querySelectorAll('.mrow')), ps=[].slice.call(m.querySelectorAll('p'));
+    rows.concat(ps).forEach(function(e){e.style.opacity=0});
+    await A($('card'),[{transform:'scale(.85)',opacity:0},{transform:'scale(1)',opacity:1}],{duration:450,easing:'ease-out'},my);
+    for(var i=0;i<rows.length;i++){
+      rows[i].style.opacity='';
+      await A(rows[i],[{opacity:0,transform:'translateX(-30px)'},{opacity:1,transform:'none'}],{duration:400},my);
+      var ch=[].slice.call(rows[i].querySelectorAll('.chip'));
+      for(var j=0;j<ch.length;j++){ await pop(ch[j],my,320); }
+      await sleep(500,my);
+    }
+    for(var k=0;k<ps.length;k++){ ps[k].style.opacity=''; await A(ps[k],[{opacity:0},{opacity:1}],{duration:600},my); }
+  },
+  4: async function(my){
+    await A($('modal'),[{opacity:1},{opacity:0}],{duration:400,fill:'forwards'},my);
+    $('modal').style.display='none';
+    setModel({read:'tok'});
+    var targets=[].slice.call($('readRow').querySelectorAll('.chip'));   /* [archivo, fichas...] */
+    targets.forEach(function(t){t.style.visibility='hidden'});
+    var srcs=[$('trayFile').firstChild].concat([].slice.call($('trayChips').children));
+    var starts=srcs.map(box);
+    var htmls=[srcs[0].outerHTML].concat(TOK1.map(function(t,i){return chipHTML(t,i)}));
+    $('trayCount').style.visibility='hidden';
+    srcs.forEach(function(c){c.style.visibility='hidden'});
+    flow('flow');
+    var all=srcs.map(function(c,i){
+      var s=starts[i], t=box(targets[i]);
+      var cl=mk(htmls[i],0,0);
+      if(i===0){ cl.style.width=s.w+'px'; }
+      var sc=i===0?0.45:0.75, fin=i===0?t.w/s.w:t.h/s.h;
+      return A(cl,[
+        {transform:'translate('+s.x+'px,'+s.y+'px) scale(1)',opacity:1},
+        {transform:'translate('+(PX0+(i%5)*12)+'px,'+(PY-22)+'px) scale('+sc+')',opacity:1,offset:.3},
+        {transform:'translate('+(PX1-90+(i%5)*12)+'px,'+(PY-22)+'px) scale('+sc+')',opacity:1,offset:.72},
+        {transform:'translate('+t.x+'px,'+t.y+'px) scale('+fin+')',opacity:i===0?0.2:1}
+      ],{duration:2800,delay:i*110,easing:'ease-in-out',fill:'forwards'},my).then(function(){
+        targets[i].style.visibility='visible'; cl.remove();
+      });
+    });
+    await sleep(500,my);
+    $('tray').style.display='none';
+    addBubble(U1,my).catch(function(){});
+    await sleep(500,my);
+    setSent(pkg(4));
+    [].slice.call($('stack').children).forEach(function(e){ pop(e,my,500).catch(function(){}); });
+    await Promise.all(all);
+    flow(null);
+    $('trayCount').style.visibility='';
+  },
+  5: async function(my){
+    $('note').style.visibility='visible';
+    await A($('note'),[{opacity:0},{opacity:1}],{duration:500},my);
+    await predictLoop(W1,CANDS1,3,my);
+    await sleep(300,my);
+  },
+  6: async function(my){
+    await returnAnswer(A1,my);
+    await sleep(300,my);
+    await dropBar(barFor(6),my);
+  },
+  7: async function(my){
+    await typeInput(MSG2,my);
+    await sleep(350,my);
+    await sendBubble(U2,my);
+    await sleep(300,my);
+    await buildStack(pkg(7),my);
+    await sleep(400,my);
+    await sendPackage(pkg(7),readHTML('pkg7'),my);
+    await predictLoop(W2,CANDS2,0,my);
+    await sleep(300,my);
+    await returnAnswer(A2,my);
+    await sleep(300,my);
+    await dropBar(barFor(7),my);
+  },
+  8: async function(my){
+    await typeInput(MSG3,my);
+    await sleep(350,my);
+    await sendBubble(U3,my);
+    await sleep(300,my);
+    await buildStack(pkg(8),my);
+    await sleep(400,my);
+    await sendPackage(pkg(8),readHTML('pkg8'),my);
+    if(bars().out){
+      await sleep(400,my);
+      await dropBar(barFor(8),my);
+      await sleep(300,my);
+      await clearModel(my);
+      await addBubble(SYS,my);
+    } else {
+      await predictLoop(W3,CANDS3,0,my);
+      await sleep(300,my);
+      await returnAnswer(A3,my);
+      await sleep(300,my);
+      await dropBar(barFor(8),my);
+    }
+  },
+  9: async function(my){
+    var b=$('newChatBtn'); b.style.display='inline-block';
+    await pop(b,my,500);
+  }
+};
+/* Pasos internos del paso 9 (Chat nuevo) */
+var SUB9={
+  1: async function(my){
+    $('newChatBtn').style.display='none';
+    var items=[].slice.call($('msgs').children).concat([].slice.call($('stack').children),[$('sentCount'),$('ghost'),$('dropLabel')]);
+    await Promise.all(items.map(function(e){return A(e,[{opacity:1},{opacity:0}],{duration:600,fill:'forwards'},my)}));
+    setChat([]); setSent([]); setBar(barFor(9,1));
+    live.forEach(function(a){a.cancel()}); live=[];
+    await sleep(500,my);
+    await typeInput(MSG2,my);
+    $('sendBtn').classList.add('big');
+  },
+  2: async function(my){
+    $('sendBtn').classList.remove('big');
+    await sendBubble(N1,my);
+    await sleep(300,my);
+    if(bars().out){
+      await buildStack([B_N1],my,true);
+      await sleep(300,my);
+      await addBubble(SYS,my);
+      setBar(barFor(9,2)); await pop($('dropLabel'),my,450);
+    } else {
+      await buildStack([B_N1],my);
+      await sleep(300,my);
+      await sendPackage([B_N1],readNew(),my);
+      await predictLoop(WN,CANDSN,0,my);
+      await sleep(300,my);
+      await returnAnswer(NA,my);
+      await sleep(300,my);
+      await dropBar(barFor(9,2),my);
+    }
+  }
+};
+
+async function play(fn,n,sb){
+  var my=++run;
+  try{ await fn(my); }
+  catch(e){ if(my!==run) return; if(!(e instanceof Cancel)) console.error(e); }
+  if(my===run) renderState(n,sb);
+}
+
+/* ---------- Controles ---------- */
+function choose(m){
+  if(step!==1) return;
+  run++; mode=m; renderState(1,0);
+  pop($('attach'),run,450).catch(function(){});
+}
+$('chLibro').addEventListener('click',function(){choose('libro')});
+$('chMd').addEventListener('click',function(){choose('md')});
+$('nextBtn').addEventListener('click',function(){
+  if(step>=TOTAL||!mode) return;
+  run++; renderState(step,sub);
+  step++; sub=0;
+  setBanner(step); setControls();
+  play(ANIM[step],step,0);
+});
+$('prevBtn').addEventListener('click',function(){
+  if(step<=1) return;
+  run++; step--; sub=0;
+  renderState(step,0);
+});
+$('newChatBtn').addEventListener('click',function(){
+  if(step!==TOTAL||sub!==0) return;
+  run++; renderState(TOTAL,0); sub=1;
+  play(SUB9[1],TOTAL,1);
+});
+$('sendBtn').addEventListener('click',function(){
+  if(step!==TOTAL||sub!==1) return;
+  run++; renderState(TOTAL,1); sub=2;
+  play(SUB9[2],TOTAL,2);
+});
+
+/* ---------- Pantalla completa ---------- */
+var fsEnabled=document.fullscreenEnabled||document.webkitFullscreenEnabled;
+function isFs(){ return document.fullscreenElement||document.webkitFullscreenElement; }
+function fsLabel(){ $('fsBtn').textContent=isFs()?'Salir de pantalla completa':'Pantalla completa'; }
+if(!fsEnabled){ $('fsBtn').style.display='none'; }
+$('fsBtn').addEventListener('click',function(){
+  try{
+    if(isFs()){ (document.exitFullscreen||document.webkitExitFullscreen).call(document); }
+    else { var d=document.documentElement; var p=(d.requestFullscreen||d.webkitRequestFullscreen).call(d); if(p&&p.catch) p.catch(function(){}); }
+  }catch(e){}
+});
+
+/* ---------- Dentro de la presentación ----------
+   Si la animación está metida en las diapositivas, las teclas del control
+   (flechas, Av Pág, Re Pág, espacio) cambian de diapositiva, no de paso. */
+if(window.parent!==window){
+  document.addEventListener('keydown',function(e){
+    var k=e.key, m=null;
+    if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' ') m='next';
+    else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp') m='prev';
+    if(!m) return;
+    e.preventDefault();
+    window.parent.postMessage(JSON.stringify({method:m}),'*');
+  });
+}
+
+renderState(1,0);
+})();
+</script>
+</body>
+</html>
