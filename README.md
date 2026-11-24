@@ -33,7 +33,7 @@ Lo que se proyecta en el taller: una presentación por sesión, con todos sus pa
 | Sesión 1: Crear | [▶ Abrir la presentación](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-1.html) | [PDF](presentacion/guia-quien-imparte-sesion-1.pdf) |
 | Sesión 2: Dar contexto | [▶ Abrir la presentación](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-2.html) | [PDF](presentacion/guia-quien-imparte-sesion-2.pdf) |
 
-Se avanza con las flechas del teclado. La tecla **S** abre la vista de presentador con las notas. La guía de quien imparte trae una página por paso (diapositivas, qué decir, qué hacer si falla) y todos los prompts; está pensada para leerse en un iPad.
+Se avanza con las flechas del teclado. La tecla **S** abre la vista de presentador con las notas. La guía de quien imparte trae una página por paso (diapositivas, qué decir, qué hacer si falla) y todos los prompts; está pensada para leerse en un iPad. Los prompts listos para copiar, con un botón por prompt, están en [presentacion/prompts.html](presentacion/prompts.html) (descárgalo y ábrelo con doble clic).
 
 ## Cómo usar este repositorio
 
