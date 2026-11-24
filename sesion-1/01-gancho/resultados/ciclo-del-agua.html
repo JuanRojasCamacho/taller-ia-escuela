@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El ciclo del agua</title>
+<style>
+:root{
+  --bg:#eef6fd; --ink:#0e2a47; --btn:#ffffff; --line:#b9d3ea;
+  --c1:#e86f00; --c2:#6a4fe0; --c3:#1769d1; --c4:#0f8f55;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0d1a2b; --ink:#f1f7ff; --btn:#16304f; --line:#2b4c74; }
+}
+:root[data-theme="dark"]{ --bg:#0d1a2b; --ink:#f1f7ff; --btn:#16304f; --line:#2b4c74; }
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;overflow:hidden;background:var(--bg);color:var(--ink);
+  font-family:"Trebuchet MS",Verdana,"Segoe UI",system-ui,sans-serif}
+#app{height:100%;display:flex;flex-direction:column;gap:1.2vh;padding:1.4vh 1.6vw}
+
+#caption{display:flex;align-items:center;gap:1.6vw;min-height:15vh;padding:.8vh 1.2vw;
+  border-left:1.1vw solid var(--accent,var(--line));background:var(--btn);border-radius:1vw;transition:border-color .5s}
+#badge{flex:none;width:min(8vw,13vh);height:min(8vw,13vh);border-radius:50%;display:grid;place-items:center;
+  background:var(--accent,#5b7ea3);color:#fff;font-weight:800;font-size:clamp(28px,min(4.6vw,7.4vh),90px);transition:background .5s}
+#text{min-width:0}
+#title{margin:0;font-size:clamp(24px,min(3.6vw,6vh),68px);line-height:1.1;font-weight:800;color:var(--accent,var(--ink));transition:color .5s}
+#desc{margin:.4vh 0 0;font-size:clamp(20px,min(2.7vw,4.6vh),52px);line-height:1.2}
+#text.swap{animation:swap .5s ease}
+@keyframes swap{from{opacity:0;transform:translateY(.8vh)}to{opacity:1;transform:none}}
+
+#stage{flex:1;min-height:0;border-radius:1vw;overflow:hidden;background:#bfe6ff}
+#scene{width:100%;height:100%;display:block}
+
+#bar{display:flex;gap:.9vw}
+#bar button{flex:1;font:inherit;font-weight:700;font-size:clamp(15px,min(1.95vw,3.4vh),34px);line-height:1.15;
+  padding:1.3vh .6vw;min-height:9vh;border-radius:1vw;border:.35vh solid var(--line);background:var(--btn);color:var(--ink);cursor:pointer;
+  transition:background .25s,color .25s,transform .15s}
+#bar button.long{flex:1.5}
+#bar button:hover{transform:translateY(-.4vh)}
+#bar button:focus-visible{outline:.6vh solid var(--ink);outline-offset:.3vh}
+#bar button.on{color:#fff;border-color:transparent}
+#b1.on{background:var(--c1)} #b2.on{background:var(--c2)} #b3.on{background:var(--c3)} #b4.on{background:var(--c4)}
+#bAll{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+#bAll.playing{background:#c62828;color:#fff;border-color:#c62828}
+
+/* ---------- Escena ---------- */
+#scene .sunrays{transform-box:fill-box;transform-origin:center;animation:spin 24s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#scene .sun{transform-box:fill-box;transform-origin:center;transition:transform 1s}
+#scene .glow{opacity:.25;transition:opacity 1s}
+[data-step="1"] .sun{transform:scale(1.3)} [data-step="1"] .glow{opacity:.75}
+.waves{animation:bob 4s ease-in-out infinite alternate} @keyframes bob{to{transform:translateX(-26px)}}
+
+.fx{opacity:0;transition:opacity .9s}
+[data-step="1"] .vapor{opacity:1}
+[data-step="2"] .vapor{opacity:.55}
+[data-step="3"] .rain{opacity:1}
+[data-step="4"] .stream,[data-step="4"] .infil,[data-step="4"] .gwflow{opacity:1}
+[data-step="2"] .drops,[data-step="3"] .drops{opacity:1}
+
+.vapor circle{fill:#fff;stroke:#9fc7e6;stroke-width:2;animation:rise 4.5s ease-in infinite;animation-delay:var(--d)}
+@keyframes rise{0%{transform:translate(0,0) scale(.6);opacity:0}15%{opacity:.95}80%{opacity:.8}100%{transform:translate(var(--dx),-290px) scale(1.3);opacity:0}}
+.rain line{stroke:#2a8cff;stroke-width:7;stroke-linecap:round;animation:fall 1.3s linear infinite;animation-delay:var(--d)}
+@keyframes fall{0%{transform:translateY(0);opacity:0}10%{opacity:1}85%{opacity:1}100%{transform:translateY(290px);opacity:0}}
+.infil circle{fill:#5cc0ff;stroke:#fff;stroke-width:2;animation:sink 3s ease-in infinite;animation-delay:var(--d)}
+@keyframes sink{0%{transform:translateY(0);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateY(var(--fall));opacity:0}}
+.stream path{stroke-dasharray:26 16;animation:flow 1.1s linear infinite} @keyframes flow{to{stroke-dashoffset:-84}}
+.gwflow polygon{fill:#fff;animation:left 2.4s linear infinite;animation-delay:var(--d)}
+@keyframes left{0%{transform:translateX(60px);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateX(-60px);opacity:0}}
+.drops circle{fill:#7cc4ff;animation:pulse 1.8s ease-in-out infinite;animation-delay:var(--d);transform-box:fill-box;transform-origin:center}
+@keyframes pulse{50%{transform:scale(1.5)}}
+
+#cloud{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.3);transition:transform 1.4s ease,opacity 1.1s}
+#cloud .shape *{fill:var(--cloud,#fff);transition:fill 1.2s}
+#scene{--cloud:#fff}
+[data-step="2"] #cloud{opacity:1;transform:scale(1)}
+[data-step="3"] #cloud{opacity:1;transform:scale(1.1)} [data-step="3"] #scene,#stage[data-step="3"] #scene{--cloud:#6e7f95}
+[data-step="4"] #cloud{opacity:.9;transform:scale(.85)} #stage[data-step="4"] #scene{--cloud:#dde6f0}
+
+@media (prefers-reduced-motion:reduce){ *{animation-duration:.01ms!important;animation-iteration-count:1!important} }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="caption" aria-live="polite">
+    <div id="badge">💧</div>
+    <div id="text"><h1 id="title">El ciclo del agua</h1><p id="desc">Toca un botón para ver cada paso.</p></div>
+  </div>
+
+  <div id="stage" data-step="0">
+    <svg id="scene" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Animación del ciclo del agua">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc7ff"/><stop offset="1" stop-color="#e3f4ff"/></linearGradient>
+      </defs>
+      <rect width="1200" height="520" fill="url(#sky)"/>
+
+      <!-- Sol -->
+      <g class="sun">
+        <circle class="glow" cx="120" cy="95" r="95" fill="#ffd54a"/>
+        <g class="sunrays" stroke="#ffb300" stroke-width="9" stroke-linecap="round">
+          <line x1="120" y1="20" x2="120" y2="0"/><line x1="120" y1="170" x2="120" y2="190"/>
+          <line x1="45" y1="95" x2="25" y2="95"/><line x1="195" y1="95" x2="215" y2="95"/>
+          <line x1="67" y1="42" x2="53" y2="28"/><line x1="173" y1="148" x2="187" y2="162"/>
+          <line x1="67" y1="148" x2="53" y2="162"/><line x1="173" y1="42" x2="187" y2="28"/>
+        </g>
+        <circle cx="120" cy="95" r="52" fill="#ffc933"/>
+      </g>
+
+      <g class="fx vapor" id="vapor"></g>
+      <g class="fx rain" id="rain"></g>
+
+      <!-- Mar -->
+      <rect x="0" y="400" width="470" height="120" fill="#1f6fb8"/>
+      <g class="waves" fill="none" stroke="#8fd0ff" stroke-width="5" stroke-linecap="round">
+        <path d="M-30 415q20-14 40 0t40 0 40 0 40 0 40 0 40 0 40 0 40 0 40 0 40 0 40 0 40 0 40 0"/>
+        <path d="M-10 455q20-14 40 0t40 0 40 0 40 0 40 0 40 0 40 0 40 0 40 0 40 0 40 0 40 0"/>
+      </g>
+      <text x="235" y="500" font-size="34" font-weight="700" fill="#fff" text-anchor="middle">Mar</text>
+
+      <!-- Tierra -->
+      <path d="M470 400L620 325L760 225L880 140L950 140L1030 215L1200 270L1200 520L470 520Z" fill="#7a4f2c"/>
+      <rect x="470" y="468" width="730" height="52" fill="#2f86d6" opacity=".9"/>
+      <text x="900" y="503" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">Agua subterránea</text>
+      <path d="M470 400L620 325L760 225L880 140L950 140L1030 215L1200 270" fill="none" stroke="#4fa83d" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M862 158L880 140L950 140L968 160L945 150L925 165L905 150Z" fill="#fff"/>
+
+      <g class="fx infil" id="infil"></g>
+      <g class="fx gwflow">
+        <polygon points="640,495 664,483 664,507" style="--d:0s"/><polygon points="740,495 764,483 764,507" style="--d:-.8s"/><polygon points="540,495 564,483 564,507" style="--d:-1.6s"/>
+      </g>
+      <g class="fx stream"><path d="M880 140L760 225L620 325L470 400" fill="none" stroke="#5ec8ff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+      <!-- Nube -->
+      <g id="cloud">
+        <g class="shape"><ellipse cx="560" cy="115" rx="125" ry="32"/><circle cx="500" cy="92" r="42"/><circle cx="565" cy="72" r="55"/><circle cx="625" cy="96" r="42"/></g>
+        <g class="fx drops" id="drops"></g>
+      </g>
+    </svg>
+  </div>
+
+  <div id="bar">
+    <button id="b1" data-n="1">1 · Evaporación</button>
+    <button id="b2" data-n="2">2 · Condensación</button>
+    <button id="b3" data-n="3">3 · Precipitación</button>
+    <button id="b4" data-n="4" class="long">4 · Escurrimiento e infiltración</button>
+    <button id="bAll" class="long">▶ Ciclo completo</button>
+  </div>
+</div>
+
+<script>
+const NS="http://www.w3.org/2000/svg";
+const mk=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e};
+
+// Vapor: sube desde el mar hacia la nube
+const vapor=document.getElementById("vapor");
+for(let i=0;i<14;i++){
+  const x=60+i*33, r=9+(i%3)*4;
+  mk("circle",{cx:x,cy:430,r,style:`--d:${-(i*0.32).toFixed(2)}s;--dx:${Math.round((540-x)*0.5)}px`},vapor);
+}
+// Lluvia
+const rain=document.getElementById("rain");
+for(let i=0;i<10;i++){
+  const x=490+i*17;
+  mk("line",{x1:x,y1:125+(i%3)*8,x2:x-5,y2:145+(i%3)*8,style:`--d:${-((i*0.37)%1.3).toFixed(2)}s`},rain);
+}
+// Infiltración: gotas que entran al suelo
+const infil=document.getElementById("infil");
+[[560,355,115],[620,325,145],[680,282,185],[740,239,225],[800,196,270]].forEach(([x,y,f],i)=>{
+  mk("circle",{cx:x,cy:y+8,r:8,style:`--d:${-(i*0.6).toFixed(1)}s;--fall:${f-14}px`},infil);
+});
+// Gotitas dentro de la nube
+const drops=document.getElementById("drops");
+[[505,105],[545,90],[590,80],[620,105],[575,115],[530,122]].forEach(([x,y],i)=>mk("circle",{cx:x,cy:y,r:6,style:`--d:${-(i*0.3).toFixed(1)}s`},drops));
+
+// Pasos
+const STEPS=[
+ null,
+ {t:"Evaporación",d:"El Sol calienta el agua del mar. El agua sube al aire como vapor.",c:"--c1"},
+ {t:"Condensación",d:"El vapor sube y se enfría. Se hacen gotitas y se forma la nube.",c:"--c2"},
+ {t:"Precipitación",d:"La nube se llena de gotas. El agua cae como lluvia, nieve o granizo.",c:"--c3"},
+ {t:"Escurrimiento e infiltración",d:"Una parte del agua corre hacia el mar. Otra parte se mete a la tierra.",c:"--c4"}
+];
+const stage=document.getElementById("stage"),cap=document.getElementById("caption"),
+      txt=document.getElementById("text"),title=document.getElementById("title"),
+      desc=document.getElementById("desc"),badge=document.getElementById("badge"),
+      bAll=document.getElementById("bAll");
+let timers=[],playing=false;
+
+function show(n){
+  stage.dataset.step=n;
+  const s=STEPS[n];
+  cap.style.setProperty("--accent",`var(${s.c})`);
+  title.textContent=s.t; desc.textContent=s.d; badge.textContent=n;
+  txt.classList.remove("swap"); void txt.offsetWidth; txt.classList.add("swap");
+  for(let i=1;i<=4;i++){const b=document.getElementById("b"+i);b.classList.toggle("on",i===n);b.setAttribute("aria-pressed",i===n)}
+}
+function stop(){timers.forEach(clearTimeout);timers=[];playing=false;bAll.classList.remove("playing");bAll.textContent="▶ Ciclo completo"}
+function playAll(){
+  if(playing){stop();return}
+  playing=true;bAll.classList.add("playing");bAll.textContent="■ Detener";
+  [1,2,3,4].forEach((n,i)=>timers.push(setTimeout(()=>show(n),i*7000)));
+  timers.push(setTimeout(stop,4*7000+1000));
+}
+for(let i=1;i<=4;i++)document.getElementById("b"+i).addEventListener("click",()=>{stop();show(i)});
+bAll.addEventListener("click",playAll);
+</script>
+</body>
+</html>
