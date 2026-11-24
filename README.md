@@ -28,12 +28,12 @@ La IA es como un practicante brillante, rapidísimo y muy leído, que **nunca ha
 
 Lo que se proyecta en el taller: una presentación por sesión, con todos sus pasos.
 
-| Sesión | Abrir |
-| --- | --- |
-| Sesión 1: Crear | [▶ Abrir la presentación](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-1.html) |
-| Sesión 2: Dar contexto | [▶ Abrir la presentación](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-2.html) |
+| Sesión | Abrir | Guía de quien imparte |
+| --- | --- | --- |
+| Sesión 1: Crear | [▶ Abrir la presentación](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-1.html) | [PDF](presentacion/guia-quien-imparte-sesion-1.pdf) |
+| Sesión 2: Dar contexto | [▶ Abrir la presentación](https://juanrojascamacho.github.io/taller-ia-escuela/presentacion/sesion-2.html) | [PDF](presentacion/guia-quien-imparte-sesion-2.pdf) |
 
-Se avanza con las flechas del teclado. La tecla **S** abre la vista de presentador con las notas.
+Se avanza con las flechas del teclado. La tecla **S** abre la vista de presentador con las notas. La guía de quien imparte trae una página por paso (diapositivas, qué decir, qué hacer si falla) y todos los prompts; está pensada para leerse en un iPad.
 
 ## Cómo usar este repositorio
 
