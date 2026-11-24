@@ -265,7 +265,7 @@
         <p><span class="parte rol">Rol</span>Eres diseñador de materiales educativos para secundaria en México.</p>
         <p><span class="parte contexto">Contexto</span>Doy Ciencias en una telesecundaria. Mis alumnos leen poco texto, así que necesito palabras sencillas y frases cortas.</p>
         <p><span class="parte tarea">Tarea</span>Crea una animación interactiva del ciclo del agua con 4 pasos: 1) evaporación, 2) condensación, 3) precipitación y 4) escurrimiento e infiltración. Cada paso se activa con un botón y anima la escena. Incluye un botón para reproducir todo el ciclo.</p>
-        <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), letras grandes para verse en proyector, todo en español, máximo 2 frases por paso.</p>
+        <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), en horizontal y completa en la pantalla, sin tener que bajar, letras grandes para verse en proyector, todo en español, máximo 2 frases por paso.</p>
       </div>
       <aside class="notes">Pegar el prompt en Claude (está en prompts.md). Mientras genera, leer los cuatro colores en voz alta SIN explicarlos: el paso 3 los explica.</aside>
     </section>
@@ -277,7 +277,7 @@
         <p><span class="parte rol">Rol</span>Eres diseñador de materiales educativos para secundaria en México.</p>
         <p><span class="parte contexto">Contexto</span>Doy Historia en una telesecundaria. Mis alumnos se pierden con tantas fechas y personajes, así que necesito algo visual y frases cortas.</p>
         <p><span class="parte tarea">Tarea</span>Crea una línea del tiempo interactiva de la Independencia de México, de 1810 a 1821, con al menos 6 momentos clave. Al hacer clic en cada momento se muestra la fecha, qué pasó y quién participó, con una ilustración sencilla dibujada dentro de la página. Botones de anterior y siguiente; cambios animados y botones con movimiento.</p>
-        <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), con colores, sombras y profundidad, letras grandes, todo en español.</p>
+        <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), con colores, sombras y profundidad, en horizontal y completa en la pantalla, sin tener que bajar, letras grandes, todo en español.</p>
       </div>
       <aside class="notes">Versión resumida para proyectar. El prompt completo para pegar está en prompts.md.</aside>
     </section>
@@ -289,7 +289,7 @@
         <p><span class="parte rol">Rol</span>Eres profesor de matemáticas de secundaria en México.</p>
         <p><span class="parte contexto">Contexto</span>Doy Matemáticas en una telesecundaria. Mis alumnos están viendo prismas y les cuesta imaginar cómo se arma un prisma a partir de su desarrollo plano.</p>
         <p><span class="parte tarea">Tarea</span>Crea una herramienta con dos vistas: un prisma en 3D que se pueda girar con el mouse y su desarrollo plano en 2D, con las caras del mismo color en las dos vistas. Botones para elegir prisma triangular, rectangular, pentagonal y hexagonal. Si es posible, un botón que anime cómo se desdobla.</p>
-        <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), letras grandes, todo en español.</p>
+        <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), en horizontal y completa en la pantalla, sin tener que bajar, letras grandes, todo en español.</p>
       </div>
       <aside class="notes">El más arriesgado: si el desdoblado no sale, el prisma girando ya impresiona.</aside>
     </section>
@@ -391,22 +391,10 @@
     </section>
   </section>
 
-  <section>
-    <section>
-      <div class="eyebrow">Tokens</div>
-      <h2>No lee palabras:<br><span class="subrayado">lee pedazos</span></h2>
-      <p style="font-size:.75em">A cada pedazo se le llama <b>token</b>. Todo lo que escribes y todo lo que te responde se cuenta en tokens.</p>
-      <p style="margin-top:1em"><a class="boton-link" href="https://platform.openai.com/tokenizer" target="_blank">Abrir el tokenizador (en vivo)</a></p>
-      <aside class="notes">Aclara: es la herramienta de OpenAI (ChatGPT); Claude no tiene una pública y corta distinto, pero la idea es la misma. Pega el texto de sesion-1/02-como-funciona/texto-tokenizador.md (pestaña GPT-5.x). Señala: agua, vapor y presión son un solo pedazo; Huajuapan, calientas y burbujas, varios; los números también se cortan. Si falla, flecha abajo: captura.</aside>
-    </section>
-
-    <section>
-      <div class="eyebrow">Plan B · captura del tokenizador</div>
-      <div class="marco" style="border:0;background:#1f1f1f">
-        <img src="../sesion-1/02-como-funciona/tokenizador.png" alt="Captura del tokenizador de OpenAI con el texto sobre cómo hierve el agua cortado en pedazos de colores" style="height:100%;width:auto;object-fit:contain;margin:0">
-      </div>
-      <aside class="notes">Solo si no hay internet o la página cambió. Señala Huajuapan (varios pedazos) contra agua o vapor (uno solo).</aside>
-    </section>
+  <section data-animacion="../sesion-1/02-como-funciona/como-funciona-la-ia.html">
+    <div class="eyebrow">Por dentro</div>
+    <h2>¿Cómo funciona la IA?</h2>
+    <aside class="notes">Animación a pantalla completa, avanza con sus botones Atrás y Siguiente (el control y las flechas cambian de diapositiva). Guion por paso. 1: "Escriben su mensaje, como en Claude". 2–3: "No lee palabras: lee pedazos. Agua es un pedazo; hierve, dos; calientas, tres. Así corta ChatGPT; Claude corta distinto, pero la idea es la misma. Todo se cuenta en tokens". 4: "Esto ya no está en tu computadora: viaja a un servidor. Por eso necesitas internet, y por eso números de lista, no nombres". 5: "Predice una palabra, la agrega y vuelve a empezar: como su hoja, pero miles de veces". 6: "Regresa palabra por palabra; por eso la ven aparecer poco a poco". 7: "Segundo mensaje: viaja TODA la conversación y gasta más". 8: clic en "+ Chat nuevo" y luego en "Enviar": "empieza ligero, pero no recuerda nada" (puente a la sesión 2). Remata: "Por eso, tres reglas".</aside>
   </section>
 
   <section>
@@ -592,7 +580,7 @@
     <div class="par">
       <div><div class="quien">Docentes · en el chat de tu planeación</div><div class="prompt chico">
           <p><span class="parte tarea">Tarea</span>Con base en esta planeación, crea una animación interactiva para <b>[el momento de tu clase]</b>. Que los alumnos puedan dar clic y ver cómo funciona <b>[tu tema]</b>.</p>
-          <p><span class="parte formato">Formato</span>Una sola página web, letras grandes para proyector, todo en español, ilustraciones dibujadas dentro de la página (no fotos de internet).</p>
+          <p><span class="parte formato">Formato</span>Una sola página web, en horizontal y completa en la pantalla, sin tener que bajar, letras grandes para proyector, todo en español, ilustraciones dibujadas dentro de la página (no fotos de internet).</p>
           <p style="color:var(--suave)">Ya no repites rol ni contexto: <b>la conversación recuerda</b>. ¿Prefieres un quiz? Pide "un quiz interactivo de 5 preguntas".</p>
       </div></div>
       <div><div class="quien">Secretarias · en un chat nuevo</div><div class="prompt chico">
@@ -631,7 +619,7 @@
         <p style="font-size:.55em;font-weight:700;color:var(--suave);margin-top:.8em">Texto con instrucciones (código)</p></div>
     </div>
     <p class="clave" style="margin-top:.7em">Una página web en <span class="subrayado">un solo archivo</span>. Tu navegador lo lee y lo convierte en tu animación.</p>
-    <aside class="notes">Minuto 28. Cinco minutos y sin explicar el código: solo que por dentro es texto y que el navegador lo "dibuja". Secretarias: su anuncio también es HTML. Esto prepara el paso 3 de mañana (Los archivos).</aside>
+    <aside class="notes">Minuto 28. Cinco minutos y sin explicar el código: solo que por dentro es texto y que el navegador lo "dibuja". Secretarias: su anuncio también es HTML. Remate: "la animación de cómo funciona la IA que vieron en el paso 2 también es un HTML, y también la hice con Claude" (si quieres, ábrela con doble clic desde la carpeta: sesion-1/02-como-funciona/como-funciona-la-ia.html). Esto prepara el paso 3 de mañana (Los archivos).</aside>
   </section>
 
   <section>
@@ -677,7 +665,7 @@
           <p><span class="parte rol">Rol</span>Eres diseñador de materiales educativos para secundaria en México.</p>
           <p><span class="parte contexto">Contexto</span>Doy <b>[materia]</b> a <b>[grado]</b> de telesecundaria. Mis alumnos <b>[lo que les cuesta]</b>.</p>
           <p><span class="parte tarea">Tarea</span>Crea una animación interactiva sobre <b>[un tema distinto al de hoy]</b>, en la que los alumnos puedan dar clic y ver cómo funciona.</p>
-          <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), letras grandes para proyector, todo en español, ilustraciones dibujadas (no fotos de internet).</p>
+          <p><span class="parte formato">Formato</span>Una sola página web (un solo archivo HTML), en horizontal y completa en la pantalla, sin tener que bajar, letras grandes para proyector, todo en español, ilustraciones dibujadas (no fotos de internet).</p>
       </div></div>
       <div><div class="quien">Secretarias · un anuncio de otro evento</div><div class="prompt chico">
           <p><span class="parte rol">Rol</span>Eres diseñadora gráfica de una escuela secundaria en México.</p>
@@ -780,6 +768,32 @@
 <script src="lib/reveal.js"></script>
 <script src="lib/notes.js"></script>
 <script>
+  /* Animaciones a pantalla completa: una diapositiva con data-animacion muestra ese HTML encima de todo */
+  (function(){
+    var capa=document.createElement('div');
+    capa.id='capa-animacion';
+    capa.style.cssText='position:fixed;inset:0;z-index:50;background:#FBF7EF;display:none';
+    var marco=document.createElement('iframe');
+    marco.title='Animación';
+    marco.style.cssText='width:100%;height:100%;border:0;display:block';
+    capa.appendChild(marco);
+    document.body.appendChild(capa);
+    var ultimo=-1;
+    function revisar(){
+      var slide=Reveal.getCurrentSlide(), src=slide&&slide.getAttribute('data-animacion');
+      var h=Reveal.getIndices().h;
+      if(src){
+        /* Al llegar hacia adelante empieza en el paso 1; al regresar, sigue donde se quedó */
+        if(h>ultimo||marco.getAttribute('src')!==src){ marco.setAttribute('src',src); }
+        capa.style.display='block';
+      } else {
+        capa.style.display='none';
+      }
+      ultimo=h;
+    }
+    Reveal.on('ready',revisar);
+    Reveal.on('slidechanged',revisar);
+  })();
   Reveal.initialize({hash:true, width:1600, height:900, margin:0.06, transition:'slide', plugins:[RevealNotes]});
 </script>
 </body>

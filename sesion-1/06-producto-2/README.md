@@ -35,7 +35,7 @@ Es la promesa del gancho: *"hoy, antes de irte, tendrás uno de estos con tu tem
 
 ```
 Tarea: con base en esta planeación, crea una animación interactiva para [el momento de la clase que quieras: el inicio, una actividad, el cierre]. Que los alumnos puedan dar clic y ver cómo funciona [tu tema].
-Formato: una sola página web, letras grandes para verse en proyector, todo en español, ilustraciones dibujadas dentro de la página (no fotos de internet).
+Formato: una sola página web, en horizontal y completa en la pantalla, sin tener que bajar, letras grandes para verse en proyector, todo en español, ilustraciones dibujadas dentro de la página (no fotos de internet).
 ```
 
 ¿Prefieres un quiz? Cambia la tarea: *"crea un quiz interactivo de 5 preguntas sobre esta clase, que diga si la respuesta es correcta y por qué"*.

@@ -29,7 +29,7 @@ De ahí salen tres reglas:
 | 0–1 | Formamos equipos por mesa y cada uno recibe su hoja |
 | 1–5 | **Escribe como una IA:** a partir de *"El agua hierve a…"*, cada quien agrega una palabra. La hoja da tres vueltas |
 | 5–7 | Cada equipo lee su frase. Comparamos, le ponemos nombre (**modelo de lenguaje**) y viene **el giro**: ¿a cuántos grados hierve el agua aquí, en Huajuapan? |
-| 7–10 | **Tokens:** vemos en vivo cómo se corta el texto en pedazos |
+| 7–10 | **Por dentro:** una animación muestra qué pasa con tu mensaje: se corta en tokens, viaja a un servidor, la IA predice palabra por palabra y la respuesta regresa |
 | 10–15 | **Tres reglas** que salen de todo esto |
 
 ### Las reglas del juego
@@ -50,7 +50,9 @@ En este paso no hay prompt: solo observa y participa en voz alta.
 
 - **Al principio todos coinciden:** casi todos los equipos escriben "cien grados", porque es lo más probable.
 - **Después cada equipo se va por su lado:** con el mismo inicio salen frases distintas. La IA hace lo mismo: no responde igual dos veces.
-- **En el tokenizador** las palabras largas o poco comunes se parten en varios pedazos de colores.
+- **En la animación** las palabras comunes son un solo pedazo y las raras se parten en varios; con cada mensaje viaja toda la conversación.
+
+La animación está en [como-funciona-la-ia.html](como-funciona-la-ia.html): descárgala y ábrela con doble clic. También es un archivo HTML hecho con Claude, igual que el que harás en el paso 6.
 
 ## Si te atoraste
 
@@ -68,8 +70,9 @@ En este paso no hay nada que hacer en tu equipo. Si te quedaste atrás en los pa
 - **El juego es con el grupo, no con Claude:** lo que importa es que vivan cómo escribe la IA, palabra por palabra.
 - **"Esto es un modelo de lenguaje":** un minuto, justo después de "Así escribe la IA". Es ponerle nombre a lo que acaban de vivir, no una clase de teoría. Menciona "LLM" una vez, para que lo reconozcan si lo leen en otro lado, y sigue.
 - **El giro de Huajuapan:** a unos 1,600 m sobre el nivel del mar, el agua hierve a unos 95 °C, no a 100. "Cien" era lo más probable, pero no lo verdadero **aquí**. Deja la idea sembrada: en la sesión 2 vemos que lo local es justo donde la IA más inventa.
-- **Tokenizador en vivo:** aclara que es de OpenAI (ChatGPT) porque Claude no tiene uno público. Pega el texto de [texto-tokenizador.md](texto-tokenizador.md) en la pestaña GPT-5.x & O1/3. Señala que *agua*, *vapor* y *presión* son un solo pedazo, y que *Huajuapan*, *calientas* y *burbujas* se parten en varios. El texto también refuerza el giro: explica por qué en Huajuapan el agua hierve a unos 94–95 °C.
-- **Plan B del tokenizador:** si no hay internet o la página cambió, usa la captura de la presentación ([tokenizador.png](tokenizador.png)).
+- **La animación "¿Cómo funciona la IA?"** ([como-funciona-la-ia.html](como-funciona-la-ia.html)) sustituye al tokenizador en vivo. En la presentación se abre a pantalla completa; avanza con sus botones **Atrás** y **Siguiente**, y las flechas o el control cambian de diapositiva. En el paso 8 da clic en **+ Chat nuevo** y luego en **Enviar**. El guion de cada paso está en las notas de la diapositiva (tecla S; ábrelas antes de llegar aquí).
+- **Los cortes de la animación son reales** (salen de la captura del tokenizador de OpenAI, [tokenizador.png](tokenizador.png)): *agua*, un pedazo; *hier·ve*, dos; *cal·ient·as*, tres. Repite la aclaración que aparece en pantalla: así corta ChatGPT; Claude corta distinto, pero la idea es la misma. Las barras de probabilidad y los conteos dicen "ejemplo": no son números reales.
+- **Remátala con la diapositiva siguiente:** las tres reglas salen de lo que acaban de ver (predice; todo cuesta; viaja toda la conversación).
 - **Los tokens preparan la sesión 2:** ahí la IA falla al contar letras, porque ve pedazos y no letras.
 - **La regla 3 no contradice al gancho:** el aviso se pidió en el mismo chat porque era el mismo tema. Retómalo así: "¿se acuerdan de que no le repetimos el tema? Por eso".
 - **No te extiendas en la regla 2.** El paso 3 explica cómo cuidar la versión gratuita.

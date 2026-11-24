@@ -33,7 +33,7 @@ Y si algún día se te acaba el límite de Claude, ya sabes a dónde ir.
 Eres diseñador de materiales educativos para secundaria en México.
 Contexto: doy [materia] a [grado] de telesecundaria. Mis alumnos [lo que les cuesta].
 Tarea: crea una animación interactiva sobre [un tema distinto al de hoy], en la que los alumnos puedan dar clic y ver cómo funciona.
-Formato: una sola página web (un solo archivo HTML), letras grandes para verse en proyector, todo en español, ilustraciones dibujadas dentro de la página (no fotos de internet).
+Formato: una sola página web (un solo archivo HTML), en horizontal y completa en la pantalla, sin tener que bajar, letras grandes para verse en proyector, todo en español, ilustraciones dibujadas dentro de la página (no fotos de internet).
 ```
 
 **Secretarias:** un anuncio de **otro evento** que tengas que avisar.
